@@ -3,8 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from './AuthContext';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import './Dashboard.css';
 
-function Dashboard() {
+function DashboardEkonomi() {
     const { user, logout } = useAuth();
     const navigate = useNavigate();
 
@@ -22,36 +23,77 @@ function Dashboard() {
     }
 
     return (
-        <div className="d-flex">
-            <div className="col">
-                <header className="d-flex justify-content-between align-items-center p-3 bg-primary text-white">
-                    <div data-aos="fade-down">
-                        <h2>Selamat Datang di Website SMK N 1 Siborongborong</h2>
-                        <p>Halo, <strong>{user.username}</strong>!</p>
-                    </div>
-                </header>
+        <div className="dashboard-ekonomi">
+            <header className="sticky-header d-flex justify-content-between align-items-center p-3 text-white shadow">
+                <h2 data-aos="fade-down">Mata Pelajaran Ekonomi Kelas 11</h2>
+                <p data-aos="fade-down">Halo, <strong>{user.username}</strong>!</p>
+            </header>
 
-                <div className="container mt-4">
-                    <section className="section mb-4 p-3 bg-white shadow-sm rounded" data-aos="fade-right">
-                        <h3 className="text-primary">Visi</h3>
-                        <p>Menjadi sekolah unggulan yang berkarakter dan berprestasi.</p>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+                <div className="container">
+                    <ul className="navbar-nav mx-auto">
+                        <li className="nav-item mx-2" data-aos="fade-down">
+                            <Link to="/dashboard/materi" className="nav-link text-dark">Materi Pelajaran</Link>
+                        </li>
+                        <li className="nav-item mx-2" data-aos="fade-down">
+                            <Link to="/dashboard/tugas" className="nav-link text-dark">Tugas</Link>
+                        </li>
+                        <li className="nav-item mx-2" data-aos="fade-down">
+                            <Link to="/dashboard/jadwal-ujian" className="nav-link text-dark">Jadwal Ujian</Link>
+                        </li>
+                        <li className="nav-item mx-2" data-aos="fade-down">
+                            <Link to="/dashboard/pengumuman" className="nav-link text-dark">Pengumuman</Link>
+                        </li>
+                        <li className="nav-item mx-2" data-aos="fade-down">
+                            <Link to="/dashboard/forum" className="nav-link text-dark">Forum Diskusi</Link>
+                        </li>
+                        <li className="nav-item mx-2" data-aos="fade-down">
+                            <button onClick={handleLogout} className="nav-link text-dark">Logout</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main className="container mt-4">
+                <div className="row row-cols-1 row-cols-md-3 g-4">
+                    <section className="col" data-aos="fade-up">
+                        <div className="section p-4 bg-white shadow rounded">
+                            <h3 className="text-primary">Materi Pelajaran</h3>
+                            <p>Daftar materi yang akan dipelajari, seperti dasar-dasar ekonomi, permintaan dan penawaran, sistem ekonomi, dan lainnya.</p>
+                        </div>
                     </section>
-                    <section className="section mb-4 p-3 bg-white shadow-sm rounded" data-aos="fade-left">
-                        <h3 className="text-primary">Misi</h3>
-                        <ul>
-                            <li>Meningkatkan kualitas pendidikan dan pembelajaran.</li>
-                            <li>Membentuk siswa yang berkarakter dan berwawasan luas.</li>
-                            <li>Mengembangkan keterampilan siswa dalam bidang kejuruan.</li>
-                        </ul>
+
+                    <section className="col" data-aos="fade-up">
+                        <div className="section p-4 bg-white shadow rounded">
+                            <h3 className="text-primary">Tugas</h3>
+                            <p>Lihat tugas yang diberikan dan pastikan untuk mengumpulkannya tepat waktu.</p>
+                        </div>
                     </section>
-                    <section className="section mb-4 p-3 bg-white shadow-sm rounded" data-aos="fade-up">
-                        <h3 className="text-primary">Informasi Terbaru</h3>
-                        <p>Dapatkan informasi terbaru seputar kegiatan dan program unggulan sekolah.</p>
+
+                    <section className="col" data-aos="fade-up">
+                        <div className="section p-4 bg-white shadow rounded">
+                            <h3 className="text-primary">Jadwal Ujian</h3>
+                            <p>Informasi jadwal ujian mid dan akhir semester, serta ujian lainnya terkait mata pelajaran Ekonomi.</p>
+                        </div>
+                    </section>
+
+                    <section className="col" data-aos="fade-up">
+                        <div className="section p-4 bg-white shadow rounded">
+                            <h3 className="text-primary">Pengumuman</h3>
+                            <p>Pengumuman penting terkait kegiatan kelas atau informasi lainnya.</p>
+                        </div>
+                    </section>
+
+                    <section className="col" data-aos="fade-up">
+                        <div className="section p-4 bg-white shadow rounded">
+                            <h3 className="text-primary">Forum Diskusi</h3>
+                            <p>Tempat berdiskusi dengan teman-teman dan guru mengenai topik ekonomi yang dipelajari.</p>
+                        </div>
                     </section>
                 </div>
-            </div>
+            </main>
         </div>
     );
 }
 
-export default Dashboard;
+export default DashboardEkonomi;
