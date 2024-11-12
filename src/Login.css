@@ -1,0 +1,88 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-card{
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.login-card h2{ 
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #495057;
+    font-weight: 700;
+}
+
+.form-control:focus{
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+.login-btn{
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #4e73df;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover{
+    background-color: #375a7f;
+    box-shadow: 0 4px 8px rgba(55, 90, 127, 0.3);
+}
+
+.register-link{
+    text-align: center;
+    display: block;
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    color: #4e73df;
+    font-weight: 500;
+}
+
+.register-link:hover{
+    color: #375a7f;
+    text-decoration: none;
+}
+
+.form-check{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.form-check-label{
+    margin-left: 8px;
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+
+.login-card[data-aos="fade-up"]{
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.login-card[data-aos="fade-up"].login-card[data-aos="fade-up"].aos-animate{
+    transform: translateY(0);
+    opacity: 1;
+}
