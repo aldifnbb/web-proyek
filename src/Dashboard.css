@@ -42,6 +42,13 @@
 
 .container {
     margin-top: 30px;
+    background-image: url(eko.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    padding: 10px;
 }
 
 .section {
