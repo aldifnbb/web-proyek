@@ -23,6 +23,5 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     );
 };
-// asdf
 
 export const useAuth = () => useContext(AuthContext);
