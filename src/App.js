@@ -7,6 +7,7 @@ import Registration from './Registration';
 import Login from './Login';
 import Dashboard from './Dashboard';
 import Pengumuman from './Pengumuman';
+import Quiz from './components/Quiz';
 
 
 function App() {
@@ -30,6 +31,7 @@ function MainContent() {
         <Route path="/register" element={<Registration />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/quiz" element={<Quiz />} />
         <Route path="/pengumuman" element={<Pengumuman />} />
         <Route path="/" element={<Navigate to="/register" replace />} />
       </Routes>
