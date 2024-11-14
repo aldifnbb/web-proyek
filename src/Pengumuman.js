@@ -8,17 +8,20 @@ const Pengumuman = () => {
     const [konten, setKonten] = useState('');
     const [showNotification, setShowNotification] = useState(false);
 
+    // Load existing pengumuman from localStorage on mount
     useEffect(() => {
         const storedPengumumanList = JSON.parse(localStorage.getItem('pengumumanList')) || [];
         setPengumumanList(storedPengumumanList);
     }, []);
 
+    // Save pengumuman list to localStorage whenever it changes
     useEffect(() => {
         if (pengumumanList.length > 0) {
             localStorage.setItem('pengumumanList', JSON.stringify(pengumumanList));
         }
     }, [pengumumanList]);
 
+    // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -30,11 +33,13 @@ const Pengumuman = () => {
                 tanggal: new Date().toLocaleString(),
             };
 
-            setPengumumanList([...pengumumanList, newPengumuman]);
+            // Add new pengumuman to the list
+            setPengumumanList((prevList) => [...prevList, newPengumuman]);
             setJudul('');
             setKonten('');
             setShowNotification(true);
 
+            // Hide notification after 3 seconds
             setTimeout(() => {
                 setShowNotification(false);
             }, 3000);
@@ -43,8 +48,9 @@ const Pengumuman = () => {
         }
     };
 
+    // Handle deletion of a pengumuman
     const handleDelete = (id) => {
-        const updatedPengumumanList = pengumumanList.filter(pengumuman => pengumuman.id !== id);
+        const updatedPengumumanList = pengumumanList.filter((pengumuman) => pengumuman.id !== id);
         setPengumumanList(updatedPengumumanList);
     };
 

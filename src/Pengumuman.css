@@ -135,7 +135,7 @@
 
 .card-body::after {
     content: '⚖️';
-    font-size: 3rem;
+    font-size: 2rem; /* Corrected font-size */
     position: absolute;
     top: 20px;
     right: 20px;
@@ -163,7 +163,7 @@
 }
 
 .card-body .btn-danger {
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
 .notification {
@@ -205,7 +205,7 @@
     }
 
     .card-body::after {
-        font-size: 2rem;
+        font-size: 2rem; /* Adjusted font-size for smaller screens */
     }
 
     .pengumuman-list h3 {
