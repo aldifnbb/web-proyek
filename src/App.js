@@ -8,6 +8,7 @@ import Login from './Login';
 import Dashboard from './Dashboard';
 import Pengumuman from './Pengumuman';
 import Quiz from './components/Quiz';
+import ForumDiskusi from './components/ForumDiskusi';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function MainContent() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/pengumuman" element={<Pengumuman />} />
+        <Route path="/forum-diskusi" element={<ForumDiskusi />} />
         <Route path="/" element={<Navigate to="/register" replace />} />
       </Routes>
     </div>

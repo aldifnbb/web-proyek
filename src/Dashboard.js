@@ -42,8 +42,15 @@ function DashboardEkonomi() {
 
                     <section className="col" data-aos="fade-up">
                         <div className="section p-4 bg-white shadow rounded">
-                            <h3 className="text-primary">Latihan Soal</h3>
+                            <h3 className="text-primary">Tugas</h3>
                             <p>Lihat tugas yang diberikan dan pastikan untuk mengumpulkannya tepat waktu.</p>
+                        </div>
+                    </section>
+
+                    <section className="col" data-aos="fade-up">
+                        <div className="section p-4 bg-white shadow rounded">
+                            <h3 className="text-primary">Quiz</h3>
+                            <p>Mengikuti Quiz setelah belajar beberapa materi.</p>
                         </div>
                     </section>
 
@@ -57,13 +64,6 @@ function DashboardEkonomi() {
                     <section className="col" data-aos="fade-up">
                         <div className="section p-4 bg-white shadow rounded">
                             <h3 className="text-primary">Diskusi</h3>
-                            <p>Tempat berdiskusi dengan teman-teman dan guru mengenai topik ekonomi yang dipelajari.</p>
-                        </div>
-                    </section>
-
-                    <section className="col" data-aos="fade-up">
-                        <div className="section p-4 bg-white shadow rounded">
-                            <h3 className="text-primary">Tugas</h3>
                             <p>Tempat berdiskusi dengan teman-teman dan guru mengenai topik ekonomi yang dipelajari.</p>
                         </div>
                     </section>
