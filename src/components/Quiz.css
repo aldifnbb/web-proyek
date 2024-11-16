@@ -83,3 +83,29 @@
     font-size: 18px;
     color: #555;
 }
+
+.btn-chapter {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #6e85b7, #b8c1ec);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s, background 0.3s;
+    cursor: pointer;
+}
+
+.btn-chapter:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, #4e73ab, #9caee3);
+}
+
+.btn-chapter:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
