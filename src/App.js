@@ -2,13 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import { AuthProvider } from './AuthContext';
-import Registration from './Registration';
-import Login from './Login';
-import Dashboard from './Dashboard';
-import Pengumuman from './Pengumuman';
-import Quiz from './components/Quiz';
-import ForumDiskusi from './components/ForumDiskusi';
+import { AuthProvider } from './pages/AuthContext';
+import Registration from './pages/Registration';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import Materi from './pages/Materi';
+import Pengumuman from './pages/Pengumuman';
+import Quiz from './pages/Quiz';
+import ForumDiskusi from './pages/ForumDiskusi';
 
 function App() {
   return (
@@ -25,12 +26,13 @@ function MainContent() {
   const showHeader = location.pathname === '/login' || location.pathname === '/register';
 
   return (
-    <div className="mt-5">
+    <div>
       {showHeader && <h1>EconoMinds</h1>}
       <Routes>
         <Route path="/register" element={<Registration />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/materi" element={<Materi/>} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/pengumuman" element={<Pengumuman />} />
         <Route path="/forum-diskusi" element={<ForumDiskusi />} />
