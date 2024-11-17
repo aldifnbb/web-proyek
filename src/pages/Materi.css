@@ -1,1 +1,22 @@
+.materi-container {
+    padding: 20px;
+}
 
+.chapter-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.chapter-card:hover {
+    transform: scale(1.05);
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
