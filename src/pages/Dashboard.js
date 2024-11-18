@@ -51,7 +51,7 @@ function DashboardEkonomi() {
             <main className="container mt-4">
                 <div className="text-center mb-4" data-aos="fade-up">
                     <h2 style={{ color: "#343a40", fontWeight: "bold", fontSize: "2rem" }}>
-                        Belajar Seru dengan Ekonomi Kelas 11
+                        Belajar Seru dengan Ekonomi Kelas 10
                     </h2>
                     <p style={{ color: "#6c757d", fontSize: "1rem" }}>
                         Temukan berbagai materi, tugas, dan quiz menarik untuk membantu Anda memahami ekonomi dengan mudah.
