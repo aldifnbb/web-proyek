@@ -1,55 +1,156 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import {
+    Accordion,
+    AccordionBody,
+    AccordionHeader,
+    AccordionItem,
+    Button,
+    Container,
+    Tooltip,
+    Card,
+    CardBody,
+    CardTitle,
+    CardText,
+} from "reactstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Bab1 = () => {
+    const [open, setOpen] = useState("1");
+    const [tooltipOpen1, setTooltipOpen1] = useState(false);
+    const [tooltipOpen2, setTooltipOpen2] = useState(false);
+
+    useEffect(() => {
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: "ease-in-out",
+            once: true,
+        });
+    }, []);
+
+    const toggle = (id) => setOpen(open === id ? null : id);
+    const toggleTooltip1 = () => setTooltipOpen1(!tooltipOpen1);
+    const toggleTooltip2 = () => setTooltipOpen2(!tooltipOpen2);
+
     return (
-        <div className="container mt-5 bg-light p-4 rounded shadow">
-            <h1>Bab 1: Masalah Ekonomi Dasar</h1>
-            <p>
+        <Container className="mt-5 p-4 rounded shadow-lg" style={{ background: "linear-gradient(135deg, #f3f4f6, #dbe6f6)" }} data-aos="fade-up">
+            <h1 className="text-center mb-4 text-primary">Bab 1: Masalah Ekonomi Dasar</h1>
+            <p data-aos="fade-up">
                 Masalah ekonomi dasar adalah persoalan yang dihadapi masyarakat dalam memenuhi kebutuhan yang tidak terbatas 
-                dengan sumber daya yang terbatas. Masalah ini muncul karena kelangkaan (scarcity), yaitu ketidakseimbangan antara kebutuhan dan alat pemuas kebutuhan.
+                dengan sumber daya yang terbatas. Masalah ini muncul karena kelangkaan (scarcity).
             </p>
 
-            <h4>3 Masalah Ekonomi Dasar</h4>
-            <ul>
-                <li>
-                    <strong>Apa yang harus diproduksi?</strong>
-                    <p>merujuk pada keputusan tentang barang dan jasa apa yang harus dihasilkan untuk memenuhi kebutuhan masyarakat. Karena sumber daya terbatas, tidak semua kebutuhan manusia dapat dipenuhi secara bersamaan. Oleh karena itu, pilihan harus dibuat mengenai jenis barang atau jasa yang paling penting dan mendesak. 
-                    Misalnya, sebuah negara harus memutuskan apakah akan fokus memproduksi kebutuhan dasar seperti pangan, pakaian, dan perumahan, atau barang-barang mewah seperti mobil dan perhiasan. Keputusan ini biasanya dipengaruhi oleh prioritas masyarakat, tingkat kebutuhan, serta ketersediaan sumber daya. Pilihan yang diambil memiliki konsekuensi besar terhadap kesejahteraan ekonomi suatu masyarakat.
-                    </p>
-                </li>
-                <li>
-                    <strong>Bagaimana cara memproduksi?</strong> 
-                    <p>mengacu pada pilihan metode, teknologi, dan sumber daya yang akan digunakan dalam proses produksi. Karena sumber daya terbatas, keputusan ini bertujuan untuk memaksimalkan efisiensi dan mengurangi pemborosan.
-                    Produsen harus menentukan apakah akan menggunakan tenaga kerja manual atau teknologi otomatis, serta memilih antara sumber daya yang ramah lingkungan atau yang lebih murah tetapi berdampak negatif terhadap lingkungan. Misalnya, dalam menghasilkan listrik, suatu negara dapat memilih menggunakan batu bara yang murah namun polutif, atau energi terbarukan seperti matahari atau angin yang lebih ramah lingkungan tetapi memerlukan investasi besar.
-                    Keputusan ini juga melibatkan bagaimana kombinasi faktor produksi (tanah, tenaga kerja, modal, dan kewirausahaan) digunakan untuk menghasilkan barang atau jasa. Pilihan yang diambil memengaruhi biaya produksi, kualitas barang, dampak lingkungan, serta keadilan sosial dalam distribusi pekerjaan.</p>
-                </li>
-                <li>
-                    <strong>Untuk siapa barang diproduksi?</strong> 
-                    <p>merujuk pada keputusan mengenai bagaimana hasil produksi didistribusikan di antara anggota masyarakat. Karena sumber daya terbatas, tidak semua orang bisa mendapatkan barang atau jasa dalam jumlah yang sama. Oleh karena itu, harus ada mekanisme untuk menentukan siapa yang akan menikmati barang dan jasa tersebut.
-                    Distribusi ini biasanya bergantung pada beberapa faktor, seperti tingkat pendapatan, daya beli, atau kebijakan pemerintah. Dalam sistem ekonomi pasar, barang cenderung diberikan kepada mereka yang mampu membayar, sehingga orang dengan pendapatan lebih tinggi memiliki akses lebih besar. Sebaliknya, dalam sistem ekonomi yang diatur pemerintah, distribusi mungkin didasarkan pada kebutuhan masyarakat, seperti program subsidi untuk kelompok miskin.
-                    Misalnya, negara harus memutuskan apakah barang tertentu, seperti layanan kesehatan atau pendidikan, akan diberikan secara gratis untuk semua, dijual hanya kepada yang mampu membayar, 
-                    atau didistribusikan secara khusus kepada kelompok yang paling membutuhkan. Keputusan ini sangat penting karena memengaruhi keadilan sosial dan stabilitas ekonomi suatu masyarakat.</p>
-                </li>
-            </ul>
+            <h4 className="mt-4 text-secondary" data-aos="fade-right">3 Masalah Ekonomi Dasar</h4>
 
-            <h3>Kelangkaan</h3>
-            <p>
-                Kelangkaan adalah kondisi ketika sumber daya terbatas tidak dapat memenuhi semua kebutuhan dan keinginan manusia. 
-                Kelangkaan memaksa masyarakat untuk membuat pilihan dan menentukan prioritas.
-            </p>
+            <Accordion open={open} toggle={toggle} className="mb-4" style={{ border: "none" }}>
+                <AccordionItem data-aos="flip-right">
+                    <AccordionHeader targetId="1" className="bg-light text-dark">
+                        Apa yang harus diproduksi?
+                    </AccordionHeader>
+                    <AccordionBody accordionId="1">
+                        <Card className="my-3 border-0 shadow-sm" style={{ borderRadius: "10px", overflow: "hidden" }}>
+                            <div style={{ background: "linear-gradient(135deg, #6dd5ed, #2193b0)", color: "white", padding: "10px 20px" }}>
+                                <CardTitle tag="h5">Keputusan Produksi</CardTitle>
+                            </div>
+                            <CardBody>
+                                <CardText>
+                                    Merujuk pada keputusan tentang barang dan jasa apa yang harus dihasilkan untuk memenuhi kebutuhan masyarakat. Karena sumber daya terbatas...
+                                </CardText>
+                                <img
+                                    src="https://via.placeholder.com/300"
+                                    alt="Production Example"
+                                    className="img-fluid my-3"
+                                    data-aos="zoom-in"
+                                />
+                                <div>
+                                    <p><strong>Kuis Singkat:</strong> Apa yang memengaruhi keputusan tentang apa yang harus diproduksi?</p>
+                                    <Button id="btnOption1" color="info" size="sm" className="mr-2">A. Prioritas masyarakat</Button>
+                                    <Button id="btnOption2" color="info" size="sm">B. Teknologi</Button>
+                                    <Tooltip placement="top" isOpen={tooltipOpen1} target="btnOption1" toggle={toggleTooltip1}>
+                                        Pilihan A mungkin tepat!
+                                    </Tooltip>
+                                    <Tooltip placement="top" isOpen={tooltipOpen2} target="btnOption2" toggle={toggleTooltip2}>
+                                        Pertimbangkan efek teknologi
+                                    </Tooltip>
+                                </div>
+                            </CardBody>
+                        </Card>
+                    </AccordionBody>
+                </AccordionItem>
 
-            <h3>Biaya Peluang</h3>
-            <p>
-                Biaya peluang adalah nilai dari alternatif terbaik berikutnya yang harus dikorbankan ketika membuat pilihan ekonomi.
-            </p>
+                <AccordionItem data-aos="flip-right">
+                    <AccordionHeader targetId="2" className="bg-light text-dark">
+                        Bagaimana cara memproduksi?
+                    </AccordionHeader>
+                    <AccordionBody accordionId="2">
+                        <Card className="my-3 border-0 shadow-sm" style={{ borderRadius: "10px", overflow: "hidden" }}>
+                            <div style={{ background: "linear-gradient(135deg, #ff9966, #ff5e62)", color: "white", padding: "10px 20px" }}>
+                                <CardTitle tag="h5">Metode Produksi</CardTitle>
+                            </div>
+                            <CardBody>
+                                <CardText>
+                                    Mengacu pada pilihan metode, teknologi, dan sumber daya yang akan digunakan dalam proses produksi...
+                                </CardText>
+                                <div className="bg-success text-white text-center p-2 my-3 rounded" data-aos="flip-left">
+                                    <strong>Contoh Penggunaan Energi (Animasi Placeholder)</strong>
+                                </div>
+                                <div>
+                                    <p><strong>Kuis Singkat:</strong> Metode produksi apa yang bisa dipilih untuk efisiensi tinggi?</p>
+                                    <Button color="info" size="sm" className="mr-2">A. Manual</Button>
+                                    <Button color="info" size="sm">B. Teknologi otomatis</Button>
+                                </div>
+                            </CardBody>
+                        </Card>
+                    </AccordionBody>
+                </AccordionItem>
 
-            <button 
-                onClick={() => window.history.back()} 
-                className="btn btn-secondary mt-4"
+                <AccordionItem data-aos="flip-right">
+                    <AccordionHeader targetId="3" className="bg-light text-dark">
+                        Untuk siapa barang diproduksi?
+                    </AccordionHeader>
+                    <AccordionBody accordionId="3">
+                        <Card className="my-3 border-0 shadow-sm" style={{ borderRadius: "10px", overflow: "hidden" }}>
+                            <div style={{ background: "linear-gradient(135deg, #56ccf2, #2f80ed)", color: "white", padding: "10px 20px" }}>
+                                <CardTitle tag="h5">Distribusi Barang</CardTitle>
+                            </div>
+                            <CardBody>
+                                <CardText>
+                                    Merujuk pada keputusan mengenai bagaimana hasil produksi didistribusikan di antara anggota masyarakat...
+                                </CardText>
+                                <img
+                                    src="https://via.placeholder.com/300"
+                                    alt="Distribution Example"
+                                    className="img-fluid my-3"
+                                    data-aos="zoom-in"
+                                />
+                                <div>
+                                    <p><strong>Kuis Singkat:</strong> Apa yang menentukan distribusi barang?</p>
+                                    <Button color="info" size="sm" className="mr-2">A. Pendapatan</Button>
+                                    <Button color="info" size="sm">B. Prioritas produksi</Button>
+                                </div>
+                            </CardBody>
+                        </Card>
+                    </AccordionBody>
+                </AccordionItem>
+            </Accordion>
+
+            <h3 data-aos="fade-left">Kelangkaan</h3>
+            <p data-aos="fade-up">Kelangkaan adalah kondisi ketika sumber daya terbatas tidak dapat memenuhi semua kebutuhan manusia.</p>
+
+            <h3 data-aos="fade-left">Biaya Peluang</h3>
+            <p data-aos="fade-up">Biaya peluang adalah nilai dari alternatif terbaik berikutnya yang harus dikorbankan ketika membuat pilihan ekonomi.</p>
+
+            <Button
+                onClick={() => window.history.back()}
+                color="primary"
+                className="mt-4 shadow"
+                data-aos="fade-up"
             >
                 Kembali ke Materi
-            </button>
-        </div>
+            </Button>
+        </Container>
     );
 };
 

@@ -20,7 +20,10 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
+      {/* Navbar */}
       <Navbar />
+
+      {/* Hero Section */}
       <section
         className="hero vh-100 d-flex flex-column justify-content-center align-items-center text-white"
         style={{
@@ -67,7 +70,8 @@ function Dashboard() {
         </div>
       </section>
 
-      <section className="explore py-5 bg-dark text-white" ref={exploreRef}>
+      {/* Explore Section */}
+      <section className="explore py-5 bg-dark text-white">
         <div className="container">
           <div className="text-center mb-5">
             <h1 data-aos="fade-up">Explore Mata Pelajaran Ekonomi</h1>
@@ -78,7 +82,7 @@ function Dashboard() {
             </p>
           </div>
           <div className="row g-4">
-            {[
+            {[ 
               {
                 title: "Home",
                 img: "/kopi.jpg",
@@ -154,10 +158,11 @@ function Dashboard() {
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="footer bg-dark text-white py-5">
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-4 mb-4" data-aos="zoom-in" data-aos-duration="1200">
               <h3>
                 Econominds<span className="text-warning">.</span>
               </h3>
@@ -166,40 +171,30 @@ function Dashboard() {
                 risiko harus diutamakan agar kita tahu beda investasi dan berjudi.
               </p>
             </div>
-
             <div className="col-md-4">
               <h4>Support</h4>
               <ul className="list-unstyled">
-                <li>
-                  <a href="#" className="text-white" style={{ textDecoration: 'none' }}>
-                    Facebook
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white" style={{ textDecoration: 'none' }}>
-                    Terms and Conditions
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white" style={{ textDecoration: 'none' }}>
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white" style={{ textDecoration: 'none' }}>
-                    Contact Us
-                  </a>
-                </li>
+                <li><a href="#" className="text-white">Facebook</a></li>
+                <li><a href="#" className="text-white">Terms and Conditions</a></li>
+                <li><a href="#" className="text-white">Privacy Policy</a></li>
+                <li><a href="#" className="text-white">Contact Us</a></li>
               </ul>
             </div>
-
             <div className="col-md-4">
               <h4>Address</h4>
-              <p>SMK N 1 SBB, Pohan Tongatonga</p>
-              <p>Email: info@example.com</p>
-              <p>Phone: 0822 7642 3194</p>
+              <p><strong>Address:</strong> SMK N 1 SBB, Pohan Tongatonga, 2024, Indonesia</p>
+              <p><strong>Email:</strong> aldinababan96@gmail.com</p>
+              <p><strong>Email:</strong> depedrompane@gmail.com</p>
+              <p><strong>Email:</strong> permaisimangunsong@gmail.com</p>
+              <p><strong>Email:</strong> immanuellumbantoruan18@gmail.com</p>
+              <p><strong>Phone:</strong> 0822 7642 3194</p>
             </div>
           </div>
+        </div>
+        <div className="footer_bar bg_secondary text-center py-3">
+          <p className="mb-0 text-white">
+            &copy; 2024 SMK N 1 Siborongborong | Designed by <span className="text-warning">Econominds United</span>
+          </p>
         </div>
       </footer>
       <div className="footer_bar text-center bg-dark text-white py-2">
