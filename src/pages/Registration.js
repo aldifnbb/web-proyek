@@ -33,7 +33,7 @@ function Registration() {
                             required
                         />
                     </div>
-                    <div className="form-group mb-3">
+                    <div className="form-group mb-3 password-group">
                         <label htmlFor="password">Password:</label>
                         <input
                             type={showPassword ? "text" : "password"}
@@ -43,14 +43,43 @@ function Registration() {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
-                        <div className="input-group-append">
-                            <input
-                                type="checkbox"
-                                className="form-check-input"
-                                onChange={() => setShowPassword(!showPassword)}
-                            />
-                            <label className="form-check-label" htmlFor="showPassword">Show</label>
-                        </div>
+                        <span
+                            className="password-toggle"
+                            onClick={() => setShowPassword(!showPassword)}
+                        >
+                            {showPassword ? (
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="feather feather-eye-off"
+                                >
+                                    <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20.5a10.94 10.94 0 0 1-5.94-2.06m11.88-5.88A10.94 10.94 0 0 0 12 3.5a10.94 10.94 0 0 0-5.94 2.06M3 3l18 18"></path>
+                                </svg>
+                            ) : (
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="feather feather-eye"
+                                >
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            )}
+                        </span>
                     </div>
                     <button type="submit" className="btn btn-primary login-btn">Register</button>
                 </form>
