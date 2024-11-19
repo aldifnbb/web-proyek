@@ -45,7 +45,7 @@ function Dashboard() {
             </p>
           </div>
           <div className="row g-4">
-            {[
+            {[ 
               {
                 title: "Home",
                 img: "/pict/home.jpg",
@@ -116,11 +116,40 @@ function Dashboard() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="gallery py-5">
+        <div className="container">
+          <div className="text-center text-white">
+            <h1 data-aos="fade-up">Gallery Kegiatan Ekonomi</h1>
+          </div>
+          <div className="row g-4 mt-4">
+            {[ 
+              "pict/ekonomi-kegiatan-1.jpg",
+              "pict/ekonomi-kegiatan-2.jpg",
+              "pict/ekonomi-kegiatan-3.jpg",
+            ].map((src, idx) => (
+              <div
+                className="col-md-4"
+                key={idx}
+                data-aos="zoom-in"
+                data-aos-delay={idx * 200}
+              >
+                <img
+                  src={src}
+                  alt={`Gallery ${idx + 1}`}
+                  className="img-fluid rounded shadow"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="footer bg-dark text-white py-5">
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-4 mb-4" data-aos="zoom-in" data-aos-duration="1200">
               <h3>
                 Econominds<span className="text-warning">.</span>
               </h3>
@@ -128,22 +157,30 @@ function Dashboard() {
                 Di antara sekian banyak ilmu menuju sukses, maka ilmu mengelola risiko harus diutamakan agar kita tahu beda investasi dan berjudi.
               </p>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 mb-4" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">
               <h4>Support</h4>
               <ul className="list-unstyled">
-                <li><a href="#" className="text-white">Facebook</a></li>
-                <li><a href="#" className="text-white">Terms and Conditions</a></li>
-                <li><a href="#" className="text-white">Privacy Policy</a></li>
-                <li><a href="#" className="text-white">Contact Us</a></li>
+                <li><a href="#" className="text-white text-decoration-none d-block">Facebook</a></li>
+                <li><a href="#" className="text-white text-decoration-none d-block">Terms and Conditions</a></li>
+                <li><a href="#" className="text-white text-decoration-none d-block">Privacy Policy</a></li>
+                <li><a href="#" className="text-white text-decoration-none d-block">Contact Us</a></li>
               </ul>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 mb-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400">
               <h4>Address</h4>
-              <p>SMK N 1 SBB, Pohan Tongatonga</p>
-              <p>Email: info@example.com</p>
-              <p>Phone: 0822 7642 3194</p>
+              <p><strong>Address:</strong> SMK N 1 SBB, Pohan Tongatonga, 2024, Indonesia</p>
+              <p><strong>Email:</strong> aldinababan96@gmail.com</p>
+              <p><strong>Email:</strong> depedrompane@gmail.com</p>
+              <p><strong>Email:</strong> permaisimangunsong@gmail.com</p>
+              <p><strong>Email:</strong> immanuellumbantoruan18@gmail.com</p>
+              <p><strong>Phone:</strong> 0822 7642 3194</p>
             </div>
           </div>
+        </div>
+        <div className="footer_bar bg_secondary text-center py-3">
+          <p className="mb-0 text-white">
+            &copy; 2024 SMK N 1 Siborongborong | Designed by <span className="text-warning">Econominds United</span>
+          </p>
         </div>
       </footer>
     </div>
