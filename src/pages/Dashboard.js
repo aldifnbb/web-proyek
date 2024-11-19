@@ -219,13 +219,13 @@ function Dashboard() {
                 <strong>Email:</strong> krisnalbntruan12#gamil.com
               </p>
               <p>
-                <strong>Email:</strong> bethania892gmail.com
+                <strong>Email:</strong> permaisimangnunsonggmail.com
               </p>
               <p>
-                <strong>Email:</strong> depedro77@gmail.com
+                <strong>Email:</strong> depedrompane@gmail.com
               </p>
               <p>
-                <strong>Phone:</strong> 0821 8113 7988
+                <strong>Phone:</strong> 0822 7642 3194
               </p>
             </div>
           </div>
