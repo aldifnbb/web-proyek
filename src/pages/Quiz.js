@@ -207,7 +207,7 @@ function Quiz() {
             <Navbar />
             
             <div style={styles.quizContainer}>
-                <h1>Kuis Ekonomi - Kelas 11</h1>
+                <h1>Kuis Ekonomi - Kelas 10</h1>
                 {!selectedChapter ? (
                     <div className="chapter-selection">
                         <div className="row">
