@@ -1,6 +1,10 @@
-import React from "react";
-import { useNavigate } from "react-router-dom"
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { Card, CardBody, CardTitle, Button, Container, Row, Col } from "reactstrap";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { FaBookOpen, FaEdit } from "react-icons/fa";
 import "./Materi.css";
 
 const Materi = () => {
@@ -14,6 +18,15 @@ const Materi = () => {
         5: { title: "Siklus Ekonomi" },
     };
 
+    useEffect(() => {
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: "ease-in-out",
+            once: true,
+        });
+    }, []);
+
     const goToChapter = (chapter) => {
         navigate(`/bab${chapter}`);
     };
@@ -23,32 +36,49 @@ const Materi = () => {
     };
 
     return (
-        <div className="materi-container">
+        <div className="materi-container" style={{ position: "relative", overflow: "hidden" }}>
             <Navbar />
-            <h1>Materi Ekonomi - Kelas 10</h1>
-            <div className="row">
-                {Object.entries(chapters).map(([chapter, data]) => (
-                    <div key={chapter} className="col-md-6 col-lg-4 my-3">
-                        <div className={`card chapter-card chapter-${chapter}`}>
-                            <div className="card-body">
-                                <h5 className="card-title">{`Bab ${chapter}: ${data.title}`}</h5>
-                                <button 
-                                    className="btn btn-info mx-1" 
-                                    onClick={() => goToChapter(chapter)}
-                                >
-                                    Materi Lengkap
-                                </button>
-                                <button 
-                                    className="btn btn-primary mx-1" 
-                                    onClick={() => goToQuiz(chapter)}
-                                >
-                                    Kerjakan Kuis
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
+            <div className="animated-background"></div>
+            <Container className="py-5">
+                <h1 className="text-center mb-5 text-primary" data-aos="fade-down">
+                    Materi Ekonomi - Kelas 10
+                </h1>
+                <Row>
+                    {Object.entries(chapters).map(([chapter, data]) => (
+                        <Col key={chapter} md="6" lg="4" className="my-3" data-aos="zoom-in">
+                            <Card className="shadow-lg chapter-card border-0" style={{ borderRadius: "15px", overflow: "hidden", transition: "transform 0.3s ease-in-out" }}>
+                                <div className={`chapter-${chapter}-header text-white p-3`} style={{ background: `linear-gradient(to right, #00c6ff, #0072ff)` }}>
+                                    <CardTitle tag="h5">{`Bab ${chapter}: ${data.title}`}</CardTitle>
+                                </div>
+                                <CardBody className="text-center">
+                                    <Button
+                                        color="info"
+                                        outline
+                                        className="btn-block mb-3 shadow"
+                                        onClick={() => goToChapter(chapter)}
+                                        style={{ borderRadius: "30px", transition: "all 0.2s ease-in-out" }}
+                                        onMouseOver={(e) => e.target.style.transform = "scale(1.1)"}
+                                        onMouseOut={(e) => e.target.style.transform = "scale(1)"}
+                                    >
+                                        <FaBookOpen className="mr-2" /> Materi Lengkap
+                                    </Button>
+                                    <Button
+                                        color="primary"
+                                        outline
+                                        className="btn-block shadow"
+                                        onClick={() => goToQuiz(chapter)}
+                                        style={{ borderRadius: "30px", transition: "all 0.2s ease-in-out" }}
+                                        onMouseOver={(e) => e.target.style.transform = "scale(1.1)"}
+                                        onMouseOut={(e) => e.target.style.transform = "scale(1)"}
+                                    >
+                                        <FaEdit className="mr-2" /> Kerjakan Kuis
+                                    </Button>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                    ))}
+                </Row>
+            </Container>
         </div>
     );
 };

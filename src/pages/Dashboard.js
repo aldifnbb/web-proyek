@@ -11,10 +11,9 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      {/* Navbar */}
+
       <Navbar />
 
-      {/* Hero Section */}
       <section
         className="hero vh-100 d-flex flex-column justify-content-center align-items-center text-white"
         style={{
@@ -33,7 +32,6 @@ function Dashboard() {
         </div>
       </section>
 
-      {/* Explore Section */}
       <section className="explore py-5 bg-dark text-white">
         <div className="container">
           <div className="text-center mb-5">
@@ -116,7 +114,6 @@ function Dashboard() {
         </div>
       </section>
 
-      {/* Gallery Section */}
       <section className="gallery py-5">
         <div className="container">
           <div className="text-center text-white">
@@ -145,7 +142,6 @@ function Dashboard() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="footer bg-dark text-white py-5">
         <div className="container">
           <div className="row">
