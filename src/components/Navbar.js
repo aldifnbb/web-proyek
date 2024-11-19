@@ -26,16 +26,10 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-grey shadow sticky-top">
             <div className="container">
-                <div className="d-flex align-items-center" data-aos="fade-down">
-                    <img
-                        src="logo.webp"
-                        alt="Logo"
-                        className="navbar-logo"
-                    />
-                    <Link className="navbar-brand fw-bold text-primary" to="/">
-                        Ekonomi Kelas 11
-                    </Link>
-                </div>
+                {/* Brand/Logo */}
+                <Link className="navbar-brand fw-bold text-primary" to="/" data-aos="fade-down">
+                    Ekonomi Kelas 11
+                </Link>
 
                 <button
                     className="navbar-toggler"
