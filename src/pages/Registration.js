@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from './AuthContext';
 import { Link } from 'react-router-dom';
 
 function Registration() {
@@ -8,12 +7,14 @@ function Registration() {
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
-    const { register } = useAuth();
 
     const handlesSubmit = (e) => {
         e.preventDefault();
         console.log('Registration submitted:', { username, password });
-        register({ username, password });
+        
+        const userData = { username, password };
+        localStorage.setItem('registeredUser', JSON.stringify(userData));
+        
         navigate('/login');
     };
 

@@ -24,7 +24,7 @@ function Dashboard() {
         }}
       >
         <h1 data-aos="fade-right">Mata Pelajaran Ekonomi</h1>
-        <p data-aos="fade-left">Kelas 10 SMK N 1 Siborongborong</p>
+        <p data-aos="fade-left">Kelas 10 SMA N 1 Siborongborong</p>
         
         <div className="subject-image mt-3" data-aos="flip-up">
           <img
@@ -209,14 +209,14 @@ function Dashboard() {
             >
               <h4>Address</h4>
               <p>
-                <strong>Address:</strong> SMK N 1 SBB, Pohan Tongatonga, 2024,
+                <strong>Address:</strong> SMA N 1 SBB, Siborongborong , 2024,
                 Indonesia
               </p>
               <p>
                 <strong>Email:</strong> aldinababan96@gmail.com
               </p>
               <p>
-                <strong>Email:</strong> krisnalbntruan12@gmail.com
+                <strong>Email:</strong> immanuellumbantoruan18@gmail.com
               </p>
               <p>
                 <strong>Email:</strong> permaisimangnunsong@gmail.com
@@ -232,7 +232,7 @@ function Dashboard() {
         </div>
         <div className="footer_bar bg_secondary text-center py-3">
           <p className="mb-0 text-white">
-            &copy; 2024 SMK N 1 Siborongborong | Designed by{" "}
+            &copy; 2024 SMA N 1 Siborongborong | Designed by{" "}
             <span className="text-warning">Econominds United</span>
           </p>
         </div>
