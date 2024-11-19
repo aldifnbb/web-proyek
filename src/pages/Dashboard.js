@@ -216,7 +216,7 @@ function Dashboard() {
                 <strong>Email:</strong> aldinababan96@gmail.com
               </p>
               <p>
-                <strong>Email:</strong> krisnalbntruan12@gmail.com
+                <strong>Email:</strong> immanuellumbantoruan18@gmail.com
               </p>
               <p>
                 <strong>Email:</strong> permaisimangnunsong@gmail.com
