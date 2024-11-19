@@ -216,10 +216,10 @@ function Dashboard() {
                 <strong>Email:</strong> aldinababan96@gmail.com
               </p>
               <p>
-                <strong>Email:</strong> krisnalbntruan12#gamil.com
+                <strong>Email:</strong> krisnalbntruan12@gmail.com
               </p>
               <p>
-                <strong>Email:</strong> permaisimangnunsonggmail.com
+                <strong>Email:</strong> permaisimangnunsong@gmail.com
               </p>
               <p>
                 <strong>Email:</strong> depedrompane@gmail.com
