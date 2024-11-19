@@ -15,7 +15,11 @@ function Dashboard() {
 
   // Function to scroll to the Explore section
   const scrollToExplore = () => {
-    exploreRef.current.scrollIntoView({ behavior: "smooth" });
+    if (exploreRef.current) {
+      exploreRef.current.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.warn("Explore section is not available yet.");
+    }
   };
 
   return (
@@ -44,34 +48,17 @@ function Dashboard() {
           </p>
           <button
             onClick={scrollToExplore}
-            className="btn"
-            style={{
-              backgroundColor: 'transparent',
-              border: '2px solid white', 
-              color: 'white',
-              fontSize: '18px',
-              padding: '10px 20px', 
-              cursor: 'pointer', 
-              borderRadius: '5px', 
-              transition: 'background-color 0.3s, color 0.3s', 
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'white'; 
-              e.currentTarget.style.color = '#000'; 
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent'; 
-              e.currentTarget.style.color = 'white'; 
-            }}
+            className="btn btn-outline-light explore-button"
+            aria-label="Explore Mata Pelajaran"
           >
             <VscDebugStart className="me-2" />
-            Explore Mata Pelajaran
+            <span>Explore Mata Pelajaran</span>
           </button>
         </div>
       </section>
 
       {/* Explore Section */}
-      <section className="explore py-5 bg-dark text-white">
+      <section ref={exploreRef} className="explore py-5 bg-dark text-white">
         <div className="container">
           <div className="text-center mb-5">
             <h1 data-aos="fade-up">Explore Mata Pelajaran Ekonomi</h1>
@@ -82,6 +69,7 @@ function Dashboard() {
             </p>
           </div>
           <div className="row g-4">
+            {/* Item Mapping Code */}
             {[ 
               {
                 title: "Home",
