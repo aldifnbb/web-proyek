@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import Navbar from "../components/Navbar";
 import './Pengumuman.css';
 
 const Pengumuman = () => {
@@ -55,7 +56,8 @@ const Pengumuman = () => {
     };
 
     return (
-        <div className="pengumuman-container">
+        <div className="pengumuman-container" style={{ paddingTop: "100px" }}>
+            <Navbar />
             <header className="pengumuman-header">
                 <h1>Pengumuman</h1>
                 <p>Tempat untuk menambahkan pengumuman penting.</p>

@@ -1,11 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
+import Navbar from "../components/Navbar";
 import "./Materi.css";
 
 const Materi = () => {
     const navigate = useNavigate();
 
-    // Data materi per bab
     const chapters = {
         1: { title: "Masalah Ekonomi Dasar" },
         2: { title: "Kebijakan Moneter" },
@@ -24,6 +24,7 @@ const Materi = () => {
 
     return (
         <div className="materi-container">
+            <Navbar />
             <h1>Materi Ekonomi - Kelas 10</h1>
             <div className="row">
                 {Object.entries(chapters).map(([chapter, data]) => (

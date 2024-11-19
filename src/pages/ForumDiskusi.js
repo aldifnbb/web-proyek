@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "../components/Navbar";
 
 const ForumDiskusi = () => {
   const [posts, setPosts] = useState([
@@ -41,6 +42,7 @@ const ForumDiskusi = () => {
 
   return (
     <div className="container forum-container">
+      <Navbar />
       <h1 className="forum-header">Forum Diskusi</h1>
       <div className="discussion-form">
         <input

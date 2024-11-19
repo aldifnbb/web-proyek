@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../pages/AuthContext";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import './Navbar.css';
 
 const Navbar = () => {
     const { user, logout } = useAuth();
@@ -23,14 +24,19 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-white shadow sticky-top">
+        <nav className="navbar navbar-expand-lg navbar-light bg-grey shadow sticky-top">
             <div className="container">
-                {/* Brand/Logo */}
-                <Link className="navbar-brand fw-bold text-primary" to="/" data-aos="fade-down">
-                    Ekonomi Kelas 11
-                </Link>
+                <div className="d-flex align-items-center" data-aos="fade-down">
+                    <img
+                        src="logo.webp"
+                        alt="Logo"
+                        className="navbar-logo"
+                    />
+                    <Link className="navbar-brand fw-bold text-primary" to="/">
+                        Ekonomi Kelas 11
+                    </Link>
+                </div>
 
-                {/* Toggler Button */}
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -45,11 +51,9 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                {/* Navbar Links */}
                 <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
                     <ul className="navbar-nav ms-auto">
-                        {/* Links */}
-                        {[
+                        {[ 
                             { path: "/dashboard", label: "Home" },
                             { path: "/materi", label: "Materi" },
                             { path: "/tugas", label: "Tugas" },
@@ -59,9 +63,16 @@ const Navbar = () => {
                         ].map((link, idx) => (
                             <li className="nav-item" key={idx}>
                                 <Link
-                                    className="nav-link text-dark fw-semibold"
+                                    className="nav-link"
                                     to={link.path}
                                     data-aos="fade-down"
+                                    style={{
+                                        color:"#ffff",
+                                        textDecoration:"none",
+                                        fontWeight:"bold"
+
+                                        
+                                    }}
                                 >
                                     {link.label}
                                 </Link>
