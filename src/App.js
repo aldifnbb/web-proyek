@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import './App.css';
 import { AuthProvider } from './pages/AuthContext';
 import Registration from './pages/Registration';
 import Login from './pages/Login';

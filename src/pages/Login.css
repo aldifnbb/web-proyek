@@ -94,13 +94,32 @@
 .password-toggle {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 15px; /* Slightly increase the right spacing */
     transform: translateY(-50%);
     cursor: pointer;
-    color: #6c757d;
-    transition: color 0.3s ease;
+    color: #6c757d; /* Default color */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
+    z-index: 1; /* Ensures it stays on top of the input */
 }
 
 .password-toggle:hover {
-    color: #4e73df;
+    color: #4e73df; /* Change color on hover */
+    transform: scale(1.1); /* Slightly scale up on hover for emphasis */
+}
+
+.form-control {
+    padding-right: 40px; /* Ensure there's space for the toggle icon */
+    height: calc(2.5rem + 2px); /* Adjust height for visual balance */
+    border-radius: 0.25rem; /* Round the input corners */
+}
+
+.password-group input:focus {
+    border-color: #4e73df; /* Border color change on focus */
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25); /* Add a shadow effect */
+    background-color: #fff; /* Light background for clarity */
+}
+
+/* Style for when the password is visible */
+.password-toggle-active {
+    color: #4e73df; /* Color when the password is shown */
 }
