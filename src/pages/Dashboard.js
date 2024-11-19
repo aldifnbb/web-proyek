@@ -15,12 +15,11 @@ function DashboardEkonomi() {
         container: {
             backgroundColor: "#f8f9fa",
             minHeight: "100vh",
-
         },
         section: {
             backgroundColor: "#ffffff",
             borderRadius: "10px",
-            padding: "20px",
+            padding: "23px",
             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
             transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
             margin: "20px 0",
@@ -58,7 +57,7 @@ function DashboardEkonomi() {
                     </p>
                 </div>
     
-                <div className="row row-cols-1 row-cols-md-3 g-4">
+                <div className="row row-cols-1 row-cols-md-2 g-7">
                     {[
                         { title: "Materi", text: "Daftar materi yang akan dipelajari, seperti dasar-dasar ekonomi, permintaan dan penawaran, sistem ekonomi, dan lainnya." },
                         { title: "Tugas", text: "Lihat tugas yang diberikan dan pastikan untuk mengumpulkannya tepat waktu." },
@@ -67,7 +66,7 @@ function DashboardEkonomi() {
                         { title: "Diskusi", text: "Tempat berdiskusi dengan teman-teman dan guru mengenai topik ekonomi yang dipelajari." },
                     ].map((section, idx) => (
                         <div
-                            className="col"
+                            className="col mb-4 mx-auto"
                             data-aos="fade-up"
                             key={idx}
                             onMouseEnter={(e) => {
