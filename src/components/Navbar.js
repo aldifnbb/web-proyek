@@ -28,7 +28,7 @@ const Navbar = () => {
             <div className="container">
                 {/* Brand/Logo */}
                 <Link className="navbar-brand fw-bold text-primary" to="/" data-aos="fade-down">
-                    Ekonomi Kelas 11
+                    Econominds
                 </Link>
 
                 <button

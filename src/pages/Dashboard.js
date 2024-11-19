@@ -14,12 +14,19 @@ function Dashboard() {
     <div className="dashboard">
       <Navbar />
       <section
-        className="home vh-100 d-flex flex-column justify-content-center align-items-center bg-dark text-white"
-        style={{ paddingTop: "10vh" }}
+        className="home vh-100 d-flex flex-column justify-content-center align-items-center text-white"
+        style={{ 
+          paddingTop: "10vh",
+          backgroundImage: `url('/kopi.jpg')`, 
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center', 
+          opacity: 0.9 
+        }}
       >
         <h1 data-aos="fade-right">Mata Pelajaran Ekonomi</h1>
-        <p data-aos="fade-left">Kelas 10 SMA N 1 Siborongborong</p>
-        <div className="logoo mt-3" data-aos="flip-up">
+        <p data-aos="fade-left">Kelas 10 SMK N 1 Siborongborong</p>
+        
+        <div className="subject-image mt-3" data-aos="flip-up">
           <img
             src="/logo.webp"
             alt="Logo"
@@ -29,85 +36,85 @@ function Dashboard() {
         </div>
       </section>
 
-    <section className="explore py-5 bg-dark text-white">
-    <div className="container">
-        <div className="text-center mb-5">
-        <h1 data-aos="fade-up">Explore Mata Pelajaran Ekonomi</h1>
-        <p data-aos="flip-up" className="mt-3">
-            Mata pelajaran Ekonomi di SMK N 1 Siborongborong berfokus pada
-            pengembangan pemahaman ekonomi yang aplikatif di dunia nyata, untuk
-            mempersiapkan siswa menghadapi tantangan dunia usaha dan industri.
-        </p>
-        </div>
-        <div className="row g-4">
-        {[{
-            title: "Home", 
-            img: "pict/home.jpg", 
-            description: "Beranda utama dengan informasi penting tentang mata pelajaran Ekonomi.",
-            path: "/dashboard",
-            delay: 400 
-        },
-        {
-            title: "Materi",
-            img: "pict/materi.jpg", 
-            description: "Akses materi pelajaran Ekonomi yang lengkap untuk membantu memahami konsep-konsep ekonomi.",
-            path: "/materi",
-            delay: 600
-        },
-        {
-            title: "Tugas",
-            img: "pict/tugas.jpg", 
-            description: "Kerjakan dan kumpulkan tugas ekonomi yang diberikan oleh guru.",
-            path: "/tugas",
-            delay: 800
-        },
-        {
-            title: "Quiz",
-            img: "pict/quiz.jpg", 
-            description: "Ikuti quiz untuk menguji pemahamanmu tentang materi ekonomi.",
-            path: "/quiz",
-            delay: 1000
-        },
-        {
-            title: "Pengumuman",
-            img: "pict/pengumuman.jpg", 
-            description: "Lihat pengumuman terkait mata pelajaran Ekonomi.",
-            path: "/pengumuman",
-            delay: 1200
-        },
-        {
-            title: "Diskusi",
-            img: "pict/diskusi.jpg", 
-            description: "Bergabunglah dalam forum diskusi untuk berbagi ide dan bertanya tentang materi ekonomi.",
-            path: "/forum-diskusi",
-            delay: 1400
-        }].map((item, idx) => (
-            <div
-            className="col-md-4"
-            key={idx}
-            data-aos="fade-up"
-            data-aos-delay={item.delay}
-            >
-            <div className="card shadow bg-light">
-                <img
-                src={item.img}
-                alt={item.title}
-                className="card-img-top"
-                style={{ height: "200px", objectFit: "cover" }}
-                />
-                <div className="card-body text-center">
-                <h5 className="card-title">{item.title}</h5>
-                <p className="card-text">{item.description}</p>
-                <a href={item.path} className="btn btn-primary">
-                    Lihat {item.title}
-                </a>
+      <section className="explore py-5 bg-dark text-white">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h1 data-aos="fade-up">Explore Mata Pelajaran Ekonomi</h1>
+            <p data-aos="flip-up" className="mt-3">
+              Mata pelajaran Ekonomi di SMK N 1 Siborongborong berfokus pada
+              pengembangan pemahaman ekonomi yang aplikatif di dunia nyata, untuk
+              mempersiapkan siswa menghadapi tantangan dunia usaha dan industri.
+            </p>
+          </div>
+          <div className="row g-4">
+            {[{
+                title: "Home", 
+                img: "pict/home.jpg", 
+                description: "Beranda utama dengan informasi penting tentang mata pelajaran Ekonomi.",
+                path: "/dashboard",
+                delay: 400 
+            },
+            {
+                title: "Materi",
+                img: "pict/materi.jpg", 
+                description: "Akses materi pelajaran Ekonomi yang lengkap untuk membantu memahami konsep-konsep ekonomi.",
+                path: "/materi",
+                delay: 600
+            },
+            {
+                title: "Tugas",
+                img: "pict/tugas.jpg", 
+                description: "Kerjakan dan kumpulkan tugas ekonomi yang diberikan oleh guru.",
+                path: "/tugas",
+                delay: 800
+            },
+            {
+                title: "Quiz",
+                img: "pict/quiz.jpg", 
+                description: "Ikuti quiz untuk menguji pemahamanmu tentang materi ekonomi.",
+                path: "/quiz",
+                delay: 1000
+            },
+            {
+                title: "Pengumuman",
+                img: "pict/pengumuman.jpg", 
+                description: "Lihat pengumuman terkait mata pelajaran Ekonomi.",
+                path: "/pengumuman",
+                delay: 1200
+            },
+            {
+                title: "Diskusi",
+                img: "pict/diskusi.jpg", 
+                description: "Bergabunglah dalam forum diskusi untuk berbagi ide dan bertanya tentang materi ekonomi.",
+                path: "/forum-diskusi",
+                delay: 1400
+            }].map((item, idx) => (
+                <div
+                  className="col-md-4"
+                  key={idx}
+                  data-aos="fade-up"
+                  data-aos-delay={item.delay}
+                >
+                  <div className="card shadow bg-light">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="card-img-top"
+                      style={{ height: "200px", objectFit: "cover" }}
+                    />
+                    <div className="card-body text-center">
+                      <h5 className="card-title">{item.title}</h5>
+                      <p className="card-text">{item.description}</p>
+                      <a href={item.path} className="btn btn-primary">
+                        Lihat {item.title}
+                      </a>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            </div>
-        ))}
+            ))}
+          </div>
         </div>
-    </div>
-    </section>
+      </section>
 
       <section className="gallery py-5">
         <div className="container">
@@ -149,7 +156,7 @@ function Dashboard() {
                 Econominds<span className="text-warning">.</span>
               </h3>
               <p>
-              Di antara sekian banyak ilmu menuju sukses, maka ilmu mengelola risiko harus diutamakan agar kita tahu beda investasi dan berjudi.
+                Di antara sekian banyak ilmu menuju sukses, maka ilmu mengelola risiko harus diutamakan agar kita tahu beda investasi dan berjudi.
               </p>
             </div>
             <div
@@ -212,7 +219,7 @@ function Dashboard() {
                 <strong>Email:</strong> krisnalbntruan12#gamil.com
               </p>
               <p>
-                 <strong>Email:</strong> bethania892gmail.com
+                <strong>Email:</strong> bethania892gmail.com
               </p>
               <p>
                 <strong>Email:</strong> depedro77@gmail.com
