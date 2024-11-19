@@ -4,8 +4,144 @@ import Navbar from "../components/Navbar";
 
 function Quiz() {
     const chapterQuestions = { 
-        // Pertanyaan kuis tetap sama seperti sebelumnya
+        1: [
+            {
+                question: "Apa masalah ekonomi dasar yang dihadapi oleh setiap masyarakat?",
+                options: ["Inflasi", "Kelangkaan", "Pengangguran", "Pengeluaran Pemerintah"],
+                answer: "Kelangkaan",
+            },
+            {
+                question: "Apa istilah yang digunakan untuk menggambarkan biaya dari alternatif terbaik berikutnya yang diabaikan?",
+                options: ["Biaya Peluang", "Biaya Marginal", "Biaya Variabel", "Biaya Tetap"],
+                answer: "Biaya Peluang",
+            },
+            {
+                question: "Mana yang termasuk faktor produksi?",
+                options: ["Uang", "Tenaga Kerja", "Kebijakan Pemerintah", "Impor"],
+                answer: "Tenaga Kerja",
+            },
+            {
+                question: "Sistem ekonomi manakah yang bergantung pada penawaran dan permintaan untuk menentukan harga?",
+                options: ["Ekonomi Terencana", "Ekonomi Campuran", "Ekonomi Pasar", "Ekonomi Tradisional"],
+                answer: "Ekonomi Pasar",
+            },
+            {
+                question: "Apa yang disebut dengan peningkatan berkelanjutan pada tingkat harga umum barang dan jasa dalam perekonomian?",
+                options: ["Resesi", "Deflasi", "Depresiasi", "Inflasi"],
+                answer: "Inflasi",
+            },
+        ],
+        2: [
+            {
+                question: "Apa tujuan utama dari kebijakan moneter?",
+                options: ["Pekerjaan penuh", "Mengendalikan inflasi", "Mengurangi kemiskinan", "Surplus perdagangan"],
+                answer: "Mengendalikan inflasi",
+            },
+            {
+                question: "Lembaga manakah yang terutama bertanggung jawab atas kebijakan moneter di sebagian besar negara?",
+                options: ["Pemerintah", "Bank Sentral", "Bank Komersial", "Pasar Saham"],
+                answer: "Bank Sentral",
+            },
+            {
+                question: "Apa alat utama yang digunakan dalam kebijakan moneter?",
+                options: ["Pajak Pendapatan", "Suku Bunga", "Tarif", "Subsidi"],
+                answer: "Suku Bunga",
+            },
+            {
+                question: "Apa yang terjadi jika suatu negara mencetak terlalu banyak uang?",
+                options: ["Deflasi", "Stabilitas Ekonomi", "Inflasi", "Penurunan perdagangan"],
+                answer: "Inflasi",
+            },
+            {
+                question: "Operasi pasar terbuka melibatkan aktivitas apa?",
+                options: ["Perdagangan dengan negara asing", "Membeli dan menjual obligasi pemerintah", "Pajak", "Membangun infrastruktur"],
+                answer: "Membeli dan menjual obligasi pemerintah",
+            },
+        ],
+        3: [
+            {
+                question: "Istilah apa yang mengacu pada perdagangan tanpa pembatasan pemerintah?",
+                options: ["Tarif", "Embargo", "Perdagangan Bebas", "Subsidi"],
+                answer: "Perdagangan Bebas",
+            },
+            {
+                question: "Apa istilah untuk pajak yang dikenakan pada barang impor?",
+                options: ["Subsidi", "Kuota", "Tarif", "Embargo"],
+                answer: "Tarif",
+            },
+            {
+                question: "Negara yang fokus pada produksi barang yang paling efisien disebut sedang melakukan apa?",
+                options: ["Keunggulan Absolut", "Keunggulan Komparatif", "Surplus Perdagangan", "Kejenuhan Pasar"],
+                answer: "Keunggulan Komparatif",
+            },
+            {
+                question: "Organisasi internasional mana yang mengawasi aturan perdagangan global?",
+                options: ["PBB", "IMF", "Bank Dunia", "WTO"],
+                answer: "WTO",
+            },
+            {
+                question: "Defisit perdagangan terjadi ketika:",
+                options: ["Ekspor suatu negara melebihi impornya", "Negara berhenti berdagang", "Impor suatu negara melebihi ekspornya", "Negara menggunakan tarif"],
+                answer: "Impor suatu negara melebihi ekspornya",
+            },
+        ],
+        4:[
+            {
+                question: "Apa yang dimaksud dengan permintaan dalam konteks ekonomi?",
+                options: ["Keinginan pembeli", "Jumlah barang yang diinginkan dan mampu dibeli", "Penawaran barang", "Ketersediaan barang"],
+                answer: "Jumlah barang yang diinginkan dan mampu dibeli",
+            },
+            {
+                question: "Hukum permintaan menyatakan bahwa, ceteris paribus, jika harga barang naik, maka:",
+                options: ["Permintaan akan tetap", "Permintaan barang tersebut meningkat", "Permintaan barang tersebut menurun", "Penawaran berkurang"],
+                answer: "Permintaan barang tersebut menurun",
+            },
+            {
+                question: "Apa yang terjadi ketika harga pasar berada di bawah harga keseimbangan?",
+                options: ["Kelebihan penawaran", "Kekurangan permintaan", "Kelebihan permintaan", "Ekuilibrium"],
+                answer: "Kelebihan permintaan",
+            },
+            {
+                question: "Elastisitas harga permintaan mengukur:",
+                options: ["Respons jumlah barang yang diminta terhadap perubahan harga", "Pendapatan nasional", "Jumlah barang yang diproduksi", "Penawaran barang"],
+                answer: "Respons jumlah barang yang diminta terhadap perubahan harga",
+            },
+            {
+                question: "Jika permintaan elastis, maka kenaikan harga barang akan:",
+                options: ["Meningkatkan total penerimaan", "Mengurangi total penerimaan", "Tidak mempengaruhi total penerimaan", "Meningkatkan jumlah barang diminta"],
+                answer: "Mengurangi total penerimaan",
+            },
+
+        ],
+        5:[
+            {
+                question: "Apa yang dimaksud dengan siklus ekonomi?",
+                options: ["Kenaikan harga barang secara tiba-tiba", "Perubahan periodik dalam tingkat aktivitas ekonomi", "Peningkatan populasi", "Perubahan nilai tukar"],
+                answer: "Perubahan periodik dalam tingkat aktivitas ekonomi",
+            },
+            {
+                question: "Tahapan ekspansi dalam siklus ekonomi ditandai dengan:",
+                options: ["Penurunan investasi", "Pengangguran tinggi", "Pertumbuhan produksi dan pendapatan", "Deflasi"],
+                answer: "Pertumbuhan produksi dan pendapatan",
+            },
+            {
+                question: "Resesi adalah fase siklus ekonomi di mana terjadi:",
+                options: ["Penurunan aktivitas ekonomi yang luas", "Pertumbuhan ekonomi", "Stabilitas harga", "Keseimbangan antara permintaan dan penawaran"],
+                answer: "Penurunan aktivitas ekonomi yang luas",
+            },
+            {
+                question: "Apa indikator yang digunakan untuk mengukur siklus ekonomi?",
+                options: ["Inflasi", "Produk Domestik Bruto (PDB)", "Tarif impor", "Keseimbangan permintaan"],
+                answer: "Produk Domestik Bruto (PDB)",
+            },
+            {
+                question: "Apa dampak dari ekspansi ekonomi pada tingkat pengangguran?",
+                options: ["Meningkatkan pengangguran", "Menurunkan pengangguran", "Tidak ada dampak", "Memperburuk resesi"],
+                answer: "Menurunkan pengangguran",
+            },
+        ],
     };
+    
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedOption, setSelectedOption] = useState('');
@@ -56,7 +192,7 @@ function Quiz() {
         },
         quizContainer: {
             padding: "20px",
-            marginTop: "80px", // Beri margin agar navbar tidak menutupi konten
+            marginTop: "80px",
         },
         sectionTitle: {
             color: "#007bff",
@@ -67,7 +203,7 @@ function Quiz() {
 
     return (
         <div style={styles.container}>
-            {/* Navbar seperti di DashboardEkonomi */}
+        
             <Navbar />
             
             <div style={styles.quizContainer}>

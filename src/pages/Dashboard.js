@@ -18,7 +18,7 @@ function Dashboard() {
         style={{ paddingTop: "10vh" }}
       >
         <h1 data-aos="fade-right">Mata Pelajaran Ekonomi</h1>
-        <p data-aos="fade-left">Kelas 10 SMK N 1 Siborongborong</p>
+        <p data-aos="fade-left">Kelas 10 SMA N 1 Siborongborong</p>
         <div className="logoo mt-3" data-aos="flip-up">
           <img
             src="/logo.webp"
