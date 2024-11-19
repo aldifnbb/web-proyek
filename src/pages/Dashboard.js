@@ -191,11 +191,6 @@ function Dashboard() {
             </div>
           </div>
         </div>
-        <div className="footer_bar bg_secondary text-center py-3">
-          <p className="mb-0 text-white">
-            &copy; 2024 SMK N 1 Siborongborong | Designed by <span className="text-warning">Econominds United</span>
-          </p>
-        </div>
       </footer>
       <div className="footer_bar text-center bg-dark text-white py-2">
         ©2024 | Created by{" "}
