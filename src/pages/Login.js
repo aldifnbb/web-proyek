@@ -1,30 +1,34 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from './AuthContext';
 import './Login.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { IoMdEye, IoMdEyeOff } from "react-icons/io"; 
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
-    const { login } = useAuth(); 
 
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Login attempted:', { username, password });
-        try {
-            await login({ username, password }); 
-            navigate('/dashboard');
-        } catch (error) {
-            console.error("Login failed:", error);
+
+        const registeredUser = JSON.parse(localStorage.getItem('registeredUser'));
+
+        if (registeredUser) {
+            if (username === registeredUser.username && password === registeredUser.password) {
+                navigate('/dashboard'); 
+            } else {
+                setErrorMessage('Invalid username or password');
+            }
+        } else {
+            setErrorMessage('No registered account found'); 
         }
     };
 
@@ -32,7 +36,7 @@ function Login() {
         <div className="login-container">
             <div className="card login-card" data-aos="fade-up">
                 <h2>Login</h2>
-                <form onSubmit={handleSubmit}> 
+                <form onSubmit={handleSubmit}>
                     <div className="form-group mb-3">
                         <label htmlFor="username">Username:</label>
                         <input
@@ -40,7 +44,7 @@ function Login() {
                             id="username"
                             className="form-control"
                             value={username}
-                            onChange={(e) => setUsername(e.target.value)}
+                            onChange={(e) => setUsername(e.target.value)} 
                             required
                         />
                     </div>
@@ -58,9 +62,10 @@ function Login() {
                             className="password-toggle"
                             onClick={() => setShowPassword(!showPassword)}
                         >
-                            {showPassword ? <IoMdEyeOff /> : <IoMdEye />} 
+                            {showPassword ? <IoMdEyeOff /> : <IoMdEye />}
                         </span>
                     </div>
+                    {errorMessage && <p className="text-danger">{errorMessage}</p>}
                     <button type="submit" className="btn login-btn">Login</button>
                 </form>
                 <p className="register-link">
