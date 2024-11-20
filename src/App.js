@@ -16,6 +16,8 @@ import Bab2 from "./pages/Bab2";
 import Bab3 from "./pages/Bab3";
 import Bab4 from "./pages/Bab4";
 import Bab5 from "./pages/Bab5";
+import Inspiratif from "./pages/Inspiratif";
+
 
 function App() {
   return (
@@ -49,6 +51,7 @@ function MainContent() {
         <Route path="/bab3" element={<Bab3 />} />
         <Route path="/bab4" element={<Bab4 />} />
         <Route path="/bab5" element={<Bab5 />} />
+        <Route path="/inspiratif" element={<Inspiratif />} />
       </Routes>
     </div>
   );

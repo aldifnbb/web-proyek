@@ -26,7 +26,6 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-grey shadow sticky-top">
             <div className="container">
-                {/* Brand/Logo */}
                 <Link className="navbar-brand fw-bold text-primary" to="/" data-aos="fade-down">
                     Econominds
                 </Link>
@@ -50,10 +49,10 @@ const Navbar = () => {
                         {[ 
                             { path: "/dashboard", label: "Home" },
                             { path: "/materi", label: "Materi" },
-                            { path: "/tugas", label: "Tugas" },
                             { path: "/quiz", label: "Quiz" },
                             { path: "/pengumuman", label: "Pengumuman" },
                             { path: "/forum-diskusi", label: "Diskusi" },
+                            { path: "/inspiratif", label: "Inspiratif" },
                         ].map((link, idx) => (
                             <li className="nav-item" key={idx}>
                                 <Link
