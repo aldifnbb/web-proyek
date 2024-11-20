@@ -26,7 +26,6 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-grey shadow sticky-top">
             <div className="container">
-                {/* Brand/Logo */}
                 <Link className="navbar-brand fw-bold text-primary" to="/" data-aos="fade-down">
                     Econominds
                 </Link>

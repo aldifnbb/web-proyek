@@ -10,10 +10,8 @@ function Dashboard() {
     AOS.init({ duration: 1200 });
   }, []);
 
-  // Create a ref for the Explore section
   const exploreRef = useRef(null);
 
-  // Function to scroll to the Explore section
   const scrollToExplore = () => {
     if (exploreRef.current) {
       exploreRef.current.scrollIntoView({ behavior: "smooth" });
@@ -24,10 +22,8 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      {/* Navbar */}
       <Navbar />
 
-      {/* Hero Section */}
       <section
         className="hero vh-100 d-flex flex-column justify-content-center align-items-center text-white"
         style={{
@@ -57,7 +53,6 @@ function Dashboard() {
         </div>
       </section>
 
-      {/* Explore Section */}
       <section ref={exploreRef} className="explore py-5 bg-dark text-white">
         <div className="container">
           <div className="text-center mb-5">
@@ -69,7 +64,6 @@ function Dashboard() {
             </p>
           </div>
           <div className="row g-4">
-            {/* Item Mapping Code */}
             {[ 
               {
                 title: "Home",
@@ -146,7 +140,6 @@ function Dashboard() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="footer bg-dark text-white py-5">
         <div className="container">
           <div className="row">
@@ -172,10 +165,10 @@ function Dashboard() {
               <h4>Address</h4>
               <p><strong>Address:</strong> SMK N 1 SBB, Pohan Tongatonga, 2024, Indonesia</p>
               <p><strong>Email:</strong> aldinababan96@gmail.com</p>
-              <p><strong>Email:</strong> depedrompane@gmail.com</p>
-              <p><strong>Email:</strong> permaisimangunsong@gmail.com</p>
-              <p><strong>Email:</strong> immanuellumbantoruan18@gmail.com</p>
-              <p><strong>Phone:</strong> 0822 7642 3194</p>
+              <p><strong></strong> immanuellumbantoruan18@gmail.com</p>
+              <p><strong></strong> permaisimangunsong@gmail.com</p>
+              <p><strong></strong> depedrompane@gmail.com</p>
+              <p><strong></strong> 0822 7642 3194</p>
             </div>
           </div>
         </div>
