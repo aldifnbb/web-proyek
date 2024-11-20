@@ -1,26 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";  // Import Link from react-router-dom
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "../components/Navbar";
-import { VscDebugStart } from "react-icons/vsc";
 
 function Dashboard() {
   useEffect(() => {
     AOS.init({ duration: 1200 });
   }, []);
-
-  // Create a ref for the Explore section
-  const exploreRef = useRef(null);
-
-  // Function to scroll to the Explore section
-  const scrollToExplore = () => {
-    if (exploreRef.current) {
-      exploreRef.current.scrollIntoView({ behavior: "smooth" });
-    } else {
-      console.warn("Explore section is not available yet.");
-    }
-  };
 
   return (
     <div className="dashboard">
@@ -46,19 +34,21 @@ function Dashboard() {
           <p className="subtext" data-aos="fade-up">
             untuk siswa SMK N 1 Siborongborong
           </p>
-          <button
-            onClick={scrollToExplore}
+          {/* Link to Materi.js with AOS effect */}
+          <Link
+            to="/materi"
             className="btn btn-outline-light explore-button"
             aria-label="Explore Mata Pelajaran"
+            data-aos="zoom-in"  // Add AOS effect here
+            data-aos-delay="500"  // Optional delay for the animation
           >
-            <VscDebugStart className="me-2" />
-            <span>Explore Mata Pelajaran</span>
-          </button>
+            Explore Mata Pelajaran
+          </Link>
         </div>
       </section>
 
       {/* Explore Section */}
-      <section ref={exploreRef} className="explore py-5 bg-dark text-white">
+      <section className="explore py-5 bg-dark text-white">
         <div className="container">
           <div className="text-center mb-5">
             <h1 data-aos="fade-up">Explore Mata Pelajaran Ekonomi</h1>
@@ -72,51 +62,45 @@ function Dashboard() {
             {/* Item Mapping Code */}
             {[ 
               {
-                title: "Home",
+                title: "Pengenalan Ekonomi",
                 img: "/kopi.jpg",
                 description:
-                  "Beranda utama dengan informasi penting tentang mata pelajaran Ekonomi.",
-                path: "/dashboard",
+                  "Ekonomi adalah ilmu yang mempelajari bagaimana individu dan masyarakat membuat keputusan untuk menggunakan sumber daya yang terbatas.",
                 delay: 400,
               },
               {
-                title: "Materi",
+                title: "Permintaan dan Penawaran",
                 img: "/kopi.jpg",
                 description:
-                  "Akses materi pelajaran Ekonomi yang lengkap untuk membantu memahami konsep ekonomi.",
-                path: "/materi",
+                  "Pemahaman tentang hukum permintaan dan penawaran sangat penting untuk memahami bagaimana harga barang dan jasa ditentukan di pasar.",
                 delay: 600,
               },
               {
-                title: "Tugas",
+                title: "Peran Pemerintah dalam Ekonomi",
                 img: "/kopi.jpg",
                 description:
-                  "Kerjakan dan kumpulkan tugas ekonomi yang diberikan oleh guru.",
-                path: "/tugas",
+                  "Pemerintah memainkan peran yang sangat penting dalam perekonomian, mulai dari regulasi pasar hingga penyediaan barang publik.",
                 delay: 800,
               },
               {
-                title: "Quiz",
+                title: "Teori Produksi",
                 img: "/kopi.jpg",
                 description:
-                  "Ikuti quiz untuk menguji pemahamanmu tentang materi ekonomi.",
-                path: "/quiz",
+                  "Teori produksi membahas tentang cara-cara untuk memaksimalkan hasil produksi dengan menggunakan berbagai faktor produksi secara efisien.",
                 delay: 1000,
               },
               {
-                title: "Pengumuman",
+                title: "Investasi dan Tabungan",
                 img: "/kopi.jpg",
                 description:
-                  "Lihat pengumuman terkait mata pelajaran Ekonomi.",
-                path: "/pengumuman",
+                  "Investasi adalah penanaman modal dalam jangka panjang untuk menghasilkan keuntungan, sementara tabungan adalah keputusan untuk menyisihkan sebagian pendapatan untuk masa depan.",
                 delay: 1200,
               },
               {
-                title: "Diskusi",
+                title: "Makroekonomi",
                 img: "/kopi.jpg",
                 description:
-                  "Bergabunglah dalam forum diskusi untuk berbagi ide dan bertanya tentang materi ekonomi.",
-                path: "/forum-diskusi",
+                  "Makroekonomi mempelajari perekonomian secara keseluruhan, termasuk inflasi, pengangguran, dan pertumbuhan ekonomi.",
                 delay: 1400,
               },
             ].map((item, idx) => (
@@ -134,10 +118,7 @@ function Dashboard() {
                   />
                   <div className="proj-txtx">
                     <h4>{item.title}</h4>
-                    <span>{item.description}</span>
-                    <a href={item.path} className="btn btn-primary">
-                      Lihat {item.title}
-                    </a>
+                    <p>{item.description}</p>
                   </div>
                 </div>
               </div>
