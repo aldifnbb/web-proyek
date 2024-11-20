@@ -4,14 +4,14 @@ import { useAuth } from './AuthContext';
 import './Login.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { IoMdEye, IoMdEyeOff } from "react-icons/io"; // Importing eye icons
+import { IoMdEye, IoMdEyeOff } from "react-icons/io"; 
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
-    const { login } = useAuth(); // Destructure login from useAuth
+    const { login } = useAuth(); 
 
     useEffect(() => {
         AOS.init({ duration: 1000 });
@@ -21,11 +21,10 @@ function Login() {
         e.preventDefault();
         console.log('Login attempted:', { username, password });
         try {
-            await login({ username, password }); // Added password for login
+            await login({ username, password }); 
             navigate('/dashboard');
         } catch (error) {
             console.error("Login failed:", error);
-            // Optionally, handle error with a state or alert
         }
     };
 
@@ -33,7 +32,7 @@ function Login() {
         <div className="login-container">
             <div className="card login-card" data-aos="fade-up">
                 <h2>Login</h2>
-                <form onSubmit={handleSubmit}> {/* Corrected handlesSubmit to handleSubmit */}
+                <form onSubmit={handleSubmit}> 
                     <div className="form-group mb-3">
                         <label htmlFor="username">Username:</label>
                         <input
@@ -59,7 +58,7 @@ function Login() {
                             className="password-toggle"
                             onClick={() => setShowPassword(!showPassword)}
                         >
-                            {showPassword ? <IoMdEyeOff /> : <IoMdEye />} {/* Use imported icons */}
+                            {showPassword ? <IoMdEyeOff /> : <IoMdEye />} 
                         </span>
                     </div>
                     <button type="submit" className="btn login-btn">Login</button>
