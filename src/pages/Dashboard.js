@@ -171,18 +171,18 @@ function Dashboard() {
             <div className="col-md-4">
               <h4>Address</h4>
               <p><strong>Address:</strong> SMK N 1 SBB, Pohan Tongatonga, 2024, Indonesia</p>
-              <p><strong>Email:</strong> aldinababan96@gmail.com</p>
-              <p><strong>Email:</strong> depedrompane@gmail.com</p>
-              <p><strong>Email:</strong> permaisimangunsong@gmail.com</p>
-              <p><strong>Email:</strong> immanuellumbantoruan18@gmail.com</p>
-              <p><strong>Phone:</strong> 0822 7642 3194</p>
+              <p><strong></strong> aldinababan96@gmail.com</p>
+              <p><strong></strong> immanuellumbantoruan18@gmail.com</p>
+              <p><strong></strong> permaisimangunsong@gmail.com</p>
+              <p><strong></strong> depedrompane@gmail.com</p>
+              <p><strong></strong> 0822 7642 3194</p>
             </div>
           </div>
         </div>
       </footer>
       <div className="footer_bar text-center bg-dark text-white py-2">
         ©2024 | Created by{" "}
-        <span className="text-warning fw-bold">Technocominds</span>
+        <span className="text-warning fw-bold">Econominds</span>
       </div>
     </div>
   );
