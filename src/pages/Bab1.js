@@ -22,7 +22,6 @@ const Bab1 = () => {
     const [tooltipOpen2, setTooltipOpen2] = useState(false);
 
     useEffect(() => {
-        // Initialize AOS
         AOS.init({
             duration: 1000,
             easing: "ease-in-out",

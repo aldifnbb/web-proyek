@@ -63,8 +63,6 @@ const Navbar = () => {
                                         color:"#ffff",
                                         textDecoration:"none",
                                         fontWeight:"bold"
-
-                                        
                                     }}
                                 >
                                     {link.label}
