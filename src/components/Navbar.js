@@ -45,59 +45,27 @@ const Navbar = () => {
                 </button>
 
                 <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
-                    <ul className="navbar-nav ms-auto">
-                        {[ 
-                            { path: "/dashboard", label: "Home" },
-                            { path: "/materi", label: "Materi" },
-                            { path: "/quiz", label: "Quiz" },
-                            { path: "/pengumuman", label: "Pengumuman" },
-                            { path: "/forum-diskusi", label: "Diskusi" },
-                            { path: "/inspiratif", label: "Inspiratif" },
-                        ].map((link, idx) => (
-                            <li className="nav-item" key={idx}>
-                                <Link
-                                    className="nav-link"
-                                    to={link.path}
-                                    data-aos="fade-down"
-                                    style={{
-                                        color:"#ffff",
-                                        textDecoration:"none",
-                                        fontWeight:"bold"
-                                    }}
-                                >
-                                    {link.label}
-                                </Link>
-                            </li>
-                        ))}
+                <ul className="navbar-nav ms-auto">
+    {[
+        { path: "/dashboard", label: "Home" },
+        { path: "/materi", label: "Materi" },
+        { path: "/quiz", label: "Quiz" },
+        { path: "/pengumuman", label: "Pengumuman" },
+        { path: "/forum-diskusi", label: "Diskusi" },
+        { path: "/inspiratif", label: "Inspiratif" },
+    ].map((link, idx) => (
+        <li className="nav-item" key={idx}>
+            <Link
+                className="nav-link"
+                to={link.path}
+                data-aos="fade-down"
+            >
+                {link.label}
+            </Link>
+        </li>
+    ))}
+</ul>
 
-                        {user && (
-                            <li className="nav-item d-flex align-items-center ms-lg-3 mt-2 mt-lg-0" data-aos="fade-down">
-                                <span
-                                    className="nav-link"
-                                    style={{
-                                        fontFamily: "'Caveat', cursive",
-                                        fontOpticalSizing: "auto",
-                                        fontSize: "20px",
-                                        fontStyle: "normal",
-                                        color: "#ffc107",
-                                        textShadow: "1px 1px 2px rgba(0, 0, 0, 0.2)",
-                                    }}
-                                >
-                                    Halo, <strong>{user.username}</strong>!
-                                </span>
-                            </li>
-                        )}
-
-                        <li className="nav-item">
-                            <button
-                                className="btn btn-outline-danger fw-semibold ms-lg-3 mt-2 mt-lg-0"
-                                onClick={handleLogout}
-                                data-aos="fade-down"
-                            >
-                                Logout
-                            </button>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </nav>

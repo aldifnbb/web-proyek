@@ -127,13 +127,12 @@ function Dashboard() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="footer bg-dark text-white py-5">
         <div className="container">
           <div className="row">
             <div className="col-md-4 mb-4" data-aos="zoom-in" data-aos-duration="1200">
               <h3>
-                Econominds<span className="text-warning">.</span>
+                Econominds<span className="text-warning"></span>
               </h3>
               <p>
                 Di antara sekian banyak ilmu menuju sukses, maka ilmu mengelola
