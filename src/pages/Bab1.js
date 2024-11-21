@@ -2,18 +2,19 @@
 
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Bab1.css'; // Tambahkan file CSS kustom
+import './Bab1.css'; 
+import Navbar from "../components/Navbar";
 
 const Bab1 = () => {
     return (
+        
         <div className="bab1-container">
-            {/* Header dengan background gradien */}
+            <Navbar/>
             <header className="bab1-header text-center py-5">
                 <h1 className="text-white display-4">Konsep Ilmu Ekonomi</h1>
                 <p className="text-white lead">Mempelajari dasar ekonomi untuk kehidupan yang lebih baik</p>
             </header>
 
-            {/* Konten utama */}
             <div className="container my-5">
                 <div className="content my-4">
                     <h2 className="section-title">Pengertian Ilmu Ekonomi</h2>
@@ -61,7 +62,6 @@ const Bab1 = () => {
                     </ul>
                 </div>
 
-                {/* Tombol dengan animasi */}
                 <div className="text-center my-4">
                     <button
                         onClick={() => window.history.back()}

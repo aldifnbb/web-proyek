@@ -24,13 +24,14 @@ const Bab4 = () => {
                 Keseimbangan pasar terjadi ketika jumlah barang yang diminta sama dengan jumlah barang yang ditawarkan, 
                 menghasilkan harga keseimbangan.
             </p>
-
+            <div className="text-center my-4">
             <button 
                 onClick={() => window.history.back()} 
                 className="btn btn-secondary mt-4"
             >
                 Kembali ke Materi
             </button>
+            </div>
         </div>
     );
 };

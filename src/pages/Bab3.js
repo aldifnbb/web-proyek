@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 const Bab3 = () => {
     return (
         <div className="container mt-5">
+            <Navbar/>ba
             <h1>Bab 3: Perdagangan Internasional</h1>
             <p>
                 Perdagangan internasional adalah kegiatan pertukaran barang dan jasa antara negara yang berbeda. 
@@ -21,13 +23,14 @@ const Bab3 = () => {
                 Meskipun memiliki banyak manfaat, perdagangan internasional menghadapi hambatan seperti tarif, kuota, 
                 dan regulasi pemerintah yang dapat membatasi aliran barang dan jasa.
             </p>
-
+            <div className="text-center my-4">
             <button 
                 onClick={() => window.history.back()} 
                 className="btn btn-secondary mt-4"
             >
                 Kembali ke Materi
             </button>
+            </div>
         </div>
     );
 };

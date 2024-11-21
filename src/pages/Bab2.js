@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 const Bab2 = () => {
     return (
         <div className="container mt-5">
+            <Navbar/>
             <h1>Permasalahan Ekonomi dalam Sistem Ekonomi</h1>
             <h3>a. Masalah yang Ada di Dalam Kegiatan Produksi</h3>
             <p>Proses produksi merupakan kegiatan yang dilakukan untuk mengolah input atau produksi untuk menambah atau menciptakan nilai guna barang dan jasa. Faktor yang diperlukan dalam proses produksi:

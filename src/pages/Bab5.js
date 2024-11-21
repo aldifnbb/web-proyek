@@ -22,13 +22,14 @@ const Bab5 = () => {
                 Beberapa indikator penting untuk memahami siklus ekonomi meliputi Produk Domestik Bruto (PDB), tingkat pengangguran, 
                 dan tingkat inflasi.
             </p>
-
+            <div className="text-center my-4">
             <button 
                 onClick={() => window.history.back()} 
                 className="btn btn-secondary mt-4"
             >
                 Kembali ke Materi
             </button>
+            </div>
         </div>
     );
 };

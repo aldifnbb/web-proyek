@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";  // Import Link from react-router-dom
+import { Link } from "react-router-dom";  
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,10 +12,8 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      {/* Navbar */}
       <Navbar />
 
-      {/* Hero Section */}
       <section
         className="hero vh-100 d-flex flex-column justify-content-center align-items-center text-white"
         style={{
@@ -34,20 +32,18 @@ function Dashboard() {
           <p className="subtext" data-aos="fade-up">
             untuk siswa SMK N 1 Siborongborong
           </p>
-          {/* Link to Materi.js with AOS effect */}
           <Link
             to="/materi"
             className="btn btn-outline-light explore-button"
             aria-label="Explore Mata Pelajaran"
-            data-aos="zoom-in"  // Add AOS effect here
-            data-aos-delay="500"  // Optional delay for the animation
+            data-aos="zoom-in"  
+            data-aos-delay="500"  
           >
             Explore Mata Pelajaran
           </Link>
         </div>
       </section>
 
-      {/* Explore Section */}
       <section className="explore py-5 bg-dark text-white">
         <div className="container">
           <div className="text-center mb-5">
@@ -59,7 +55,6 @@ function Dashboard() {
             </p>
           </div>
           <div className="row g-4">
-            {/* Item Mapping Code */}
             {[ 
               {
                 title: "Pengenalan Ekonomi",
