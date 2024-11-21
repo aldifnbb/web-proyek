@@ -17,8 +17,29 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Bab1 = () => {
+    const [open, setOpen] = useState(""); // State untuk Accordion
+    const [tooltipOpen1, setTooltipOpen1] = useState(false); // State Tooltip 1
+    const [tooltipOpen2, setTooltipOpen2] = useState(false); // State Tooltip 2
+
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, []);
+
+    // Fungsi toggle untuk Accordion
+    const toggle = (id) => {
+        setOpen((prevOpen) => (prevOpen === id ? "" : id));
+    };
+
+    // Fungsi toggle untuk Tooltip
+    const toggleTooltip1 = () => setTooltipOpen1(!tooltipOpen1);
+    const toggleTooltip2 = () => setTooltipOpen2(!tooltipOpen2);
+
     return (
-        <Container className="mt-5 p-4 rounded shadow-lg" style={{ background: "linear-gradient(135deg, #f3f4f6, #dbe6f6)" }} data-aos="fade-up">
+        <Container
+            className="mt-5 p-4 rounded shadow-lg"
+            style={{ background: "linear-gradient(135deg, #f3f4f6, #dbe6f6)" }}
+            data-aos="fade-up"
+        >
             <h1 className="text-center mb-4 text-primary">Bab 1: Masalah Ekonomi Dasar</h1>
             <p data-aos="fade-up">
                 Masalah ekonomi dasar adalah persoalan yang dihadapi masyarakat dalam memenuhi kebutuhan yang tidak terbatas 
@@ -34,12 +55,18 @@ const Bab1 = () => {
                     </AccordionHeader>
                     <AccordionBody accordionId="1">
                         <Card className="my-3 border-0 shadow-sm" style={{ borderRadius: "10px", overflow: "hidden" }}>
-                            <div style={{ background: "linear-gradient(135deg, #6dd5ed, #2193b0)", color: "white", padding: "10px 20px" }}>
+                            <div
+                                style={{
+                                    background: "linear-gradient(135deg, #6dd5ed, #2193b0)",
+                                    color: "white",
+                                    padding: "10px 20px",
+                                }}
+                            >
                                 <CardTitle tag="h5">Keputusan Produksi</CardTitle>
                             </div>
                             <CardBody>
                                 <CardText>
-                                    Merujuk pada keputusan tentang barang dan jasa apa yang harus dihasilkan untuk memenuhi kebutuhan masyarakat. Karena sumber daya terbatas...
+                                    Merujuk pada keputusan tentang barang dan jasa apa yang harus dihasilkan untuk memenuhi kebutuhan masyarakat.
                                 </CardText>
                                 <img
                                     src="https://via.placeholder.com/300"
@@ -48,13 +75,29 @@ const Bab1 = () => {
                                     data-aos="zoom-in"
                                 />
                                 <div>
-                                    <p><strong>Kuis Singkat:</strong> Apa yang memengaruhi keputusan tentang apa yang harus diproduksi?</p>
-                                    <Button id="btnOption1" color="info" size="sm" className="mr-2">A. Prioritas masyarakat</Button>
-                                    <Button id="btnOption2" color="info" size="sm">B. Teknologi</Button>
-                                    <Tooltip placement="top" isOpen={tooltipOpen1} target="btnOption1" toggle={toggleTooltip1}>
+                                    <p>
+                                        <strong>Kuis Singkat:</strong> Apa yang memengaruhi keputusan tentang apa yang harus diproduksi?
+                                    </p>
+                                    <Button id="btnOption1" color="info" size="sm" className="mr-2">
+                                        A. Prioritas masyarakat
+                                    </Button>
+                                    <Button id="btnOption2" color="info" size="sm">
+                                        B. Teknologi
+                                    </Button>
+                                    <Tooltip
+                                        placement="top"
+                                        isOpen={tooltipOpen1}
+                                        target="btnOption1"
+                                        toggle={toggleTooltip1}
+                                    >
                                         Pilihan A mungkin tepat!
                                     </Tooltip>
-                                    <Tooltip placement="top" isOpen={tooltipOpen2} target="btnOption2" toggle={toggleTooltip2}>
+                                    <Tooltip
+                                        placement="top"
+                                        isOpen={tooltipOpen2}
+                                        target="btnOption2"
+                                        toggle={toggleTooltip2}
+                                    >
                                         Pertimbangkan efek teknologi
                                     </Tooltip>
                                 </div>
@@ -69,20 +112,35 @@ const Bab1 = () => {
                     </AccordionHeader>
                     <AccordionBody accordionId="2">
                         <Card className="my-3 border-0 shadow-sm" style={{ borderRadius: "10px", overflow: "hidden" }}>
-                            <div style={{ background: "linear-gradient(135deg, #ff9966, #ff5e62)", color: "white", padding: "10px 20px" }}>
+                            <div
+                                style={{
+                                    background: "linear-gradient(135deg, #ff9966, #ff5e62)",
+                                    color: "white",
+                                    padding: "10px 20px",
+                                }}
+                            >
                                 <CardTitle tag="h5">Metode Produksi</CardTitle>
                             </div>
                             <CardBody>
                                 <CardText>
-                                    Mengacu pada pilihan metode, teknologi, dan sumber daya yang akan digunakan dalam proses produksi...
+                                    Mengacu pada pilihan metode, teknologi, dan sumber daya yang akan digunakan dalam proses produksi.
                                 </CardText>
-                                <div className="bg-success text-white text-center p-2 my-3 rounded" data-aos="flip-left">
+                                <div
+                                    className="bg-success text-white text-center p-2 my-3 rounded"
+                                    data-aos="flip-left"
+                                >
                                     <strong>Contoh Penggunaan Energi (Animasi Placeholder)</strong>
                                 </div>
                                 <div>
-                                    <p><strong>Kuis Singkat:</strong> Metode produksi apa yang bisa dipilih untuk efisiensi tinggi?</p>
-                                    <Button color="info" size="sm" className="mr-2">A. Manual</Button>
-                                    <Button color="info" size="sm">B. Teknologi otomatis</Button>
+                                    <p>
+                                        <strong>Kuis Singkat:</strong> Metode produksi apa yang bisa dipilih untuk efisiensi tinggi?
+                                    </p>
+                                    <Button color="info" size="sm" className="mr-2">
+                                        A. Manual
+                                    </Button>
+                                    <Button color="info" size="sm">
+                                        B. Teknologi otomatis
+                                    </Button>
                                 </div>
                             </CardBody>
                         </Card>
@@ -95,12 +153,18 @@ const Bab1 = () => {
                     </AccordionHeader>
                     <AccordionBody accordionId="3">
                         <Card className="my-3 border-0 shadow-sm" style={{ borderRadius: "10px", overflow: "hidden" }}>
-                            <div style={{ background: "linear-gradient(135deg, #56ccf2, #2f80ed)", color: "white", padding: "10px 20px" }}>
+                            <div
+                                style={{
+                                    background: "linear-gradient(135deg, #56ccf2, #2f80ed)",
+                                    color: "white",
+                                    padding: "10px 20px",
+                                }}
+                            >
                                 <CardTitle tag="h5">Distribusi Barang</CardTitle>
                             </div>
                             <CardBody>
                                 <CardText>
-                                    Merujuk pada keputusan mengenai bagaimana hasil produksi didistribusikan di antara anggota masyarakat...
+                                    Merujuk pada keputusan mengenai bagaimana hasil produksi didistribusikan di antara anggota masyarakat.
                                 </CardText>
                                 <img
                                     src="https://via.placeholder.com/300"
@@ -109,9 +173,15 @@ const Bab1 = () => {
                                     data-aos="zoom-in"
                                 />
                                 <div>
-                                    <p><strong>Kuis Singkat:</strong> Apa yang menentukan distribusi barang?</p>
-                                    <Button color="info" size="sm" className="mr-2">A. Pendapatan</Button>
-                                    <Button color="info" size="sm">B. Prioritas produksi</Button>
+                                    <p>
+                                        <strong>Kuis Singkat:</strong> Apa yang menentukan distribusi barang?
+                                    </p>
+                                    <Button color="info" size="sm" className="mr-2">
+                                        A. Pendapatan
+                                    </Button>
+                                    <Button color="info" size="sm">
+                                        B. Prioritas produksi
+                                    </Button>
                                 </div>
                             </CardBody>
                         </Card>
@@ -120,10 +190,14 @@ const Bab1 = () => {
             </Accordion>
 
             <h3 data-aos="fade-left">Kelangkaan</h3>
-            <p data-aos="fade-up">Kelangkaan adalah kondisi ketika sumber daya terbatas tidak dapat memenuhi semua kebutuhan manusia.</p>
+            <p data-aos="fade-up">
+                Kelangkaan adalah kondisi ketika sumber daya terbatas tidak dapat memenuhi semua kebutuhan manusia.
+            </p>
 
             <h3 data-aos="fade-left">Biaya Peluang</h3>
-            <p data-aos="fade-up">Biaya peluang adalah nilai dari alternatif terbaik berikutnya yang harus dikorbankan ketika membuat pilihan ekonomi.</p>
+            <p data-aos="fade-up">
+                Biaya peluang adalah nilai dari alternatif terbaik berikutnya yang harus dikorbankan ketika membuat pilihan ekonomi.
+            </p>
 
             <Button
                 onClick={() => window.history.back()}
@@ -135,6 +209,6 @@ const Bab1 = () => {
             </Button>
         </Container>
     );
-}
+};
 
 export default Bab1;
