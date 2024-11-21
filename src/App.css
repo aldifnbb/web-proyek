@@ -43,11 +43,11 @@
 
 .explore-button:hover,
 .explore-button:focus {
-  background-color: #ffffff; /* White background on hover */
-  color: #000; /* Text color changes to black */
-  border-color: #ffffff; /* Keep border color white */
-  outline: none; /* Removes default focus outline */
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); /* Adds a custom focus ring */
+  background-color: #ffffff; 
+  color: #000; 
+  border-color: #ffffff; 
+  outline: none; 
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
 
 /* DASHBOARD BAGIAN EXPLORE */

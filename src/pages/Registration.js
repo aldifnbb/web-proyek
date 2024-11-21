@@ -8,13 +8,12 @@ function Registration() {
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
-    const handlesSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Registration submitted:', { username, password });
-        
+
         const userData = { username, password };
-        localStorage.setItem('registeredUser', JSON.stringify(userData));
-        
+        localStorage.setItem('registeredUser', JSON.stringify(userData)); 
+
         navigate('/login');
     };
 
@@ -22,7 +21,7 @@ function Registration() {
         <div className="login-container">
             <div className="card login-card" data-aos="fade-up">
                 <h2 className="text-center mb-4">Registration</h2>
-                <form onSubmit={handlesSubmit}>
+                <form onSubmit={handleSubmit}>
                     <div className="form-group mb-3">
                         <label htmlFor="username">Username:</label>
                         <input
@@ -30,7 +29,7 @@ function Registration() {
                             id="username"
                             className="form-control"
                             value={username}
-                            onChange={(e) => setUsername(e.target.value)}
+                            onChange={(e) => setUsername(e.target.value)} 
                             required
                         />
                     </div>
@@ -41,7 +40,7 @@ function Registration() {
                             id="password"
                             className="form-control"
                             value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={(e) => setPassword(e.target.value)} 
                             required
                         />
                         <span
@@ -49,36 +48,9 @@ function Registration() {
                             onClick={() => setShowPassword(!showPassword)}
                         >
                             {showPassword ? (
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="feather feather-eye-off"
-                                >
-                                    <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20.5a10.94 10.94 0 0 1-5.94-2.06m11.88-5.88A10.94 10.94 0 0 0 12 3.5a10.94 10.94 0 0 0-5.94 2.06M3 3l18 18"></path>
-                                </svg>
+                                <svg ></svg>
                             ) : (
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="feather feather-eye"
-                                >
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
+                                <svg ></svg>
                             )}
                         </span>
                     </div>

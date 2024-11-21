@@ -1,0 +1,44 @@
+/* Bab1.css */
+
+.bab1-container {
+    font-family: 'Arial', sans-serif;
+    background: #f8f9fa;
+    color: #333;
+}
+
+.bab1-header {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.section-title {
+    border-left: 5px solid #007bff;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #007bff;
+}
+x
+.list-group-item {
+    border: none;
+    padding: 10px;
+    margin-bottom: 5px;
+    transition: transform 0.3s;
+}
+
+.list-group-item:hover {
+    background: #f1f1f1;
+    transform: scale(1.03);
+}
+
+.btn-hover {
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-hover:hover {
+    background-color: #343a40;
+    transform: translateY(-5px);
+    color: #fff;
+}
+    

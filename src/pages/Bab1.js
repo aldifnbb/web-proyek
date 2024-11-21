@@ -1,59 +1,139 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import {
+    Accordion,
+    AccordionBody,
+    AccordionHeader,
+    AccordionItem,
+    Button,
+    Container,
+    Tooltip,
+    Card,
+    CardBody,
+    CardTitle,
+    CardText,
+} from "reactstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Bab1 = () => {
     return (
-        <div className="container">
-            <h1 className="text-center my-4">Konsep Ilmu Ekonomi</h1>
+        <Container className="mt-5 p-4 rounded shadow-lg" style={{ background: "linear-gradient(135deg, #f3f4f6, #dbe6f6)" }} data-aos="fade-up">
+            <h1 className="text-center mb-4 text-primary">Bab 1: Masalah Ekonomi Dasar</h1>
+            <p data-aos="fade-up">
+                Masalah ekonomi dasar adalah persoalan yang dihadapi masyarakat dalam memenuhi kebutuhan yang tidak terbatas 
+                dengan sumber daya yang terbatas. Masalah ini muncul karena kelangkaan (scarcity).
+            </p>
 
-            <div className="content my-4">
-                <h2>Pengertian Ilmu Ekonomi</h2>
-                <p>
-                    Ilmu ekonomi adalah studi tentang bagaimana individu dan masyarakat memilih untuk menggunakan sumber daya yang terbatas untuk memenuhi kebutuhan dan keinginan mereka.
-                </p>
-            </div>
+            <h4 className="mt-4 text-secondary" data-aos="fade-right">3 Masalah Ekonomi Dasar</h4>
 
-            <div className="content my-4">
-                <h2>Manfaat Ilmu Ekonomi</h2>
-                <p>Ilmu ekonomi memiliki banyak manfaat, antara lain:</p>
-                <ul>
-                    <li>Membantu dalam pengambilan keputusan ekonomi yang lebih baik.</li>
-                    <li>Memberikan pemahaman tentang berbagai masalah ekonomi.</li>
-                    <li>Menjadi dasar untuk perencanaan dan kebijakan ekonomi.</li>
-                </ul>
-            </div>
+            <Accordion open={open} toggle={toggle} className="mb-4" style={{ border: "none" }}>
+                <AccordionItem data-aos="flip-right">
+                    <AccordionHeader targetId="1" className="bg-light text-dark">
+                        Apa yang harus diproduksi?
+                    </AccordionHeader>
+                    <AccordionBody accordionId="1">
+                        <Card className="my-3 border-0 shadow-sm" style={{ borderRadius: "10px", overflow: "hidden" }}>
+                            <div style={{ background: "linear-gradient(135deg, #6dd5ed, #2193b0)", color: "white", padding: "10px 20px" }}>
+                                <CardTitle tag="h5">Keputusan Produksi</CardTitle>
+                            </div>
+                            <CardBody>
+                                <CardText>
+                                    Merujuk pada keputusan tentang barang dan jasa apa yang harus dihasilkan untuk memenuhi kebutuhan masyarakat. Karena sumber daya terbatas...
+                                </CardText>
+                                <img
+                                    src="https://via.placeholder.com/300"
+                                    alt="Production Example"
+                                    className="img-fluid my-3"
+                                    data-aos="zoom-in"
+                                />
+                                <div>
+                                    <p><strong>Kuis Singkat:</strong> Apa yang memengaruhi keputusan tentang apa yang harus diproduksi?</p>
+                                    <Button id="btnOption1" color="info" size="sm" className="mr-2">A. Prioritas masyarakat</Button>
+                                    <Button id="btnOption2" color="info" size="sm">B. Teknologi</Button>
+                                    <Tooltip placement="top" isOpen={tooltipOpen1} target="btnOption1" toggle={toggleTooltip1}>
+                                        Pilihan A mungkin tepat!
+                                    </Tooltip>
+                                    <Tooltip placement="top" isOpen={tooltipOpen2} target="btnOption2" toggle={toggleTooltip2}>
+                                        Pertimbangkan efek teknologi
+                                    </Tooltip>
+                                </div>
+                            </CardBody>
+                        </Card>
+                    </AccordionBody>
+                </AccordionItem>
 
-            <div className="content my-4">
-                <h2>Pembagian Ilmu Ekonomi</h2>
-                <p>Ilmu ekonomi dapat dibagi menjadi dua kategori utama:</p>
-                <ol>
-                    <li><strong>Ilmu Ekonomi Teori:</strong> Berfokus pada teori-teori ekonomi yang mendasari perilaku ekonomi.</li>
-                    <li><strong>Ilmu Ekonomi Deskriptif:</strong> Menggambarkan keadaan ekonomi dan analisis data ekonomi.</li>
-                </ol>
-            </div>
+                <AccordionItem data-aos="flip-right">
+                    <AccordionHeader targetId="2" className="bg-light text-dark">
+                        Bagaimana cara memproduksi?
+                    </AccordionHeader>
+                    <AccordionBody accordionId="2">
+                        <Card className="my-3 border-0 shadow-sm" style={{ borderRadius: "10px", overflow: "hidden" }}>
+                            <div style={{ background: "linear-gradient(135deg, #ff9966, #ff5e62)", color: "white", padding: "10px 20px" }}>
+                                <CardTitle tag="h5">Metode Produksi</CardTitle>
+                            </div>
+                            <CardBody>
+                                <CardText>
+                                    Mengacu pada pilihan metode, teknologi, dan sumber daya yang akan digunakan dalam proses produksi...
+                                </CardText>
+                                <div className="bg-success text-white text-center p-2 my-3 rounded" data-aos="flip-left">
+                                    <strong>Contoh Penggunaan Energi (Animasi Placeholder)</strong>
+                                </div>
+                                <div>
+                                    <p><strong>Kuis Singkat:</strong> Metode produksi apa yang bisa dipilih untuk efisiensi tinggi?</p>
+                                    <Button color="info" size="sm" className="mr-2">A. Manual</Button>
+                                    <Button color="info" size="sm">B. Teknologi otomatis</Button>
+                                </div>
+                            </CardBody>
+                        </Card>
+                    </AccordionBody>
+                </AccordionItem>
 
-            <div className="content my-4">
-                <h2>Kelangkaan dan Cara Mengatasinya</h2>
-                <h3>Pengertian Kelangkaan</h3>
-                <p>
-                    Kelangkaan adalah kondisi di mana sumber daya yang ada tidak cukup untuk memenuhi semua kebutuhan dan keinginan manusia.
-                </p>
+                <AccordionItem data-aos="flip-right">
+                    <AccordionHeader targetId="3" className="bg-light text-dark">
+                        Untuk siapa barang diproduksi?
+                    </AccordionHeader>
+                    <AccordionBody accordionId="3">
+                        <Card className="my-3 border-0 shadow-sm" style={{ borderRadius: "10px", overflow: "hidden" }}>
+                            <div style={{ background: "linear-gradient(135deg, #56ccf2, #2f80ed)", color: "white", padding: "10px 20px" }}>
+                                <CardTitle tag="h5">Distribusi Barang</CardTitle>
+                            </div>
+                            <CardBody>
+                                <CardText>
+                                    Merujuk pada keputusan mengenai bagaimana hasil produksi didistribusikan di antara anggota masyarakat...
+                                </CardText>
+                                <img
+                                    src="https://via.placeholder.com/300"
+                                    alt="Distribution Example"
+                                    className="img-fluid my-3"
+                                    data-aos="zoom-in"
+                                />
+                                <div>
+                                    <p><strong>Kuis Singkat:</strong> Apa yang menentukan distribusi barang?</p>
+                                    <Button color="info" size="sm" className="mr-2">A. Pendapatan</Button>
+                                    <Button color="info" size="sm">B. Prioritas produksi</Button>
+                                </div>
+                            </CardBody>
+                        </Card>
+                    </AccordionBody>
+                </AccordionItem>
+            </Accordion>
 
-                <h3>Cara yang Dapat Digunakan untuk Mengatasi Kelangkaan</h3>
-                <p>Beberapa cara yang dapat digunakan untuk mengatasi kelangkaan antara lain:</p>
-                <ul>
-                    <li>Efisiensi dalam penggunaan sumber daya.</li>
-                    <li>Inovasi untuk menciptakan sumber daya baru.</li>
-                    <li>Prioritas dalam pemenuhan kebutuhan.</li>
-                </ul>
-            </div>
-            <button 
-                onClick={() => window.history.back()} 
-                className="btn btn-secondary mt-4"
+            <h3 data-aos="fade-left">Kelangkaan</h3>
+            <p data-aos="fade-up">Kelangkaan adalah kondisi ketika sumber daya terbatas tidak dapat memenuhi semua kebutuhan manusia.</p>
+
+            <h3 data-aos="fade-left">Biaya Peluang</h3>
+            <p data-aos="fade-up">Biaya peluang adalah nilai dari alternatif terbaik berikutnya yang harus dikorbankan ketika membuat pilihan ekonomi.</p>
+
+            <Button
+                onClick={() => window.history.back()}
+                color="primary"
+                className="mt-4 shadow"
+                data-aos="fade-up"
             >
                 Kembali ke Materi
-            </button>
-        </div>
+            </Button>
+        </Container>
     );
 }
 
