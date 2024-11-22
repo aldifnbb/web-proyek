@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 
-const Bab2 = () => {
+const Bab2   = () => {
     return (
         <div className="container mt-5">
             <Navbar/>

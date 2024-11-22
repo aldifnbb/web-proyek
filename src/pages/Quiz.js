@@ -225,8 +225,17 @@ function Quiz() {
                         {feedback && <div className="alert alert-info mt-3">{feedback}</div>}
                     </div>
                 )}
-            </div>
+        <div className="text-center my-4">
+            <button 
+            onClick={() => window.history.back()}
+            className="btn btn-secondary mt-4"
+            >
+                Kembali ke halaman awal
+            </button>
         </div>
+        </div>
+        </div>
+    
     );
 }
 

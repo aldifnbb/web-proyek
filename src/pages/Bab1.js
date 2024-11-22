@@ -1,5 +1,3 @@
-// src/Bab1.js
-
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Bab1.css'; 
