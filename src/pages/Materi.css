@@ -1,73 +1,98 @@
 .materi-container {
-    padding: 20px;
+    background: linear-gradient(to bottom, #f9f9f9, #ffffff);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
-.chapter-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: transform 0.2s;
-}
-
-.chapter-card:hover {
-    transform: scale(1.05);
-}
-
-.btn-info {
-    background-color: #17a2b8;
-    color: white;
-}
-
-.btn-info:hover {
-    background-color: #138496;
-}
-
-/* Materi.css */
 .animated-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(0, 123, 255, 0.3), transparent);
-    animation: backgroundAnimation 10s linear infinite;
+    background: radial-gradient(circle at 30% 30%, #ff7e5f 0%, rgba(255, 255, 255, 0) 70%),
+        radial-gradient(circle at 70% 70%, #76b852 0%, rgba(255, 255, 255, 0) 70%);
     z-index: -1;
-    pointer-events: none;
+    animation: moveBackground 10s infinite alternate;
 }
 
-@keyframes backgroundAnimation {
+@keyframes moveBackground {
     0% {
-        transform: translate(0, 0) scale(1);
-    }
-    50% {
-        transform: translate(-20px, -20px) scale(1.1);
+        transform: scale(1);
     }
     100% {
-        transform: translate(0, 0) scale(1);
+        transform: scale(1.2);
     }
+}
+
+.chapter-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%; 
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: #ffffff;
 }
 
 .chapter-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-.chapter-1-header {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+.chapter-header {
+    padding: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+    flex-shrink: 0; 
 }
 
-.chapter-2-header {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+.card-body {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1; 
 }
 
-.chapter-3-header {
-    background: linear-gradient(to right, #ff9966, #ff5e62);
+button {
+    border-radius: 30px !important;
+    padding: 10px 20px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.chapter-4-header {
-    background: linear-gradient(to right, #00c6ff, #0072ff);
+button:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
-.chapter-5-header {
-    background: linear-gradient(to right, #f7971e, #ffd200);
+.btn-block {
+    width: 90%;
+    margin: auto;
 }
 
+.text-primary {
+    color: #0072ff !important;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; 
+}

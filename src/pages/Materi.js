@@ -18,8 +18,15 @@ const Materi = () => {
         5: { title: "Siklus Ekonomi" },
     };
 
+    const gradients = [
+        "linear-gradient(to right, #ff7e5f, #feb47b)",
+        "linear-gradient(to right, #00c6ff, #0072ff)",
+        "linear-gradient(to right, #76b852, #8dc26f)",
+        "linear-gradient(to right, #f953c6, #b91d73)",
+        "linear-gradient(to right, #fc4a1a, #f7b733)",
+    ];
+
     useEffect(() => {
-        // Initialize AOS
         AOS.init({
             duration: 1000,
             easing: "ease-in-out",
@@ -44,10 +51,24 @@ const Materi = () => {
                     Materi Ekonomi - Kelas 10
                 </h1>
                 <Row>
-                    {Object.entries(chapters).map(([chapter, data]) => (
+                    {Object.entries(chapters).map(([chapter, data], index) => (
                         <Col key={chapter} md="6" lg="4" className="my-3" data-aos="zoom-in">
-                            <Card className="shadow-lg chapter-card border-0" style={{ borderRadius: "15px", overflow: "hidden", transition: "transform 0.3s ease-in-out" }}>
-                                <div className={`chapter-${chapter}-header text-white p-3`} style={{ background: `linear-gradient(to right, #00c6ff, #0072ff)` }}>
+                            <Card
+                                className="shadow-lg chapter-card border-0"
+                                style={{
+                                    borderRadius: "20px",
+                                    overflow: "hidden",
+                                    transition: "transform 0.3s ease-in-out",
+                                }}
+                                onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+                                onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                            >
+                                <div
+                                    className={`chapter-${chapter}-header chapter-header text-white`}
+                                    style={{
+                                        background: gradients[index % gradients.length],
+                                    }}
+                                >
                                     <CardTitle tag="h5">{`Bab ${chapter}: ${data.title}`}</CardTitle>
                                 </div>
                                 <CardBody className="text-center">
@@ -56,22 +77,18 @@ const Materi = () => {
                                         outline
                                         className="btn-block mb-3 shadow"
                                         onClick={() => goToChapter(chapter)}
-                                        style={{ borderRadius: "30px", transition: "all 0.2s ease-in-out" }}
-                                        onMouseOver={(e) => e.target.style.transform = "scale(1.1)"}
-                                        onMouseOut={(e) => e.target.style.transform = "scale(1)"}
+                                        style={{ borderRadius: "30px" }}
                                     >
-                                        <FaBookOpen className="mr-2" /> Materi Lengkap
+                                        <FaBookOpen size={20} className="mr-2" /> Materi Lengkap
                                     </Button>
                                     <Button
                                         color="primary"
                                         outline
                                         className="btn-block shadow"
                                         onClick={() => goToQuiz(chapter)}
-                                        style={{ borderRadius: "30px", transition: "all 0.2s ease-in-out" }}
-                                        onMouseOver={(e) => e.target.style.transform = "scale(1.1)"}
-                                        onMouseOut={(e) => e.target.style.transform = "scale(1)"}
+                                        style={{ borderRadius: "30px" }}
                                     >
-                                        <FaEdit className="mr-2" /> Kerjakan Kuis
+                                        <FaEdit size={20} className="mr-2" /> Kerjakan Kuis
                                     </Button>
                                 </CardBody>
                             </Card>
