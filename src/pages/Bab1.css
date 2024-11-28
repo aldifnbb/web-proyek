@@ -1,44 +1,88 @@
-/* Bab1.css */
-
-.bab1-container {
-    font-family: 'Arial', sans-serif;
-    background: #f8f9fa;
-    color: #333;
-}
-
-.bab1-header {
-    background: linear-gradient(to right, #007bff, #0056b3);
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.section-title {
-    border-left: 5px solid #007bff;
-    padding-left: 10px;
-    margin-bottom: 20px;
+/* Quiz title */
+.quiz-title {
+    font-size: 2rem;
     font-weight: bold;
     color: #007bff;
-}
-x
-.list-group-item {
-    border: none;
+    margin-bottom: 20px;
+  }
+  
+  /* Feedback after answering quizzes */
+  .feedback {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #28a745; /* Green color for correct answers */
+  }
+  
+  .feedback.salah {
+    color: #dc3545; /* Red color for incorrect answers */
+  }
+  
+  /* Styling for form controls and buttons */
+  .form-check-label {
+    font-size: 1.1rem;
+    margin-left: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Styling the button when disabled */
+  button[disabled] {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  /* Container for feedback in quiz */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Styling the container for all sections */
+  section {
+    margin-top: 30px;
+  }
+  
+  /* Breadcrumbs styling */
+  .breadcrumb {
+    background-color: #f4f6f9;
     padding: 10px;
-    margin-bottom: 5px;
-    transition: transform 0.3s;
-}
-
-.list-group-item:hover {
-    background: #f1f1f1;
-    transform: scale(1.03);
-}
-
-.btn-hover {
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.btn-hover:hover {
-    background-color: #343a40;
-    transform: translateY(-5px);
-    color: #fff;
-}
-    
+    font-size: 1.1rem;
+    border-radius: 5px;
+  }
+  
+  .breadcrumb-item {
+    color: #007bff;
+  }
+  
+  .breadcrumb-item.active {
+    color: #6c757d;
+  }
+  
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    .main-container {
+      padding: 20px;
+    }
+  
+    .quiz-title {
+      font-size: 1.5rem;
+    }
+  
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .form-check-label {
+      font-size: 1rem;
+    }
+  }
+  
