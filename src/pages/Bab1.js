@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Breadcrumb, Form, Button, Card, Row, Col } from "react-bootstrap";
-import { FaCheckCircle, FaTimesCircle } from "react-icons/fa"; // Menggunakan ikon untuk feedback
+import { Container, Form, Button, Card } from "react-bootstrap";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import Navbar from "../components/Navbar";
 
 function App() {
   const [quizAnswers, setQuizAnswers] = useState({
@@ -21,7 +22,8 @@ function App() {
     setQuizAnswers({ ...quizAnswers, [name]: value });
   };
 
-  const checkAnswers = () => {
+  const checkAnswers = (e) => {
+    e.preventDefault(); // Prevent form submission
     const correctAnswers = {
       quiz1: "kelangkaan",
       quiz2: "padat modal",
@@ -35,29 +37,31 @@ function App() {
     });
   };
 
+  const handleBack = () => {
+    // Implement navigation logic here if necessary
+    window.history.back();
+  };
+
   return (
     <Container className="my-5">
-      <Breadcrumb>
-        <Breadcrumb.Item href="#">Beranda</Breadcrumb.Item>
-        <Breadcrumb.Item active>Bab 1: Masalah Ekonomi Dasar</Breadcrumb.Item>
-      </Breadcrumb>
-
+      <Navbar />
       <header className="text-center mb-5">
         <h1 className="display-4 text-primary">Bab 1: Masalah Ekonomi Dasar</h1>
         <p className="lead text-muted">
-        Masalah ekonomi dasar adalah persoalan universal yang dihadapi oleh setiap masyarakat atau individu terkait pengelolaan sumber daya yang terbatas untuk memenuhi kebutuhan yang tak terbatas. Masalah ini terjadi karena adanya kelangkaan (scarcity), yang mengharuskan masyarakat membuat pilihan di antara berbagai alternatif. Masalah ekonomi dasar ini dapat dijelaskan lebih rinci melalui tiga aspek utama, yaitu apa yang harus diproduksi, bagaimana cara memproduksi, dan untuk siapa barang atau jasa tersebut diproduksi.
+          Masalah ekonomi dasar adalah persoalan universal yang dihadapi oleh setiap masyarakat atau individu terkait pengelolaan sumber daya yang terbatas untuk memenuhi kebutuhan yang tak terbatas. Masalah ini terjadi karena adanya kelangkaan (scarcity), yang mengharuskan masyarakat membuat pilihan di antara berbagai alternatif. Masalah ekonomi dasar ini dapat dijelaskan lebih rinci melalui tiga aspek utama, yaitu apa yang harus diproduksi, bagaimana cara memproduksi, dan untuk siapa barang atau jasa tersebut diproduksi.
         </p>
       </header>
 
       <section className="mb-5">
         <h2>Apa yang Harus Diproduksi?</h2>
         <p>
-          Pertanyaan ini berfokus pada jenis barang dan jasa yang harus diproduksi untuk memenuhi kebutuhan masyarakat.</p>
-        <p>Sumber daya yang tersedia: Jika tenaga kerja melimpah, metode padat karya lebih disukai. Sebaliknya, jika modal dan teknologi mendukung, metode padat modal akan lebih efisien.
-Teknologi: Perkembangan teknologi memungkinkan produksi lebih efisien, tetapi sering kali membutuhkan investasi besar. Misalnya, robotik dalam industri manufaktur dapat meningkatkan efisiensi, tetapi meminimalkan lapangan kerja.
-Lingkungan: Di era modern, pertimbangan lingkungan menjadi faktor penting. Produksi yang berkelanjutan dan ramah lingkungan semakin ditekankan.
-Pilihan metode ini juga berdampak pada biaya produksi, kualitas barang, dan waktu yang dibutuhkan untuk menghasilkan barang atau jasa.
-
+          Pertanyaan ini berfokus pada jenis barang dan jasa yang harus diproduksi untuk memenuhi kebutuhan masyarakat.
+        </p>
+        <p>
+          Sumber daya yang tersedia: Jika tenaga kerja melimpah, metode padat karya lebih disukai. Sebaliknya, jika modal dan teknologi mendukung, metode padat modal akan lebih efisien.
+          Teknologi: Perkembangan teknologi memungkinkan produksi lebih efisien, tetapi sering kali membutuhkan investasi besar. Misalnya, robotik dalam industri manufaktur dapat meningkatkan efisiensi, tetapi meminimalkan lapangan kerja.
+          Lingkungan: Di era modern, pertimbangan lingkungan menjadi faktor penting. Produksi yang berkelanjutan dan ramah lingkungan semakin ditekankan.
+          Pilihan metode ini juga berdampak pada biaya produksi, kualitas barang, dan waktu yang dibutuhkan untuk menghasilkan barang atau jasa.
         </p>
       </section>
 
@@ -103,7 +107,7 @@ Pilihan metode ini juga berdampak pada biaya produksi, kualitas barang, dan wakt
       <section className="mt-5">
         <h2 className="mb-4 text-center"><strong>Mini Kuis</strong></h2>
         <Card className="p-4 mb-3 shadow-lg rounded-lg border-0 bg-light">
-          <Form>
+          <Form onSubmit={checkAnswers}>
             <Form.Group className="mb-3">
               <Form.Label>1. Apa penyebab utama masalah ekonomi dasar?</Form.Label>
               <Form.Check
@@ -165,7 +169,7 @@ Pilihan metode ini juga berdampak pada biaya produksi, kualitas barang, dan wakt
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>3. Sistem ekonomi yang berbasis pada mekanisme pasar disebut?</Form.Label>
+              <Form.Label>3. Sistem ekonomi apa yang mengutamakan kepemilikan pribadi dan mekanisme pasar bebas?</Form.Label>
               <Form.Check
                 type="radio"
                 label="Kapitalis"
@@ -194,16 +198,11 @@ Pilihan metode ini juga berdampak pada biaya produksi, kualitas barang, dan wakt
               )}
             </Form.Group>
 
-            <Button variant="primary" onClick={checkAnswers} className="w-100 mt-4">Periksa Jawaban</Button>
+            <Button type="submit" variant="primary">Cek Jawaban</Button>
+            <Button type="button" variant="secondary" className=" btn btn-secondary mt-4 mx-auto d-block" onClick={handleBack}>Kembali</Button>
           </Form>
         </Card>
       </section>
-      <button 
-                onClick={() => window.history.back()} 
-                className="btn btn-secondary mt-4"
-            >
-                Kembali 
-            </button>
     </Container>
   );
 }
