@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Form, Button, Card } from "react-bootstrap";
-import { FaCheckCircle, FaTimesCircle } from "react-icons/fa"; // Menggunakan ikon untuk feedback
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa"; 
 import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
 
 function App() {
+  
+  const navigate = useNavigate();
   const [quizAnswers, setQuizAnswers] = useState({
     quiz1: "",
     quiz2: "",
@@ -37,7 +40,7 @@ function App() {
   };
 
   const handleBackClick = () => {
-    // Logic for "Kembali" button if needed, e.g., navigating to a different section or resetting the form
+    navigate(-1);
     setQuizAnswers({
       quiz1: "",
       quiz2: "",
@@ -55,10 +58,10 @@ function App() {
       <Navbar />
       <header className="text-center mb-5">
         <h1 className="display-4 text-primary">Bab 2: Kebijakan Moneter</h1>
-        <p className="lead text-muted">
+        <p className="lead text-muted" style={{textAlign: "justify"}}>
           Kebijakan moneter adalah upaya yang dilakukan oleh otoritas moneter, seperti bank sentral, untuk mengelola jumlah uang yang beredar dan tingkat suku bunga dalam perekonomian. Tujuannya adalah menjaga stabilitas ekonomi, mengendalikan inflasi, menciptakan kesempatan kerja yang optimal, serta mendorong pertumbuhan ekonomi yang berkelanjutan.
         </p>
-        <p className="lead text-muted">
+        <p className="lead text-muted" style={{textAlign: "justify"}}>
           Bank sentral di Indonesia, yaitu Bank Indonesia (BI), bertanggung jawab atas pelaksanaan kebijakan moneter. Alat utama kebijakan ini adalah pengaturan likuiditas di pasar untuk menjaga kestabilan nilai tukar rupiah, inflasi, dan sistem keuangan secara keseluruhan. 
         </p>
       </header>

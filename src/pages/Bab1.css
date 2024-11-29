@@ -1,88 +1,144 @@
-/* Quiz title */
-.quiz-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #007bff;
-    margin-bottom: 20px;
+
+body {
+  background-color: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  background: linear-gradient(120deg, #007bff, #6c757d);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Section styling */
+section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Form styling */
+form label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+form .form-check {
+  margin: 10px 0;
+}
+
+form .form-check:hover {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* Card styling */
+.card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Feedback styling */
+.text-success {
+  font-weight: bold;
+  animation: fadeIn 0.5s;
+}
+
+.text-danger {
+  font-weight: bold;
+  animation: shake 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  /* Feedback after answering quizzes */
-  .feedback {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #28a745; /* Green color for correct answers */
+  to {
+    opacity: 1;
   }
-  
-  .feedback.salah {
-    color: #dc3545; /* Red color for incorrect answers */
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
   }
-  
-  /* Styling for form controls and buttons */
-  .form-check-label {
-    font-size: 1.1rem;
-    margin-left: 10px;
+  25%, 75% {
+    transform: translateX(-5px);
   }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    border-radius: 5px;
+  50% {
+    transform: translateX(5px);
   }
-  
-  button:hover {
-    background-color: #0056b3;
-    color: white;
-    cursor: pointer;
-  }
-  
-  /* Styling the button when disabled */
-  button[disabled] {
-    background-color: #6c757d;
-    cursor: not-allowed;
-  }
-  
-  /* Container for feedback in quiz */
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  /* Styling the container for all sections */
-  section {
-    margin-top: 30px;
-  }
-  
-  /* Breadcrumbs styling */
-  .breadcrumb {
-    background-color: #f4f6f9;
-    padding: 10px;
-    font-size: 1.1rem;
-    border-radius: 5px;
-  }
-  
-  .breadcrumb-item {
-    color: #007bff;
-  }
-  
-  .breadcrumb-item.active {
-    color: #6c757d;
-  }
-  
-  /* Responsive Design for Mobile */
-  @media (max-width: 768px) {
-    .main-container {
-      padding: 20px;
-    }
-  
-    .quiz-title {
-      font-size: 1.5rem;
-    }
-  
-    header h1 {
-      font-size: 1.8rem;
-    }
-  
-    .form-check-label {
-      font-size: 1rem;
-    }
-  }
-  
+}
+
+/* Button styling */
+button {
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Back button */
+button.btn-secondary {
+  background-color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+button.btn-secondary:hover {
+  background-color: #5a6268;
+  color: white;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #343a40;
+  border-radius: 8px;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  margin-right: 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}

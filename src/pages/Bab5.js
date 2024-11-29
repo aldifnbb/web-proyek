@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Breadcrumb, Form, Button, Card } from "react-bootstrap";
+import { Container, Form, Button, Card } from "react-bootstrap";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import Navbar from "../components/Navbar";
 
 function App() {
   const [quizAnswers, setQuizAnswers] = useState({
@@ -41,14 +42,10 @@ function App() {
 
   return (
     <Container className="my-5">
-      <Breadcrumb>
-        <Breadcrumb.Item href="#">Beranda</Breadcrumb.Item>
-        <Breadcrumb.Item active>Siklus Ekonomi</Breadcrumb.Item>
-      </Breadcrumb>
-
+     <Navbar />
       <header className="text-center mb-5">
-        <h1 className="display-4 text-primary">Siklus Ekonomi</h1>
-        <p className="lead text-muted">
+        <h1 className="display-4 text-primary">Bab 5: Siklus Ekonomi</h1>
+        <p className="lead text-muted" style={{textAlign: "justify"}}>
         Siklus ekonomi adalah pola perubahan aktivitas ekonomi suatu negara yang terjadi secara berulang dalam periode tertentu. Siklus ini mencerminkan fluktuasi dalam tingkat pertumbuhan ekonomi yang dapat memengaruhi produksi, pendapatan, investasi, konsumsi, dan lapangan kerja. Siklus ekonomi terdiri dari empat tahap utama: ekspansi, puncak, kontraksi, dan resesi atau depresi.
         </p>
       </header>
@@ -218,7 +215,7 @@ Bencana Alam atau Pandemi: Situasi seperti pandemi COVID-19 dapat memperlambat e
       </section>
       <button 
                 onClick={() => window.history.back()} 
-                className="btn btn-secondary mt-4"
+                className="btn btn-secondary mt-4 mx-auto d-block"
             >
                 Kembali 
             </button>

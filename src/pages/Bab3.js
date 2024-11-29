@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Breadcrumb, Form, Button, Card } from "react-bootstrap";
-import { FaCheckCircle, FaTimesCircle } from "react-icons/fa"; // Menggunakan ikon untuk feedback
+import { Container,Form, Button, Card} from "react-bootstrap";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa"; 
+import Navbar from "../components/Navbar";
 
 function App() {
   const [quizAnswers, setQuizAnswers] = useState({
@@ -37,14 +38,11 @@ function App() {
 
   return (
     <Container className="my-5">
-      <Breadcrumb>
-        <Breadcrumb.Item href="#">Beranda</Breadcrumb.Item>
-        <Breadcrumb.Item active>Bab 3: Perdagangan Internasional</Breadcrumb.Item>
-      </Breadcrumb>
+      <Navbar />
 
       <header className="text-center mb-5">
         <h1 className="display-4 text-primary">Bab 3: Perdagangan Internasional</h1>
-        <p className="lead text-muted">
+        <p className="lead text-muted" style={{textAlign: "justify"}}>
           Perdagangan internasional adalah kegiatan pertukaran barang, jasa, atau faktor produksi antara negara-negara di dunia. Kegiatan ini muncul karena tidak ada satu negara pun yang dapat memenuhi semua kebutuhan ekonominya sendiri. Melalui perdagangan internasional, negara-negara dapat saling melengkapi kebutuhan mereka dengan memanfaatkan keunggulan masing-masing.
         </p>
       </header>
@@ -223,7 +221,7 @@ function App() {
       </section>
       <button 
                 onClick={() => window.history.back()} 
-                className="btn btn-secondary mt-4"
+                className="btn btn-secondary mt-4 mx-auto d-block"
             >
                 Kembali 
             </button>

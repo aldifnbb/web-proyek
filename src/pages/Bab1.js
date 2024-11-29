@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Form, Button, Card } from "react-bootstrap";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 import Navbar from "../components/Navbar";
+import "./Bab1.css";
 
 function App() {
   const [quizAnswers, setQuizAnswers] = useState({
@@ -23,7 +24,7 @@ function App() {
   };
 
   const checkAnswers = (e) => {
-    e.preventDefault(); // Prevent form submission
+    e.preventDefault(); 
     const correctAnswers = {
       quiz1: "kelangkaan",
       quiz2: "padat modal",
@@ -38,7 +39,6 @@ function App() {
   };
 
   const handleBack = () => {
-    // Implement navigation logic here if necessary
     window.history.back();
   };
 
@@ -47,7 +47,7 @@ function App() {
       <Navbar />
       <header className="text-center mb-5">
         <h1 className="display-4 text-primary">Bab 1: Masalah Ekonomi Dasar</h1>
-        <p className="lead text-muted">
+        <p className="lead text-muted" style={{textAlign: "justify"}}>
           Masalah ekonomi dasar adalah persoalan universal yang dihadapi oleh setiap masyarakat atau individu terkait pengelolaan sumber daya yang terbatas untuk memenuhi kebutuhan yang tak terbatas. Masalah ini terjadi karena adanya kelangkaan (scarcity), yang mengharuskan masyarakat membuat pilihan di antara berbagai alternatif. Masalah ekonomi dasar ini dapat dijelaskan lebih rinci melalui tiga aspek utama, yaitu apa yang harus diproduksi, bagaimana cara memproduksi, dan untuk siapa barang atau jasa tersebut diproduksi.
         </p>
       </header>

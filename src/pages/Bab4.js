@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Breadcrumb, Form, Button, Card } from "react-bootstrap";
+import { Container,Form, Button, Card } from "react-bootstrap";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import Navbar from "../components/Navbar";
 
 function App() {
   const [quizAnswers, setQuizAnswers] = useState({
@@ -37,14 +38,10 @@ function App() {
 
   return (
     <Container className="my-5">
-      <Breadcrumb>
-        <Breadcrumb.Item href="#">Beranda</Breadcrumb.Item>
-        <Breadcrumb.Item active>Bab 4: Permintaan dan Penawaran</Breadcrumb.Item>
-      </Breadcrumb>
-
+      <Navbar />
       <header className="text-center mb-5">
         <h1 className="display-4 text-primary">Bab 4: Permintaan dan Penawaran</h1>
-        <p className="lead text-muted">
+        <p className="lead text-muted" style={{textAlign: "justify"}}>
           Permintaan dan penawaran adalah konsep dasar dalam ekonomi yang menjelaskan bagaimana harga barang atau jasa ditentukan di pasar. Interaksi antara keduanya menciptakan keseimbangan pasar, di mana jumlah barang yang diminta sama dengan jumlah barang yang ditawarkan pada harga tertentu.
         </p>
       </header>
@@ -184,7 +181,7 @@ function App() {
       </section>
       <button 
                 onClick={() => window.history.back()} 
-                className="btn btn-secondary mt-4"
+                className="btn btn-secondary mt-4 mx-auto d-block"
             >
                 Kembali 
             </button>
