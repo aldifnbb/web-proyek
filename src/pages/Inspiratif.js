@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "../components/Navbar";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import "./Inspiratif.css"
 
 function Inspiratif() {
   const economists = [
@@ -26,6 +27,26 @@ function Inspiratif() {
       kepada masyarakat miskin tanpa jaminan, membantu mereka keluar dari kemiskinan.`,
       inspiration: `Yunus menginspirasi dunia dengan pendekatannya terhadap pemberdayaan masyarakat miskin dan dianugerahi Nobel Perdamaian pada tahun 2006.`,
       image: "https://th.bing.com/th/id/OIP.fviSl-hpo0Z8MxYkUZ6s0wHaDt?w=349&h=174&c=7&r=0&o=5&dpr=2&pid=1.7",
+    },
+    {
+      name: "David Ricardo",
+      story: `David Ricardo merupakan salah satu tokoh penting dalam dunia ekonomi, lahir pada 18 April 1772. Ia dikenal sebagai ekonom yang sangat berpengaruh 
+      dalam perekonomian Inggris pada abad ke-19. Dalam bukunya Principles of Political Economy and Taxation (1817), Ricardo mengemukakan berbagai teori penting 
+      tentang sistem pengupahan, perpajakan, permodalan, dan hubungannya dengan kestabilan politik sebuah negara.`,
+      inspiration: `David Ricardo menggagas konsep keunggulan komparatif, menyatakan bahwa sebuah negara harus fokus pada industri yang paling kompetitif di 
+      tingkat global. Ia juga memprediksi pentingnya perdagangan bebas, yang kini telah menjadi bagian penting dari ekonomi dunia. Pemikirannya membantu membentuk
+       fondasi ekonomi modern, terutama dalam era globalisasi.`,
+      image: "https://cdn.idntimes.com/content-images/community/2020/12/z-1-9b3ad9f379c33a673cb97fe2c1b99836-661157a38e9f29db8929b45b2c08f79c.jpg",
+    },
+    {
+      name: "Beatrice Webb",
+      story: `Beatrice Webb adalah seorang pakar ekonomi dan sosiolog terkemuka asal Inggris. Lahir pada 22 Januari 1858, ia dikenal sebagai salah satu reformis 
+      sosial dan ekonomi terkemuka di zamannya. Beatrice Webb adalah salah satu pendiri London School of Economics and Political Science (LSE). Ia juga merupakan
+      penulis buku The History of Trade Unionism (1894) dan Industrial Democracy (1897), yang menjadi landasan penting dalam studi serikat pekerja dan demokrasi industri.`,
+      inspiration: `Beatrice Webb percaya bahwa perekonomian tidak berdiri sendiri, melainkan dipengaruhi oleh faktor sosial dan politik suatu negara. Gagasannya yang 
+      dipengaruhi oleh sosialisme kompleks telah membantu mendorong reformasi sosial dan pendidikan di Inggris. Pendekatannya yang mengintegrasikan ekonomi dengan aspek 
+      sosial menginspirasi berbagai kebijakan publik modern.`,
+      image: "https://cdn.idntimes.com/content-images/community/2020/12/z-4-9b3ad9f379c33a673cb97fe2c1b99836-fab96f13a40ee427c714feb75f248d7d.jpg",
     },
   ];
 
@@ -112,14 +133,6 @@ function Inspiratif() {
               </div>
             </div>
           </div>
-          <div className="text-center my-4">
-            <button 
-            onClick={() => window.history.back()}
-            className="btn btn-secondary mt-4"
-            >
-                Kembali ke halaman awal
-            </button>
-            </div>
         </div>
       </div>
     </>
