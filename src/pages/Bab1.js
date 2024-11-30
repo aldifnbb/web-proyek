@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Form, Button, Card } from "react-bootstrap";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 import Navbar from "../components/Navbar";
-import "./Bab1.css";
+import "./Bab.css";
 
 function App() {
   const [quizAnswers, setQuizAnswers] = useState({

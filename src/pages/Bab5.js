@@ -183,30 +183,6 @@ Bencana Alam atau Pandemi: Situasi seperti pandemi COVID-19 dapat memperlambat e
                 </p>
               )}
             </Form.Group>
-
-            <Form.Group className="mb-3">
-              <Form.Label>4. Apa yang dimaksud dengan pemulihan dalam siklus ekonomi?</Form.Label>
-              <Form.Check
-                type="radio"
-                label="Peningkatan permintaan dan penurunan pengangguran"
-                name="quiz4"
-                value="Pemulihan"
-                onChange={handleQuizChange}
-              />
-              <Form.Check
-                type="radio"
-                label="Penurunan tajam ekonomi"
-                name="quiz4"
-                value="Penurunan ekonomi"
-                onChange={handleQuizChange}
-              />
-              {quizFeedback.quiz4 && (
-                <p className={quizFeedback.quiz4.includes("Benar") ? "text-success" : "text-danger"}>
-                  {quizFeedback.quiz4} {quizFeedback.quiz4.includes("Benar") ? <FaCheckCircle /> : <FaTimesCircle />}
-                </p>
-              )}
-            </Form.Group>
-
             <Button variant="primary" onClick={checkAnswers}>
               Cek Jawaban
             </Button>

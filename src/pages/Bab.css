@@ -1,0 +1,216 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f7f8fa, #dbe4ff);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  color: #175ed7;
+}
+
+header h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3rem;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.navbar {
+  background-color: #1f1f20;
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff !important;
+}
+
+.navbar a {
+  color: white !important;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+  color: #ffc107 !important;
+}
+
+header {
+  background: linear-gradient(145deg, #eef2ff, #ffffff);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+header h1 {
+  color: #1f1f20;
+  font-size: 3rem;
+}
+
+header p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: justify;
+  color: #555;
+}
+
+h2 {
+  color: #4a47a3;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  color: #101010;
+  font-size: 1.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+}
+
+.quiz-card {
+  max-width: 400px; 
+  margin: 0 auto; 
+  padding: 1.5rem; 
+  box-sizing: border-box;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #555;
+}
+
+.form-check-label {
+  font-size: 1rem;
+  color: #666;
+}
+
+.btn-primary {
+  background-color: #4a47a3;
+  border: none;
+  font-size: 1.1rem;
+  padding: 12px 40px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  font-size: 1rem;
+  padding: 10px 30px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #495057;
+}
+
+.text-success {
+  color: #28a745 !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 2rem 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+}
