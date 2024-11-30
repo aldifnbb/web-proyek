@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "../components/Navbar";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import "./Inspiratif.css"
 
 function Inspiratif() {
   const economists = [
@@ -68,7 +66,6 @@ function Inspiratif() {
 
   return (
     <>
-      <Navbar />
       <div className="container mt-5">
         <div className="text-center mb-4">
           <h1 className="display-5" style={{ color: "#343a40", fontWeight: "700" }}>

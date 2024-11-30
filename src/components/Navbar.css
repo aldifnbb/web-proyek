@@ -1,49 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+/* Navbar */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #343a40;
-    color: white;
-    padding: 10px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: all 0.3s ease;
-    height: 60px; 
-    line-height: 60px; 
+    background-color: #212529 !important; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #ffffff !important; 
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.navbar-brand:hover {
+    color: #ff9800 !important; /* Aksen oranye saat hover */
 }
 
 .nav-link {
-    position: relative;
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 5px;
-    transition: color 0.3s ease;
+    color: #ffffff !important; /* Teks putih untuk menu */
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-link:hover {
+    color: #ff9800 !important; /* Aksen oranye saat hover */
+    transform: scale(1.05);
+}
+
+.nav-link.active {
+    color: #ff9800 !important; /* Warna aktif */
+    font-weight: 600;
+    border-bottom: 2px solid #ff9800; /* Border bawah aktif */
+}
+
+.logout-btn,
+.sign-in-btn {
+    background-color: #ffffff !important; /* Tombol putih */
+    color: #212529 !important; /* Teks gelap untuk tombol */
+    border: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover,
+.sign-in-btn:hover {
+    background-color: #f1f1f1 !important; /* Tombol terang saat hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* User Info */
+.user-info {
+    display: flex;
+    align-items: center;
+    background-color: #343a40 !important;
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.user-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color: #ff9800 !important; /* Aksen oranye */
+    color: white !important;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    text-transform: uppercase;
+}
+
+.halo-message {
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
     color: #ffd700;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-.nav-link::after {
-    content: '';
+/* Navbar text */
+.navbar-text {
+    font-size: 1.1rem;
+    color: #ffffff !important;
+    font-weight: bold;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar-text:hover {
+    color: #ff9800 !important;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    position: relative; /* Untuk dropdown */
+}
+
+/* Dropdown Menu */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
     position: absolute;
-    bottom: 0;
+    top: 100%;
     left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #ffd700;
-    transition: width 0.3s ease;
+    background-color: #212529;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    min-width: 200px;
+    z-index: 10;
 }
 
-.nav-link:hover::after {
-    width: 100%;
+.dropdown-item {
+    color: #ffffff !important;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
 }
 
-body {
-    margin: 0;
-    padding-top: 70px; 
-    font-family: 'Roboto', sans-serif;
+.dropdown-item:hover {
+    background-color: #ff9800 !important;
+    color: #212529 !important;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-item.dropdown .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #212529;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        min-width: 200px;
+        z-index: 10;
+    }
+
+    .navbar-nav .nav-item.dropdown.show .dropdown-menu {
+        display: block;
+    }
+
+    .navbar-nav .nav-item.dropdown .dropdown-item {
+        padding: 10px 15px;
+        font-size: 1rem;
+        color: #ffffff !important;
+    }
 }

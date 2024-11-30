@@ -1,46 +1,49 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const AuthContext = createContext(null);
+const AuthContext = createContext();
+
+export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(() => {
-        const storedUser = localStorage.getItem('user');
-        return storedUser ? JSON.parse(storedUser) : null;
-    });
+    const [user, setUser] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        if (user) {
-            localStorage.setItem('user', JSON.stringify(user));
-        } else {
-            localStorage.removeItem('user');
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            try {
+                setUser(JSON.parse(storedUser));
+            } catch (error) {
+                console.error('Gagal memuat data pengguna:', error);
+                setUser(null);
+            }
         }
-    }, [user]);
+        setIsLoading(false);
+    }, []);
 
     const login = (userData) => {
         setUser(userData);
-    };
-
-    const logout = () => {
-        setUser(null);
+        localStorage.setItem('user', JSON.stringify(userData)); // Simpan user ke localStorage
+        navigate('/dashboard'); // Navigasi ke dashboard setelah login
     };
 
     const register = (userData) => {
         setUser(userData);
+        localStorage.setItem('user', JSON.stringify(userData)); // Simpan user ke localStorage
+        navigate('/dashboard');
+    };
+
+    const logout = () => {
+        setUser(null);
+        localStorage.removeItem('user');
+        navigate('/login');
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, logout, register }}>
+        <AuthContext.Provider value={{ user, login, register, logout, isLoading }}>
             {children}
         </AuthContext.Provider>
     );
-};
-
-export const useAuth = () => {
-    const context = useContext(AuthContext);
-
-    if (!context) {
-        throw new Error('useAuth must be used within an AuthProvider');
-    }
-
-    return context;
 };

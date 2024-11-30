@@ -1,84 +1,138 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import { Container, Row, Col, Card, CardBody } from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "./Materi.css";
+import { FaBookOpen } from "react-icons/fa";
+import kopiImage from '../img/kopi.jpg';
+import pict1Image from '../img/pict1.jpg';
+import pict2Image from '../img/pict2.jpg';
+import pict3Image from '../img/pict3.jpg';
+import pict4Image from '../img/pict4.jpg';
+import pict5Image from '../img/pict5.jpg';
 
 const Materi = () => {
     const navigate = useNavigate();
 
-    const chapters = [
-        { id: 1, title: "Masalah Ekonomi Dasar", icon: "📘", bgColor: "#ff7e5f" },
-        { id: 2, title: "Kebijakan Moneter", icon: "💰", bgColor: "#6a11cb" },
-        { id: 3, title: "Perdagangan Internasional", icon: "🌐", bgColor: "#00c6ff" },
-        { id: 4, title: "Permintaan dan Penawaran", icon: "📊", bgColor: "#f953c6" },
-        { id: 5, title: "Siklus Ekonomi", icon: "🔄", bgColor: "#fc4a1a" },
-    ];
-
     useEffect(() => {
         AOS.init({
-            duration: 1200,
+            duration: 1000,
             easing: "ease-in-out",
             once: true,
         });
     }, []);
 
-    const goToChapter = (chapterId) => {
-        navigate(`/bab${chapterId}`);
+    const goToChapter = (chapter) => {
+        navigate(`/bab${chapter}`);
     };
 
     return (
-        <div className="materi-container">
-            <Navbar />
+        <div className="project" style={{ position: "relative", overflow: "hidden" }}>
+            <div className="animated-background"></div>
+
             <Container className="py-5">
-                <h1
-                    className="text-center mb-5 text-primary fw-bold display-4"
-                    data-aos="fade-down"
-                >
-                    Semua Bab - Ekonomi Kelas 10
-                </h1>
-                <Row className="g-4">
-                    {chapters.map((chapter) => (
-                        <Col key={chapter.id} md="6" lg="4" data-aos="zoom-in">
-                            <Card
-                                className="shadow-lg chapter-card border-0"
-                                style={{
-                                    borderRadius: "20px",
-                                    overflow: "hidden",
-                                    position: "relative",
-                                    background: `linear-gradient(135deg, ${chapter.bgColor}, #ffffff)`,
-                                    transform: "scale(1)",
-                                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = "scale(1.05)";
-                                    e.currentTarget.style.boxShadow =
-                                        "0 15px 30px rgba(0, 0, 0, 0.2)";
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = "scale(1)";
-                                    e.currentTarget.style.boxShadow = "none";
-                                }}
-                            >
-                                <div className="text-center chapter-icon mt-4">
-                                    <span style={{ fontSize: "3.5rem" }}>{chapter.icon}</span>
-                                </div>
-                                <CardBody className="text-center px-4">
-                                    <h5 className="chapter-title fw-bold mb-4">
-                                        {chapter.title}
-                                    </h5>
-                                    <button
-                                        className="btn btn-primary btn-gradient mt-3"
-                                        onClick={() => goToChapter(chapter.id)}
-                                    >
-                                        Buka Materi
-                                    </button>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                    ))}
+                <h2 className="text-primary mb-5" data-aos="fade-down" style={{ position: "relative", zIndex: 2 }}>
+                    <span>Materi Ekonomi Lengkap - Kelas 10</span>
+                </h2>
+                <div className="background-text">TechnocoMinds</div>
+
+                <div className="vertical-line"></div>
+
+                <Row>
+                    {/* Bab 1 */}
+                    <Col md="6" lg="4" className="my-3" data-aos="zoom-in">
+                        <div className="proj-imgbx" style={{ backgroundImage: `url(${pict1Image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                            <div className="proj-txtx">
+                                <h4>Bab 1: Masalah Ekonomi Dasar</h4>
+                                <span>Pelajari masalah dasar dalam ekonomi</span>
+                                <Button
+                                    color="info"
+                                    outline
+                                    className="mt-3"
+                                    onClick={() => goToChapter(1)}
+                                    style={{ borderRadius: "30px" }}
+                                >
+                                    <FaBookOpen className="mr-2" /> Materi Lengkap
+                                </Button>
+                            </div>
+                        </div>
+                    </Col>
+
+                    {/* Bab 2 */}
+                    <Col md="6" lg="4" className="my-3" data-aos="zoom-in">
+                        <div className="proj-imgbx" style={{ backgroundImage: `url(${pict2Image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                            <div className="proj-txtx">
+                                <h4>Bab 2: Kebijakan Moneter</h4>
+                                <span>Pelajari tentang kebijakan moneter</span>
+                                <Button
+                                    color="info"
+                                    outline
+                                    className="mt-3"
+                                    onClick={() => goToChapter(2)}
+                                    style={{ borderRadius: "30px" }}
+                                >
+                                    <FaBookOpen className="mr-2" /> Materi Lengkap
+                                </Button>
+                            </div>
+                        </div>
+                    </Col>
+
+                    {/* Bab 3 */}
+                    <Col md="6" lg="4" className="my-3" data-aos="zoom-in">
+                        <div className="proj-imgbx" style={{ backgroundImage: `url(${pict3Image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                            <div className="proj-txtx">
+                                <h4>Bab 3: Perdagangan Internasional</h4>
+                                <span>Pelajari perdagangan antarnegara</span>
+                                <Button
+                                    color="info"
+                                    outline
+                                    className="mt-3"
+                                    onClick={() => goToChapter(3)}
+                                    style={{ borderRadius: "30px" }}
+                                >
+                                    <FaBookOpen className="mr-2" /> Materi Lengkap
+                                </Button>
+                            </div>
+                        </div>
+                    </Col>
+
+                    {/* Bab 4 */}
+                    <Col md="6" lg="4" className="my-3" data-aos="zoom-in">
+                        <div className="proj-imgbx" style={{ backgroundImage: `url(${pict4Image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                            <div className="proj-txtx">
+                                <h4>Bab 4: Permintaan dan Penawaran</h4>
+                                <span>Pelajari tentang hukum permintaan dan penawaran</span>
+                                <Button
+                                    color="info"
+                                    outline
+                                    className="mt-3"
+                                    onClick={() => goToChapter(4)}
+                                    style={{ borderRadius: "30px" }}
+                                >
+                                    <FaBookOpen className="mr-2" /> Materi Lengkap
+                                </Button>
+                            </div>
+                        </div>
+                    </Col>
+
+                    {/* Bab 5 */}
+                    <Col md="6" lg="4" className="my-3" data-aos="zoom-in">
+                        <div className="proj-imgbx" style={{ backgroundImage: `url(${pict5Image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                            <div className="proj-txtx">
+                                <h4>Bab 5: Siklus Ekonomi</h4>
+                                <span>Pelajari tentang siklus perekonomian</span>
+                                <Button
+                                    color="info"
+                                    outline
+                                    className="mt-3"
+                                    onClick={() => goToChapter(5)}
+                                    style={{ borderRadius: "30px" }}
+                                >
+                                    <FaBookOpen className="mr-2" /> Materi Lengkap
+                                </Button>
+                            </div>
+                        </div>
+                    </Col>
                 </Row>
             </Container>
         </div>

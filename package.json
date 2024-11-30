@@ -1,5 +1,5 @@
 {
-  "name": "lect-economi",
+  "name": "ok",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,12 +8,14 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
-    "font-awesome": "^4.7.0",
+    "firebase": "^11.0.2",
+    "icons": "^1.0.0",
     "react": "^18.3.1",
-    "react-bootstrap": "^2.10.5",
+    "react-bootstrap": "^2.10.6",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
-    "react-router-dom": "^6.28.0",
+    "react-quill": "^2.0.0",
+    "react-router-dom": "^7.0.1",
     "react-scripts": "5.0.1",
     "reactstrap": "^9.2.3",
     "web-vitals": "^2.1.4"

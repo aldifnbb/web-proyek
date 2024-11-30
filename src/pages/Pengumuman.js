@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import Navbar from "../components/Navbar";
-import './Pengumuman.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS CSS
 
 const Pengumuman = () => {
     const [pengumumanList, setPengumumanList] = useState([]);
@@ -9,20 +9,26 @@ const Pengumuman = () => {
     const [konten, setKonten] = useState('');
     const [showNotification, setShowNotification] = useState(false);
 
-    // Load existing pengumuman from localStorage on mount
     useEffect(() => {
+        // Inisialisasi AOS
+        AOS.init({
+            duration: 1000, // Durasi animasi
+            easing: 'ease-in-out', // Easing animasi
+            once: true, // Animasi hanya sekali
+        });
+
+        // Memuat data pengumuman dari localStorage
         const storedPengumumanList = JSON.parse(localStorage.getItem('pengumumanList')) || [];
         setPengumumanList(storedPengumumanList);
     }, []);
 
-    // Save pengumuman list to localStorage whenever it changes
     useEffect(() => {
+        // Menyimpan data pengumuman ke localStorage setiap ada perubahan
         if (pengumumanList.length > 0) {
             localStorage.setItem('pengumumanList', JSON.stringify(pengumumanList));
         }
     }, [pengumumanList]);
 
-    // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -34,13 +40,11 @@ const Pengumuman = () => {
                 tanggal: new Date().toLocaleString(),
             };
 
-            // Add new pengumuman to the list
             setPengumumanList((prevList) => [...prevList, newPengumuman]);
             setJudul('');
             setKonten('');
             setShowNotification(true);
 
-            // Hide notification after 3 seconds
             setTimeout(() => {
                 setShowNotification(false);
             }, 3000);
@@ -49,21 +53,20 @@ const Pengumuman = () => {
         }
     };
 
-    // Handle deletion of a pengumuman
     const handleDelete = (id) => {
         const updatedPengumumanList = pengumumanList.filter((pengumuman) => pengumuman.id !== id);
         setPengumumanList(updatedPengumumanList);
     };
 
     return (
-        <div className="pengumuman-container" style={{ paddingTop: "100px" }}>
-            <Navbar />
-            <header className="pengumuman-header">
+        <div className="pengumuman-container">
+            <div className="background-text">Pengumuman</div>
+            <header className="pengumuman-header" data-aos="fade-down">
                 <h1>Pengumuman</h1>
                 <p>Tempat untuk menambahkan pengumuman penting.</p>
             </header>
 
-            <section className="pengumuman-form">
+            <section className="pengumuman-form" data-aos="fade-right">
                 <h3>Tambah Pengumuman Baru</h3>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
@@ -89,41 +92,42 @@ const Pengumuman = () => {
                             required
                         />
                     </div>
-                    <button type="submit" className="btn btn-submit">Tambah Pengumuman</button>
+                    <button type="submit" className="btn btn-submit" data-aos="fade-right">
+                        Tambah Pengumuman  
+                    </button>
                 </form>
             </section>
 
             {showNotification && (
-                <div className="notification">
+                <div className="notification" data-aos="fade-left">
                     <span className="icon">✔</span>
                     <p>Selesai!</p>
                 </div>
             )}
 
-            <section className="pengumuman-list">
+            <section className="pengumuman-list" data-aos="fade-right">
                 <h3>Daftar Pengumuman</h3>
                 {pengumumanList.length === 0 ? (
                     <p className="empty-list">Belum ada pengumuman yang ditambahkan.</p>
                 ) : (
-                    <ul className="list-group">
+                    <div className="card-columns">
                         {pengumumanList.map((pengumuman) => (
-                            <li key={pengumuman.id} className="list-group-item">
-                                <div className="card">
-                                    <div className="card-body">
-                                        <h5 className="card-title">{pengumuman.judul}</h5>
-                                        <p className="card-text">{pengumuman.konten}</p>
-                                        <small className="text-muted">{pengumuman.tanggal}</small>
-                                        <button
-                                            className="btn btn-danger btn-sm mt-3"
-                                            onClick={() => handleDelete(pengumuman.id)}
-                                        >
-                                            <i className="bi bi-trash"></i> Hapus
-                                        </button>
-                                    </div>
+                            <div key={pengumuman.id} className="card" data-aos="zoom-in">
+                                <div className="card-body">
+                                    <h5 className="card-title">{pengumuman.judul}</h5>
+                                    <p className="card-text">{pengumuman.konten}</p>
+                                    <small className="text-muted">{pengumuman.tanggal}</small>
+                                    <button
+                                        className="btn btn-danger btn-sm mt-3"
+                                        onClick={() => handleDelete(pengumuman.id)}
+                                        data-aos="fade-right"
+                                    >
+                                        <i className="bi bi-trash"></i> Hapus
+                                    </button>
                                 </div>
-                            </li>
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 )}
             </section>
         </div>

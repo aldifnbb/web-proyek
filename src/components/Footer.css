@@ -1,0 +1,50 @@
+footer {
+  background-color: #000;
+}
+
+.email-link {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-flex; /* Untuk mendukung icon atau elemen tambahan */
+  align-items: center;
+}
+
+.email-link:hover {
+  color: #ff9800;
+  transform: scale(1.05);
+}
+
+.list-emails {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.list-emails li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.list-emails li::before {
+  content: "✉️";
+  margin-right: 10px;
+  font-size: 1.2em;
+  color: #ff9800;
+}
+
+.list-emails li:last-child {
+  margin-bottom: 0;
+}
+  
+.support-link {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.3s ease; 
+}
+  
+.support-link:hover {
+  color: #ff9800;
+  transform: scale(1.05); 
+} 

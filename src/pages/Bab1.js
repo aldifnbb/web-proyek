@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Form, Button, Card } from "react-bootstrap";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
-import Navbar from "../components/Navbar";
-import "./Bab.css";
 
 function App() {
   const [quizAnswers, setQuizAnswers] = useState({
@@ -44,7 +42,6 @@ function App() {
 
   return (
     <Container className="my-5">
-      <Navbar />
       <header className="text-center mb-5">
         <h1 className="display-4 text-primary">Bab 1: Masalah Ekonomi Dasar</h1>
         <p className="lead text-muted" style={{textAlign: "justify"}}>
