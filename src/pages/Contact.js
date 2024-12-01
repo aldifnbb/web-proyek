@@ -30,10 +30,9 @@ const Contact = () => {
         </div>
       </nav>
       <header className="contact-header">
-        <h1 className="contact-title">Get In Touch</h1>
+        <h1 className="contact-title">Contact Us</h1>
         <p className="contact-subtitle">
-          This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel
-          velit auctor aliquet.
+          Hubungi email di bawah untuk info lebih lanjut.
         </p>
       </header>
 
@@ -43,29 +42,25 @@ const Contact = () => {
           <form>
             <div className="form-group">
               <label htmlFor="name">Your Name</label>
-              <input type="text" id="name" placeholder="Dexter Morgan" required />
+              <input type="text" id="name" placeholder="" required />
             </div>
 
             <div className="form-group">
               <label htmlFor="email">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="dextermorgan@postoffice.com"
-                required
+              <input type="email" id="email" placeholder="" required
               />
             </div>
 
             <div className="form-group">
               <label htmlFor="phone">Phone</label>
-              <input type="text" id="phone" placeholder="(800) 900 - 900 - 100" />
+              <input type="text" id="phone" placeholder="  " />
             </div>
 
             <div className="form-group">
               <label htmlFor="message">Message</label>
               <textarea
                 id="message"
-                placeholder="Hi, do you have a moment to talk about..."
+                placeholder="Hi Ganteng....."
                 rows="5"
               ></textarea>
             </div>
@@ -78,9 +73,12 @@ const Contact = () => {
 
         <div className="contact-info">
           <h2>Contact Information</h2>
-          <p>360 King Street, Feasterville Trevose, PA 19053</p>
-          <p>(800) 900-200-300</p>
-          <p>info@example.com</p>
+          <p>Jl. Sisingamangaraja, Tapanuli Utara, Sumatera Utara</p>
+          <p>081265455903</p>
+          <p> aldinababan96@gmail.com</p>
+          <p> immanuellumbantoruan18@gmail.com</p>
+          <p> permaisimangunsong@gmail.com</p>
+          <p> depedrompane@gmail.com</p>
           <div className="social-icons">
             <a href="#" className="social-icon">LinkedIn</a>
             <a href="#" className="social-icon">Twitter</a>
