@@ -1,45 +1,92 @@
 import React from "react";
-import "./Contact.css"; 
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
-    <div className="contact-container">
-      <h1 className="contact-title">Get in Touch</h1>
-      <p className="contact-description">
-        We would love to hear from you! Feel free to reach out using the form below.
-      </p>
+    <div className="contact-page">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">EconoMinds</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+              <Link className="nav-link" to="/ekonomi-sejarah" data-aos="fade-down">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">About</a>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/contact" data-aos="fade-down">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <header className="contact-header">
+        <h1 className="contact-title">Get In Touch</h1>
+        <p className="contact-subtitle">
+          This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel
+          velit auctor aliquet.
+        </p>
+      </header>
 
-      <form className="contact-form">
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required />
+      <div className="contact-content">
+        <div className="message-form">
+          <h2 className="form-title">Send us a Message</h2>
+          <form>
+            <div className="form-group">
+              <label htmlFor="name">Your Name</label>
+              <input type="text" id="name" placeholder="Dexter Morgan" required />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="dextermorgan@postoffice.com"
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="phone">Phone</label>
+              <input type="text" id="phone" placeholder="(800) 900 - 900 - 100" />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                placeholder="Hi, do you have a moment to talk about..."
+                rows="5"
+              ></textarea>
+            </div>
+
+            <button type="submit" className="form-submit">
+              <span className="send-icon">➤</span>
+            </button>
+          </form>
         </div>
 
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required />
+        <div className="contact-info">
+          <h2>Contact Information</h2>
+          <p>360 King Street, Feasterville Trevose, PA 19053</p>
+          <p>(800) 900-200-300</p>
+          <p>info@example.com</p>
+          <div className="social-icons">
+            <a href="#" className="social-icon">LinkedIn</a>
+            <a href="#" className="social-icon">Twitter</a>
+            <a href="#" className="social-icon">Facebook</a>
+          </div>
         </div>
-
-        <div className="form-group">
-          <label htmlFor="message">Message</label>
-          <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-        </div>
-
-        <button type="submit" className="submit-button">Send Message</button>
-      </form>
-
-      <div className="contact-info">
-        <h2>Our Contact Information</h2>
-        <p>Email: support@example.com</p>
-        <p>Phone: +1 234 567 890</p>
-        <p>Address: 123 Example Street, City, Country</p>
-      </div>
-
-      <div className="social-links">
-        <h3>Follow Us</h3>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </div>
   );
