@@ -13,7 +13,7 @@ const Contact = () => {
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your Name" required />
-        </div>  
+        </div>
 
         <div className="form-group">
           <label htmlFor="email">Email</label>

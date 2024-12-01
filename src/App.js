@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import EkonomiSejarah from './pages/Sejarah';
+import Contact from './pages/Contact';
 import EkonomiKonsep from './pages/Konsep';
 import Materi from './pages/Materi';
 import Bab1 from "./pages/Bab1";
@@ -45,6 +46,7 @@ function App() {
                     <Route path="/register" element={<Register />} />
 
                     <Route path="/ekonomi-sejarah" element={<PrivateRoute><EkonomiSejarah /></PrivateRoute>} />
+                    <Route path="/contact" element={<Contact/>}/>
                     <Route path="/ekonomi-konsep" element={<PrivateRoute><EkonomiKonsep /></PrivateRoute>} />
                     <Route path="/ekonomi-perkembangan" element={<PrivateRoute><EkonomiPerkembangan /></PrivateRoute>} />
                     <Route path="/materi" element={<PrivateRoute><Materi /></PrivateRoute>} />
