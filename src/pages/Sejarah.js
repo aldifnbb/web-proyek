@@ -1,48 +1,101 @@
-import React from "react";
-import "./Contact.css"; 
+import React, { useEffect } from "react";
+import Footer from "../components/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
-const Contact = () => {
+const EkonomiSejarah = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+  }, []);
+
   return (
-    <div className="contact-container">
-      <h1 className="contact-title">Get in Touch</h1>
-      <p className="contact-description">
-        We would love to hear from you! Feel free to reach out using the form below.
-      </p>
-
-      <form className="contact-form">
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required />
-        </div>  
-
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required />
+    <div className="page-wrapper d-flex flex-column min-vh-100">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">EconoMinds</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">About</a>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/contact" data-aos="fade-down">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
 
-        <div className="form-group">
-          <label htmlFor="message">Message</label>
-          <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+      <div className="content-wrapper flex-grow-1">
+        <div className="container-lg page-content">
+          <h1 data-aos="fade-right" className="text-center mb-4">
+            Sejarah Ekonomi
+          </h1>
+          
+          <p data-aos="fade-up" className="text-justify mt-4">
+            Ekonomi adalah studi tentang bagaimana manusia mengelola sumber daya 
+            yang terbatas untuk memenuhi kebutuhan yang tidak terbatas. Dalam sejarah, 
+            sistem ekonomi telah berkembang dari sistem barter di zaman kuno hingga 
+            era ekonomi digital saat ini. Pengetahuan tentang sejarah ekonomi membantu 
+            kita memahami perubahan sosial, politik, dan budaya yang terkait dengan 
+            pengelolaan sumber daya.
+          </p>
+
+          <h2 data-aos="fade-right" className="mt-5">Perkembangan Sistem Ekonomi</h2>
+          <p data-aos="fade-up" className="text-justify mt-3">
+            Pada awalnya, sistem ekonomi didasarkan pada barter, yang mana barang atau jasa 
+            dipertukarkan langsung tanpa adanya uang sebagai alat tukar. Namun, seiring dengan 
+            perkembangan masyarakat dan perdagangan, sistem uang mulai diperkenalkan. 
+            Perkembangan ini mengubah cara manusia bertransaksi dan berinteraksi dalam ekonomi.
+          </p>
+
+          <h3 data-aos="fade-left" className="mt-5">Sistem Ekonomi Tradisional</h3>
+          <p data-aos="fade-up" className="text-justify mt-3">
+            Sistem ekonomi tradisional banyak diterapkan pada masyarakat yang bergantung pada 
+            hasil alam dan pertanian. Di sini, kegiatan ekonomi berfokus pada kebutuhan dasar 
+            seperti pangan, pakaian, dan tempat tinggal. Hubungan ekonomi dalam sistem ini lebih 
+            bersifat keluarga atau komunitas kecil.
+          </p>
+
+          <h3 data-aos="fade-left" className="mt-5">Sistem Ekonomi Modern</h3>
+          <p data-aos="fade-up" className="text-justify mt-3">
+            Dengan kemajuan teknologi, sistem ekonomi modern muncul dengan memperkenalkan pasar 
+            global yang menghubungkan berbagai negara di seluruh dunia. Perdagangan internasional 
+            berkembang pesat, dan munculnya pasar saham serta perkembangan industri telah mengubah 
+            struktur ekonomi dunia.
+          </p>
+
+          <h3 data-aos="fade-up" className="mt-5">Era Digital dalam Ekonomi</h3>
+          <p data-aos="fade-up" className="text-justify mt-3">
+            Era digital telah membawa perubahan besar dalam cara ekonomi bekerja. Kemajuan teknologi 
+            informasi memungkinkan munculnya e-commerce, industri berbasis data, dan perkembangan 
+            mata uang digital seperti Bitcoin. Semua ini memperkenalkan paradigma baru dalam cara 
+            kita bertransaksi dan mengelola sumber daya ekonomi.
+          </p>
+
+          <h3 data-aos="fade-right" className="mt-5">Ekonomi Berkelanjutan</h3>
+          <p data-aos="fade-up" className="text-justify mt-3">
+            Dalam beberapa dekade terakhir, topik ekonomi berkelanjutan semakin mendapat perhatian. 
+            Ekonomi berkelanjutan bertujuan untuk memenuhi kebutuhan ekonomi saat ini tanpa mengorbankan 
+            kemampuan generasi masa depan untuk memenuhi kebutuhan mereka sendiri. Konsep ini menekankan 
+            pentingnya keberlanjutan sosial, ekonomi, dan lingkungan.
+          </p>
         </div>
-
-        <button type="submit" className="submit-button">Send Message</button>
-      </form>
-
-      <div className="contact-info">
-        <h2>Our Contact Information</h2>
-        <p>Email: support@example.com</p>
-        <p>Phone: +1 234 567 890</p>
-        <p>Address: 123 Example Street, City, Country</p>
       </div>
 
-      <div className="social-links">
-        <h3>Follow Us</h3>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </div>
+      <Footer />
     </div>
   );
 };
 
-export default Contact;
+export default EkonomiSejarah;

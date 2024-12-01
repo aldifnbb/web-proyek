@@ -24,7 +24,7 @@ function PrivateRoute({ children }) {
     const { user, isLoading } = useAuth();
 
     if (isLoading) {
-        return <div>Loading...</div>;  // Menunggu hingga state user terdeteksi
+        return <div>Loading...</div>; 
     }
 
     if (!user) {
