@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container,Form, Button, Card } from "react-bootstrap";
+import { Container, Form, Button, Card } from "react-bootstrap";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 
 function App() {
@@ -15,6 +15,10 @@ function App() {
     quiz2: "",
     quiz3: "",
   });
+
+  // Tambahkan useRef untuk canvas
+  const demandCanvasRef = useRef(null);
+  const supplyCanvasRef = useRef(null);
 
   const handleQuizChange = (e) => {
     const { name, value } = e.target;
@@ -35,14 +39,72 @@ function App() {
     });
   };
 
+  useEffect(() => {
+    // Render demand curve
+    const demandCanvas = demandCanvasRef.current;
+    const demandCtx = demandCanvas.getContext("2d");
+    if (demandCtx) {
+      demandCtx.clearRect(0, 0, demandCanvas.width, demandCanvas.height);
+
+      // Draw demand curve
+      demandCtx.beginPath();
+      demandCtx.moveTo(50, 50); // Start at top-left
+      demandCtx.lineTo(250, 250); // End at bottom-right
+      demandCtx.strokeStyle = "blue";
+      demandCtx.lineWidth = 2;
+      demandCtx.stroke();
+      demandCtx.closePath();
+      demandCtx.fillStyle = "blue";
+      demandCtx.fillText("Demand", 120, 130);
+
+      // Add labels for axes
+      demandCtx.fillStyle = "#333";
+      demandCtx.font = "14px Arial";
+      demandCtx.fillText("Price", 20, 30);
+      demandCtx.fillText("Quantity", 270, 270);
+    }
+
+    // Render supply curve
+    const supplyCanvas = supplyCanvasRef.current;
+    const supplyCtx = supplyCanvas.getContext("2d");
+    if (supplyCtx) {
+      supplyCtx.clearRect(0, 0, supplyCanvas.width, supplyCanvas.height);
+
+      // Draw supply curve
+      supplyCtx.beginPath();
+      supplyCtx.moveTo(50, 250); // Start at bottom-left
+      supplyCtx.lineTo(250, 50); // End at top-right
+      supplyCtx.strokeStyle = "red";
+      supplyCtx.lineWidth = 2;
+      supplyCtx.stroke();
+      supplyCtx.closePath();
+      supplyCtx.fillStyle = "red";
+      supplyCtx.fillText("Supply", 120, 130);
+
+      // Add labels for axes
+      supplyCtx.fillStyle = "#333";
+      supplyCtx.font = "14px Arial";
+      supplyCtx.fillText("Price", 20, 30);
+      supplyCtx.fillText("Quantity", 270, 270);
+    }
+  }, []);
+
   return (
     <Container className="my-5">
       <header className="text-center mb-5">
         <h1 className="display-4 text-primary">Bab 4: Permintaan dan Penawaran</h1>
-        <p className="lead text-muted" style={{textAlign: "justify"}}>
+        <p className="lead text-muted" style={{ textAlign: "justify" }}>
           Permintaan dan penawaran adalah konsep dasar dalam ekonomi yang menjelaskan bagaimana harga barang atau jasa ditentukan di pasar. Interaksi antara keduanya menciptakan keseimbangan pasar, di mana jumlah barang yang diminta sama dengan jumlah barang yang ditawarkan pada harga tertentu.
         </p>
       </header>
+
+      <section className="mb-5">
+        <h2>Grafik Permintaan dan Penawaran</h2>
+        <div className="d-flex justify-content-center">
+          <canvas ref={demandCanvasRef} width={300} height={300} className="border border-primary me-4"></canvas>
+          <canvas ref={supplyCanvasRef} width={300} height={300} className="border border-danger"></canvas>
+        </div>
+      </section>
 
       <section className="mb-5">
         <h2>Permintaan (Demand)</h2>
@@ -70,7 +132,7 @@ function App() {
             <li><strong>Kebijakan Pemerintah:</strong> Pajak yang tinggi mengurangi penawaran, sementara subsidi dapat meningkatkan penawaran.</li>
             <li><strong>Ekspektasi Produsen:</strong> Produsen mungkin menahan barang jika mereka memperkirakan harga akan naik.</li>
             <li><strong>Jumlah Produsen:</strong> Semakin banyak produsen, semakin banyak barang yang ditawarkan.</li>
-          </ul>
+            </ul>
         </p>
       </section>
 
@@ -97,9 +159,10 @@ function App() {
           </ul>
         </p>
       </section>
-
       <section className="mt-5">
-        <h2 className="mb-4 text-center"><strong>Mini Kuis</strong></h2>
+        <h2 className="mb-4 text-center">
+          <strong>Mini Kuis</strong>
+        </h2>
         <Card className="p-4 mb-3 shadow-lg rounded-lg border-0 bg-light">
           <Form>
             <Form.Group className="mb-3">
@@ -177,12 +240,13 @@ function App() {
           </Form>
         </Card>
       </section>
-      <button 
-                onClick={() => window.history.back()} 
-                className="btn btn-secondary mt-4 mx-auto d-block"
-            >
-                Kembali 
-            </button>
+
+      <button
+        onClick={() => window.history.back()}
+        className="btn btn-secondary mt-4 mx-auto d-block"
+      >
+        Kembali
+      </button>
     </Container>
   );
 }

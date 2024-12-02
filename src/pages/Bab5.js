@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Form, Button, Card } from "react-bootstrap";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
@@ -17,6 +17,8 @@ function App() {
     quiz3: "",
     quiz4: "",
   });
+
+  const cycleCanvasRef = useRef(null);
 
   const handleQuizChange = (e) => {
     const { name, value } = e.target;
@@ -39,14 +41,63 @@ function App() {
     });
   };
 
+  useEffect(() => {
+    const canvas = cycleCanvasRef.current;
+    const ctx = canvas.getContext("2d");
+
+    if (ctx) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Setting basic styles
+      ctx.strokeStyle = "blue";
+      ctx.lineWidth = 2;
+      ctx.font = "14px Arial";
+
+      // Draw axes
+      ctx.beginPath();
+      ctx.moveTo(50, 250); // Y-axis
+      ctx.lineTo(50, 50);
+      ctx.moveTo(50, 250); // X-axis
+      ctx.lineTo(450, 250);
+      ctx.stroke();
+      ctx.closePath();
+
+      // Label axes
+      ctx.fillStyle = "#000";
+      ctx.fillText("Waktu", 420, 270);
+      ctx.fillText("Kinerja Ekonomi", 10, 60);
+
+      // Draw economic cycle curve
+      ctx.beginPath();
+      ctx.moveTo(50, 250); // Start point (initial trough)
+      ctx.bezierCurveTo(150, 100, 200, 100, 250, 250); // Expansion to peak
+      ctx.bezierCurveTo(300, 400, 350, 400, 400, 250); // Recession to trough
+      ctx.strokeStyle = "green";
+      ctx.stroke();
+      ctx.closePath();
+
+      // Add labels for phases
+      ctx.fillStyle = "green";
+      ctx.fillText("Ekspansi", 120, 150);
+      ctx.fillText("Puncak", 220, 80);
+      ctx.fillText("Resesi", 320, 150);
+      ctx.fillText("Lembah", 420, 260);
+    }
+  }, []);
+
   return (
     <Container className="my-5">
       <header className="text-center mb-5">
         <h1 className="display-4 text-primary">Bab 5: Siklus Ekonomi</h1>
-        <p className="lead text-muted" style={{textAlign: "justify"}}>
+        <p className="lead text-muted" style={{ textAlign: "justify" }}>
         Siklus ekonomi adalah pola perubahan aktivitas ekonomi suatu negara yang terjadi secara berulang dalam periode tertentu. Siklus ini mencerminkan fluktuasi dalam tingkat pertumbuhan ekonomi yang dapat memengaruhi produksi, pendapatan, investasi, konsumsi, dan lapangan kerja. Siklus ekonomi terdiri dari empat tahap utama: ekspansi, puncak, kontraksi, dan resesi atau depresi.
         </p>
       </header>
+
+      <section className="text-center mb-5">
+        <h2>Siklus Ekonomi dalam Grafik</h2>
+        <canvas ref={cycleCanvasRef} width="500" height="300" style={{ border: "1px solid #ccc" }}></canvas>
+      </section>
 
       <section className="mb-5">
         <h2>Tahapan Siklus Ekonomi</h2>
@@ -86,7 +137,7 @@ Kepercayaan konsumen dan investor pulih, menandai dimulainya siklus ekspansi bar
 Kebijakan Pemerintah: Kebijakan fiskal (pengeluaran dan pajak) dan moneter (suku bunga dan uang beredar) dapat memengaruhi aktivitas ekonomi.
 Inovasi Teknologi: Penemuan baru dapat mendorong ekspansi, tetapi adaptasi yang lambat dapat memicu kontraksi.
 </li>
-          <li><strong>Eksternal:</strong> Perubahan harga komoditas, krisis keuangan global, bencana alam, dan pandemi.</li>
+<li><strong>Eksternal:</strong> Perubahan harga komoditas, krisis keuangan global, bencana alam, dan pandemi.</li>
         </ul>
       </section>
 
@@ -107,8 +158,7 @@ Bencana Alam atau Pandemi: Situasi seperti pandemi COVID-19 dapat memperlambat e
           <li><strong>Ekspansi:</strong> Pemerintah dapat menerapkan kebijakan moneter ketat untuk mencegah inflasi berlebih.</li>
           <li><strong>Kontraksi:</strong> Pemerintah dapat memberikan stimulus fiskal untuk mendorong pertumbuhan.</li>
         </ul>
-      </section>
-
+      </section>
       <section className="mt-5">
         <h2 className="mb-4 text-center"><strong>Mini Kuis</strong></h2>
         <Card className="p-4 mb-3 shadow-lg rounded-lg border-0 bg-light">
@@ -187,12 +237,10 @@ Bencana Alam atau Pandemi: Situasi seperti pandemi COVID-19 dapat memperlambat e
           </Form>
         </Card>
       </section>
-      <button 
-                onClick={() => window.history.back()} 
-                className="btn btn-secondary mt-4 mx-auto d-block"
-            >
-                Kembali 
-            </button>
+
+      <button onClick={() => window.history.back()} className="btn btn-secondary mt-4 mx-auto d-block">
+        Kembali
+      </button>
     </Container>
   );
 }
