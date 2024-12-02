@@ -9,12 +9,30 @@ const EkonomiSejarah = () => {
   }, []);
 
   return (
+    
     <div className="page-wrapper d-flex flex-column min-vh-100">
       <div className="content-wrapper flex-grow-1">
         <div className="container-lg page-content">
-          <h1 data-aos="fade-right" className="text-center mb-4">
+          <h1 data-aos="fade-right" className="text-center mb-4 text-primary">
             Sejarah Ekonomi
           </h1>
+          <section className="mb-5">
+          <img
+            src="https://th.bing.com/th/id/OIP.QfIstEp_5rod8mvbbFHDKAHaEO?w=319&h=181&c=7&r=0&o=5&dpr=2&pid=1.7"
+            alt="Gambaran ekonomi dari masa ke masa"
+            className="img-fluid rounded shadow-lg mb-4"
+            data-aos="zoom-in"
+          />
+          <p data-aos="fade-up" className="text-justify">
+            Ekonomi, sebagai studi tentang pengelolaan sumber daya untuk
+            memenuhi kebutuhan manusia, telah mengalami transformasi besar
+            sepanjang sejarah. Dari zaman kuno, ketika manusia mengandalkan
+            barter untuk bertukar barang, hingga era digital saat ini dengan
+            sistem perdagangan elektronik dan mata uang virtual, perjalanan
+            sejarah ekonomi mencerminkan adaptasi manusia terhadap perubahan
+            kebutuhan dan teknologi.
+          </p>
+        </section>
           
           <p data-aos="fade-up" className="text-justify mt-4">
             Ekonomi adalah studi tentang bagaimana manusia mengelola sumber daya 

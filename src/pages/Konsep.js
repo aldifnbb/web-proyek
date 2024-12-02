@@ -1,101 +1,54 @@
 import React from "react";
 
 const EkonomiKonsep = () => {
-    return (
-        <div className="container mt-5">
-            <h1 data-aos="fade-right" className="text-center">
-                Konsep Dasar Ekonomi
-            </h1>
-            <p data-aos="fade-up" className="mt-3 text-muted text-center">
-                Mengenal konsep-konsep dasar dalam ilmu ekonomi yang menjadi landasan untuk memahami dinamika ekonomi di masyarakat.
-            </p>
+  return (
+    <div className="container mt-5">
+      <h1 data-aos="fade-right" className="text-center mb-4 text-primary">
+        Konsep Dasar Ekonomi
+      </h1>
+      <p data-aos="fade-up" className="lead text-muted text-center mb-5">
+        Ekonomi adalah ilmu yang mempelajari bagaimana individu, perusahaan, dan pemerintah membuat pilihan untuk memenuhi kebutuhan dan keinginan mereka dengan menggunakan sumber daya yang terbatas. 
+        Konsep dasar ekonomi mencakup kelangkaan, pilihan, biaya peluang, serta interaksi antara permintaan dan penawaran di pasar.
+      </p>
 
-            <div className="row mt-5">
-                <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <h3>1. Kebutuhan dan Keinginan</h3>
-                    <p>
-                        Dalam ilmu ekonomi, kebutuhan adalah sesuatu yang harus dipenuhi untuk mempertahankan hidup, seperti makanan, 
-                        pakaian, dan tempat tinggal. Sementara itu, keinginan mencakup hal-hal yang tidak esensial tetapi memberikan 
-                        kenyamanan atau kemewahan, seperti liburan atau gadget terbaru.
-                    </p>
-                </div>
+      {/* Kelangkaan */}
+      <div data-aos="fade-right" className="mt-5">
+        <h3>Kelangkaan (Scarcity)</h3>
+        <p>
+          Kelangkaan adalah konsep utama dalam ekonomi yang menjelaskan bahwa sumber daya yang terbatas tidak dapat memenuhi kebutuhan manusia yang tidak terbatas. 
+          Oleh karena itu, ekonomi berfokus pada bagaimana mengelola dan mengalokasikan sumber daya tersebut agar dapat memenuhi kebutuhan yang paling mendesak.
+        </p>
+      </div>
 
-                <div className="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <h3>2. Kelangkaan Sumber Daya</h3>
-                    <p>
-                        Kelangkaan terjadi karena keterbatasan sumber daya, seperti bahan baku, tenaga kerja, atau waktu, 
-                        sementara kebutuhan manusia terus bertambah. Konsep ini mendorong manusia untuk mengambil keputusan yang bijak 
-                        dalam alokasi sumber daya.
-                    </p>
-                </div>
-            </div>
+      {/* Pilihan */}
+      <div data-aos="fade-right" className="mt-5">
+        <h3>Pilihan (Choices)</h3>
+        <p>
+          Karena kelangkaan, setiap individu atau masyarakat harus membuat pilihan. Pilihan ini melibatkan keputusan tentang bagaimana menggunakan sumber daya terbatas untuk memenuhi kebutuhan yang ada.
+          Pilihan yang dibuat akan menentukan alokasi sumber daya dan mempengaruhi kesejahteraan ekonomi.
+        </p>
+      </div>
 
-            <div className="row mt-4">
-                <div className="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <h3>3. Pilihan dan Biaya Kesempatan</h3>
-                    <p>
-                        Ketika kita memilih satu opsi, kita mengorbankan opsi lain yang mungkin lebih berharga. 
-                        Biaya kesempatan adalah nilai dari alternatif terbaik yang tidak dipilih. Pemahaman ini penting dalam membuat 
-                        keputusan pribadi maupun kebijakan ekonomi.
-                    </p>
-                </div>
+      {/* Biaya Peluang */}
+      <div data-aos="fade-right" className="mt-5">
+        <h3>Biaya Peluang (Opportunity Cost)</h3>
+        <p>
+          Biaya peluang adalah nilai dari pilihan terbaik yang harus dikorbankan ketika membuat keputusan ekonomi. Ini adalah konsekuensi dari memilih satu opsi di atas yang lain, 
+          dan membantu individu atau organisasi untuk memahami trade-off yang terlibat dalam setiap keputusan.
+        </p>
+      </div>
 
-                <div className="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <h3>4. Mekanisme Permintaan dan Penawaran</h3>
-                    <p>
-                        Permintaan mengacu pada keinginan konsumen untuk membeli barang atau jasa pada harga tertentu. 
-                        Penawaran adalah kemampuan produsen untuk menyediakan barang atau jasa tersebut. Keseimbangan antara permintaan 
-                        dan penawaran menentukan harga pasar dan alokasi sumber daya.
-                    </p>
-                </div>
-            </div>
-
-            <div className="row mt-4">
-                <div className="col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <h3>5. Jenis Pasar</h3>
-                    <p>
-                        Pasar dapat dibagi menjadi beberapa jenis berdasarkan strukturnya, seperti pasar persaingan sempurna, 
-                        monopoli, oligopoli, dan monopsoni. Masing-masing jenis pasar memiliki karakteristik unik yang memengaruhi 
-                        perilaku produsen dan konsumen.
-                    </p>
-                </div>
-
-                <div className="col-md-6" data-aos="fade-up" data-aos-delay="700">
-                    <h3>6. Faktor Produksi</h3>
-                    <p>
-                        Faktor produksi meliputi tanah, tenaga kerja, modal, dan kewirausahaan yang digunakan untuk menciptakan barang 
-                        dan jasa. Setiap faktor ini memiliki peran penting dalam memastikan keberlangsungan produksi dan pertumbuhan ekonomi.
-                    </p>
-                </div>
-            </div>
-
-            <div className="row mt-4">
-                <div className="col-md-6" data-aos="fade-up" data-aos-delay="800">
-                    <h3>7. Distribusi dan Konsumsi</h3>
-                    <p>
-                        Distribusi adalah proses menyampaikan barang atau jasa dari produsen ke konsumen, sementara konsumsi adalah 
-                        penggunaan barang atau jasa untuk memenuhi kebutuhan atau keinginan. Efisiensi dalam distribusi memastikan aksesibilitas 
-                        bagi masyarakat luas.
-                    </p>
-                </div>
-
-                <div className="col-md-6" data-aos="fade-up" data-aos-delay="900">
-                    <h3>8. Peran Pemerintah dalam Ekonomi</h3>
-                    <p>
-                        Pemerintah memiliki peran penting dalam mengatur pasar, menyediakan barang publik, serta menjaga stabilitas ekonomi 
-                        melalui kebijakan fiskal dan moneter. Intervensi pemerintah dapat membantu mengatasi ketimpangan dan kegagalan pasar.
-                    </p>
-                </div>
-            </div>
-
-            <div className="mt-5 text-center" data-aos="fade-up" data-aos-delay="1000">
-                <p className="text-muted">
-                    Memahami konsep-konsep dasar ekonomi adalah langkah awal untuk memahami fenomena ekonomi yang lebih kompleks dan 
-                    mengambil keputusan ekonomi yang lebih baik.
-                </p>
-            </div>
-        </div>
-    );
+      {/* Permintaan dan Penawaran */}
+      <div data-aos="fade-right" className="mt-5">
+        <h3>Permintaan dan Penawaran (Supply and Demand)</h3>
+        <p>
+          Permintaan dan penawaran adalah dua konsep yang saling berkaitan yang menentukan harga dan jumlah barang di pasar. 
+          Permintaan mencerminkan keinginan konsumen untuk membeli barang pada harga tertentu, sedangkan penawaran mencerminkan keinginan produsen untuk menjual barang pada harga tertentu. 
+          Interaksi keduanya menciptakan keseimbangan pasar.
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default EkonomiKonsep;
