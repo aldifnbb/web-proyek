@@ -3,7 +3,7 @@ import React from "react";
 const EkonomiPerkembangan = () => {
     return (
         <div className="container mt-5">
-            <h1 data-aos="fade-right" className="text-center">
+            <h1 data-aos="fade-right" className="text-center mb-4 text-primary">
                 Perjalanan dan Dinamika Perkembangan Ekonomi
             </h1>
             <p data-aos="fade-up" className="mt-3 text-muted text-center">
