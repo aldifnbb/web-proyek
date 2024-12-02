@@ -126,7 +126,7 @@ const Navbar = () => {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/contact" data-aos="fade-down">
-                                Contact U
+                                Contact Us
                             </Link>
                         </li>
                         <li className="nav-item d-flex align-items-center">
