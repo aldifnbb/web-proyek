@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
 const EkonomiSejarah = () => {
   useEffect(() => {
@@ -10,10 +11,32 @@ const EkonomiSejarah = () => {
   }, []);
 
   return (
-    <div className="content-wrapper flex-grow-1">
-      <div className="container-lg page-content">
-        <header className="text-center my-5">
-          <h1 data-aos="fade-right" className="text-primary fw-bold">
+    <div className="page-wrapper d-flex flex-column min-vh-100">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">EconoMinds</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">About</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div className="content-wrapper flex-grow-1">
+        <div className="container-lg page-content">
+          <h1 data-aos="fade-right" className="text-center mb-4">
             Sejarah Ekonomi
           </h1>
           <p data-aos="fade-up" className="lead text-muted mt-4">
