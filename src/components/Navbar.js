@@ -120,13 +120,13 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/pengumuman" data-aos="fade-down">
-                                Pengumuman
+                            <Link className="nav-link" to="/inspiratif" data-aos="fade-down">
+                            Inspiratif
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/inspiratif" data-aos="fade-down">
-                                Inspiratif
+                            <Link className="nav-link" to="/contact" data-aos="fade-down">
+                                Contact U
                             </Link>
                         </li>
                         <li className="nav-item d-flex align-items-center">
