@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
-import Footer from "../components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
 
 const EkonomiSejarah = () => {
   useEffect(() => {
@@ -68,8 +66,6 @@ const EkonomiSejarah = () => {
           </p>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };
