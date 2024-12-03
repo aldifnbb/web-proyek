@@ -99,27 +99,6 @@ function Quiz() {
             explanation:
               "Hukum permintaan menyatakan bahwa ketika harga suatu barang naik, jumlah barang yang diminta oleh konsumen akan menurun, dengan asumsi faktor lain tetap.",
           },
-          {
-            question: "Apa yang terjadi ketika harga pasar berada di bawah harga keseimbangan?",
-            options: ["Kelebihan penawaran", "Kekurangan permintaan", "Kelebihan permintaan", "Ekuilibrium"],
-            answer: "Kelebihan permintaan",
-            explanation:
-              "Ketika harga pasar di bawah harga keseimbangan, jumlah barang yang diminta lebih besar daripada jumlah barang yang ditawarkan, menciptakan kelebihan permintaan atau kelangkaan.",
-          },
-          {
-            question: "Elastisitas harga permintaan mengukur:",
-            options: ["Respons jumlah barang yang diminta terhadap perubahan harga", "Pendapatan nasional", "Jumlah barang yang diproduksi", "Penawaran barang"],
-            answer: "Respons jumlah barang yang diminta terhadap perubahan harga",
-            explanation:
-              "Elastisitas harga permintaan mengukur seberapa besar perubahan jumlah barang yang diminta akibat perubahan harga barang tersebut.",
-          },
-          {
-            question: "Jika permintaan elastis, maka kenaikan harga barang akan:",
-            options: ["Meningkatkan total penerimaan", "Mengurangi total penerimaan", "Tidak mempengaruhi total penerimaan", "Meningkatkan jumlah barang diminta"],
-            answer: "Mengurangi total penerimaan",
-            explanation:
-              "Jika permintaan elastis, kenaikan harga akan menyebabkan penurunan yang lebih besar pada jumlah barang yang diminta, sehingga total penerimaan penjual menurun.",
-          },
 
     ];
 
@@ -148,7 +127,7 @@ function Quiz() {
                 setCurrentQuestionIndex(nextQuestionIndex);
                 setSelectedOption('');
                 setFeedback('');
-            }, 2500); 
+            }, 3000); 
         } else {
             setTimeout(() => setQuizFinished(true), 3000);
         }
