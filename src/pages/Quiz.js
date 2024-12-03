@@ -99,6 +99,27 @@ function Quiz() {
             explanation:
               "Hukum permintaan menyatakan bahwa ketika harga suatu barang naik, jumlah barang yang diminta oleh konsumen akan menurun, dengan asumsi faktor lain tetap.",
           },
+          {
+            question: "Apa yang terjadi ketika harga pasar berada di bawah harga keseimbangan?",
+            options: ["Kelebihan penawaran", "Kekurangan permintaan", "Kelebihan permintaan", "Ekuilibrium"],
+            answer: "Kelebihan permintaan",
+            explanation:
+              "Ketika harga pasar di bawah harga keseimbangan, jumlah barang yang diminta lebih besar daripada jumlah barang yang ditawarkan, menciptakan kelebihan permintaan atau kelangkaan.",
+          },
+          {
+            question: "Elastisitas harga permintaan mengukur:",
+            options: ["Respons jumlah barang yang diminta terhadap perubahan harga", "Pendapatan nasional", "Jumlah barang yang diproduksi", "Penawaran barang"],
+            answer: "Respons jumlah barang yang diminta terhadap perubahan harga",
+            explanation:
+              "Elastisitas harga permintaan mengukur seberapa besar perubahan jumlah barang yang diminta akibat perubahan harga barang tersebut.",
+          },
+          {
+            question: "Jika permintaan elastis, maka kenaikan harga barang akan:",
+            options: ["Meningkatkan total penerimaan", "Mengurangi total penerimaan", "Tidak mempengaruhi total penerimaan", "Meningkatkan jumlah barang diminta"],
+            answer: "Mengurangi total penerimaan",
+            explanation:
+              "Jika permintaan elastis, kenaikan harga akan menyebabkan penurunan yang lebih besar pada jumlah barang yang diminta, sehingga total penerimaan penjual menurun.",
+          },
 
     ];
 
@@ -107,7 +128,7 @@ function Quiz() {
     const [score, setScore] = useState(0);
     const [quizFinished, setQuizFinished] = useState(false);
     const [feedback, setFeedback] = useState('');
-    const [answeredQuestions, setAnsweredQuestions] = useState(new Set());
+    const [answeredQuestions, setAnsweredQuestions] = useState(new Set()); // Track answered questions
 
     const handleOptionChange = (e) => setSelectedOption(e.target.value);
 
@@ -117,10 +138,12 @@ function Quiz() {
         const currentQuestion = allQuestions[currentQuestionIndex];
         if (selectedOption === currentQuestion.answer) {
             setScore(score + 1);
-            setFeedback(`Benar! ${currentQuestion.explanation}`);
+            setFeedback(Benar! ${currentQuestion.explanation});
         } else {
-            setFeedback(`Salah! Jawaban yang benar adalah ${currentQuestion.answer}. ${currentQuestion.explanation}`);
+            setFeedback(Salah! Jawaban yang benar adalah ${currentQuestion.answer}. ${currentQuestion.explanation});
         }
+
+        setAnsweredQuestions(prev => new Set(prev.add(currentQuestionIndex)));
 
         const nextQuestionIndex = currentQuestionIndex + 1;
         if (nextQuestionIndex < allQuestions.length) {
@@ -128,7 +151,7 @@ function Quiz() {
                 setCurrentQuestionIndex(nextQuestionIndex);
                 setSelectedOption('');
                 setFeedback('');
-            }, 2500); 
+            }, 2500);
         } else {
             setTimeout(() => setQuizFinished(true), 3000);
         }
@@ -143,8 +166,6 @@ function Quiz() {
         setAnsweredQuestions(new Set());
     };
 
-    const isAllAnswered = answeredQuestions.size === allQuestions.length;
-
     return (
         <div className="quiz-container">
             <div className="quiz-sidebar">
@@ -153,7 +174,7 @@ function Quiz() {
                     {allQuestions.map((question, index) => (
                         <button
                             key={index}
-                            className={`question-card ${currentQuestionIndex === index ? 'active' : ''} ${answeredQuestions.has(index) ? 'answered' : ''}`}
+                            className={question-card ${currentQuestionIndex === index ? 'active' : ''} ${answeredQuestions.has(index) ? 'answered' : ''}}
                             onClick={() => setCurrentQuestionIndex(index)}
                         >
                             {index + 1}
@@ -177,10 +198,10 @@ function Quiz() {
                         <form onSubmit={handleSubmit}>
                             <div className="options">
                                 {allQuestions[currentQuestionIndex].options.map((option, index) => (
-                                    <div key={index} className={`option ${selectedOption === option ? 'active' : ''}`}>
+                                    <div key={index} className={option ${selectedOption === option ? 'active' : ''}}>
                                         <input
                                             type="radio"
-                                            id={`option-${index}`}
+                                            id={option-${index}}
                                             name="quiz-option"
                                             value={option}
                                             checked={selectedOption === option}
@@ -188,18 +209,13 @@ function Quiz() {
                                             className="option-input"
                                             required
                                         />
-                                        <label htmlFor={`option-${index}`} className="option-label">{option}</label>
+                                        <label htmlFor={option-${index}} className="option-label">{option}</label>
                                     </div>
                                 ))}
                             </div>
                             <button type="submit" className="btn-nav">Kirim Jawaban</button>
                         </form>
                         {feedback && <div className="feedback">{feedback}</div>}
-                        {isAllAnswered && !quizFinished && (
-                            <button className="btn-finish" onClick={handleFinishQuiz}>
-                                Selesaikan Kuis
-                            </button>
-                        )}
                     </div>
                 )}
             </div>
