@@ -138,9 +138,9 @@ function Quiz() {
         const currentQuestion = allQuestions[currentQuestionIndex];
         if (selectedOption === currentQuestion.answer) {
             setScore(score + 1);
-            setFeedback(Benar! ${currentQuestion.explanation});
+            setFeedback(`Benar! ${currentQuestion.explanation}`);
         } else {
-            setFeedback(Salah! Jawaban yang benar adalah ${currentQuestion.answer}. ${currentQuestion.explanation});
+            setFeedback(`Salah! Jawaban yang benar adalah ${currentQuestion.answer}. ${currentQuestion.explanation}`);
         }
 
         setAnsweredQuestions(prev => new Set(prev.add(currentQuestionIndex)));
@@ -174,7 +174,7 @@ function Quiz() {
                     {allQuestions.map((question, index) => (
                         <button
                             key={index}
-                            className={question-card ${currentQuestionIndex === index ? 'active' : ''} ${answeredQuestions.has(index) ? 'answered' : ''}}
+                            className={`question-card ${currentQuestionIndex === index ? 'active' : ''} ${answeredQuestions.has(index) ? 'answered' : ''}`}
                             onClick={() => setCurrentQuestionIndex(index)}
                         >
                             {index + 1}
@@ -198,10 +198,10 @@ function Quiz() {
                         <form onSubmit={handleSubmit}>
                             <div className="options">
                                 {allQuestions[currentQuestionIndex].options.map((option, index) => (
-                                    <div key={index} className={option ${selectedOption === option ? 'active' : ''}}>
+                                    <div key={index} className={`option ${selectedOption === option ? 'active' : ''}`}>
                                         <input
                                             type="radio"
-                                            id={option-${index}}
+                                            id={`option-${index}`}
                                             name="quiz-option"
                                             value={option}
                                             checked={selectedOption === option}
@@ -209,7 +209,7 @@ function Quiz() {
                                             className="option-input"
                                             required
                                         />
-                                        <label htmlFor={option-${index}} className="option-label">{option}</label>
+                                        <label htmlFor={`option-${index}`} className="option-label">{option}</label>
                                     </div>
                                 ))}
                             </div>
