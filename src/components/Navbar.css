@@ -15,11 +15,11 @@
 }
 
 .navbar-brand:hover {
-    color: #ff9800 !important; /* Aksen oranye saat hover */
+    color: #ff9800 !important;
 }
 
 .nav-link {
-    color: #ffffff !important; /* Teks putih untuk menu */
+    color: #ffffff !important; 
     font-weight: 500;
     transition: color 0.3s ease, transform 0.2s ease;
 }
@@ -30,15 +30,15 @@
 }
 
 .nav-link.active {
-    color: #ff9800 !important; /* Warna aktif */
+    color: #ff9800 !important;
     font-weight: 600;
-    border-bottom: 2px solid #ff9800; /* Border bawah aktif */
+    border-bottom: 2px solid #ff9800;
 }
 
 .logout-btn,
 .sign-in-btn {
-    background-color: #ffffff !important; /* Tombol putih */
-    color: #212529 !important; /* Teks gelap untuk tombol */
+    background-color: #ffffff !important; 
+    color: #212529 !important;
     border: none;
     padding: 8px 15px;
     font-weight: bold;
@@ -49,7 +49,7 @@
 
 .logout-btn:hover,
 .sign-in-btn:hover {
-    background-color: #f1f1f1 !important; /* Tombol terang saat hover */
+    background-color: #f1f1f1 !important;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -62,7 +62,6 @@
     filter: invert(1);
 }
 
-/* User Info */
 .user-info {
     display: flex;
     align-items: center;
@@ -79,7 +78,7 @@
     align-items: center;
     width: 35px;
     height: 35px;
-    background-color: #ff9800 !important; /* Aksen oranye */
+    background-color: #ff9800 !important; 
     color: white !important;
     font-weight: bold;
     font-size: 1.2rem;

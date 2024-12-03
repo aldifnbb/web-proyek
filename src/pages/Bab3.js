@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container,Form, Button, Card} from "react-bootstrap";
+import { Container, Form, Button, Card } from "react-bootstrap";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa"; 
 
 function App() {
@@ -38,16 +38,16 @@ function App() {
   return (
     <Container className="my-5">
 
-      <header className="text-center mb-5">
-        <h1 className="display-4 text-primary">Bab 3: Perdagangan Internasional</h1>
-        <p className="lead text-muted" style={{textAlign: "justify"}}>
+      <header className="app__header text-center mb-5">
+        <h1 className="display-4">Bab 3: Perdagangan Internasional</h1>
+        <p className="app__header__description" style={{textAlign: "justify"}}>
           Perdagangan internasional adalah kegiatan pertukaran barang, jasa, atau faktor produksi antara negara-negara di dunia. Kegiatan ini muncul karena tidak ada satu negara pun yang dapat memenuhi semua kebutuhan ekonominya sendiri. Melalui perdagangan internasional, negara-negara dapat saling melengkapi kebutuhan mereka dengan memanfaatkan keunggulan masing-masing.
         </p>
       </header>
 
-      <section className="mb-5">
-        <h2>Alasan Terjadinya Perdagangan Internasional</h2>
-        <p>
+      <section className="content-section mb-5">
+        <h2 className="section-title">Alasan Terjadinya Perdagangan Internasional</h2>
+        <p className="section-content">
           Beberapa alasan utama terjadinya perdagangan internasional antara lain:
           <ul>
             <li><strong>Perbedaan Sumber Daya Alam:</strong> Negara-negara memiliki kekayaan alam yang berbeda.</li>
@@ -59,9 +59,9 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5">
-        <h2>Manfaat Perdagangan Internasional</h2>
-        <p>
+      <section className="content-section mb-5">
+        <h2 className="section-title">Manfaat Perdagangan Internasional</h2>
+        <p className="section-content">
           Perdagangan internasional membawa manfaat berikut:
           <ul>
             <li><strong>Memperluas Pasar:</strong> Produsen dapat menjual barang ke negara lain, meningkatkan pendapatan dan skala produksi.</li>
@@ -73,9 +73,9 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5">
-        <h2>Hambatan Perdagangan Internasional</h2>
-        <p>
+      <section className="content-section mb-5">
+        <h2 className="section-title">Hambatan Perdagangan Internasional</h2>
+        <p className="section-content">
           Beberapa hambatan dalam perdagangan internasional adalah:
           <ul>
             <li><strong>Proteksionisme:</strong> Kebijakan yang melindungi industri dalam negeri dengan cara seperti tarif, kuota, atau larangan impor.</li>
@@ -87,9 +87,9 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5">
-        <h2>Bentuk Perdagangan Internasional</h2>
-        <p>
+      <section className="content-section mb-5">
+        <h2 className="section-title">Bentuk Perdagangan Internasional</h2>
+        <p className="section-content">
           Perdagangan internasional dapat berupa:
           <ul>
             <li><strong>Ekspor dan Impor:</strong> Ekspor adalah penjualan barang ke luar negeri, sementara impor adalah pembelian barang dari luar negeri.</li>
@@ -101,9 +101,9 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5">
-        <h2>Kebijakan Perdagangan Internasional</h2>
-        <p>
+      <section className="content-section mb-5">
+        <h2 className="section-title">Kebijakan Perdagangan Internasional</h2>
+        <p className="section-content">
           Terdapat dua jenis kebijakan utama dalam perdagangan internasional:
           <ul>
             <li><strong>Kebijakan Proteksi:</strong> Melindungi industri dalam negeri melalui tarif, kuota, atau subsidi ekspor.</li>
@@ -113,9 +113,9 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5">
-        <h2>Dampak Perdagangan Internasional</h2>
-        <p>
+      <section className="content-section mb-5">
+        <h2 className="section-title">Dampak Perdagangan Internasional</h2>
+        <p className="section-content">
           Dampak positif dan negatif perdagangan internasional antara lain:
           <ul>
             <li><strong>Dampak Positif:</strong> Meningkatkan pendapatan nasional, membuka lapangan kerja baru, meningkatkan akses barang dan jasa, serta mempercepat transfer teknologi.</li>
@@ -124,19 +124,19 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5">
-        <h2>Contoh Perdagangan Internasional di Indonesia</h2>
-        <p>
+      <section className="content-section mb-5">
+        <h2 className="section-title">Contoh Perdagangan Internasional di Indonesia</h2>
+        <p className="section-content">
           Indonesia memiliki ekspor utama seperti minyak kelapa sawit, batu bara, karet, kopi, dan produk perikanan. Impor utama Indonesia mencakup bahan baku industri, barang modal, serta barang konsumsi seperti elektronik dan kendaraan.
         </p>
       </section>
 
-      <section className="mt-5">
-        <h2 className="mb-4 text-center"><strong>Mini Kuis</strong></h2>
-        <Card className="p-4 mb-3 shadow-lg rounded-lg border-0 bg-light">
+      <section className="quiz-section mt-5">
+        <h2 className="quiz-title mb-4 text-center"><strong>Mini Kuis</strong></h2>
+        <Card className="app__card p-4 mb-3 shadow-lg rounded-lg border-0 bg-light">
           <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>1. Apa yang menyebabkan perdagangan internasional terjadi?</Form.Label>
+            <Form.Group className="app__form-group mb-3">
+              <Form.Label className="app__form-label">1. Apa yang menyebabkan perdagangan internasional terjadi?</Form.Label>
               <Form.Check
                 type="radio"
                 label="Perbedaan Sumber Daya Alam"
@@ -146,83 +146,75 @@ function App() {
               />
               <Form.Check
                 type="radio"
-                label="Perbedaan Iklim"
+                label="Perbedaan Waktu"
                 name="quiz1"
-                value="perbedaan iklim"
+                value="perbedaan waktu"
                 onChange={handleQuizChange}
               />
               <Form.Check
                 type="radio"
-                label="Perbedaan Bahasa"
+                label="Perbedaan Teknologi"
                 name="quiz1"
-                value="perbedaan bahasa"
+                value="perbedaan teknologi"
                 onChange={handleQuizChange}
               />
-              {quizFeedback.quiz1 && (
-                <p className={quizFeedback.quiz1.includes("Benar") ? "text-success" : "text-danger"}>
-                  {quizFeedback.quiz1} {quizFeedback.quiz1.includes("Benar") ? <FaCheckCircle /> : <FaTimesCircle />}
-                </p>
-              )}
             </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>2. Apa yang dimaksud dengan ekspor dan impor?</Form.Label>
+            <Form.Group className="app__form-group mb-3">
+              <Form.Label className="app__form-label">2. Apa yang dimaksud dengan ekspor dan impor?</Form.Label>
               <Form.Check
                 type="radio"
-                label="Ekspor adalah penjualan barang ke luar negeri, Impor adalah pembelian barang dari luar negeri"
+                label="Ekspor adalah penjualan barang ke luar negeri, impor adalah pembelian barang dari luar negeri."
                 name="quiz2"
                 value="ekspor dan impor"
                 onChange={handleQuizChange}
               />
               <Form.Check
                 type="radio"
-                label="Ekspor adalah pembelian barang dari luar negeri, Impor adalah penjualan barang ke luar negeri"
+                label="Ekspor adalah pembelian barang dari luar negeri, impor adalah penjualan barang ke luar negeri."
                 name="quiz2"
-                value="ekspor dan impor salah"
+                value="impor dan ekspor"
                 onChange={handleQuizChange}
               />
-              {quizFeedback.quiz2 && (
-                <p className={quizFeedback.quiz2.includes("Benar") ? "text-success" : "text-danger"}>
-                  {quizFeedback.quiz2} {quizFeedback.quiz2.includes("Benar") ? <FaCheckCircle /> : <FaTimesCircle />}
-                </p>
-              )}
             </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>3. Apa yang dimaksud dengan kebijakan proteksionisme?</Form.Label>
+            <Form.Group className="app__form-group mb-3">
+              <Form.Label className="app__form-label">3. Apa yang dimaksud dengan proteksionisme?</Form.Label>
               <Form.Check
                 type="radio"
-                label="Melindungi industri dalam negeri dengan tarif dan kuota"
+                label="Kebijakan untuk melindungi industri dalam negeri"
                 name="quiz3"
                 value="proteksionisme"
                 onChange={handleQuizChange}
               />
               <Form.Check
                 type="radio"
-                label="Mendorong perdagangan bebas tanpa hambatan"
+                label="Kebijakan untuk membuka pasar ekspor"
                 name="quiz3"
                 value="liberalisasi"
                 onChange={handleQuizChange}
               />
-              {quizFeedback.quiz3 && (
-                <p className={quizFeedback.quiz3.includes("Benar") ? "text-success" : "text-danger"}>
-                  {quizFeedback.quiz3} {quizFeedback.quiz3.includes("Benar") ? <FaCheckCircle /> : <FaTimesCircle />}
-                </p>
-              )}
             </Form.Group>
 
-            <Button variant="primary" onClick={checkAnswers}>
+            <Button variant="primary" className="app__button" onClick={checkAnswers}>
               Cek Jawaban
             </Button>
           </Form>
         </Card>
+
+        <div className="quiz-feedback">
+          <div>
+            {quizFeedback.quiz1 && <p className="app__form-feedback">{quizFeedback.quiz1}</p>}
+          </div>
+          <div>
+            {quizFeedback.quiz2 && <p className="app__form-feedback">{quizFeedback.quiz2}</p>}
+          </div>
+          <div>
+            {quizFeedback.quiz3 && <p className="app__form-feedback">{quizFeedback.quiz3}</p>}
+          </div>
+        </div>
       </section>
-      <button 
-                onClick={() => window.history.back()} 
-                className="btn btn-secondary mt-4 mx-auto d-block"
-            >
-                Kembali 
-            </button>
+
     </Container>
   );
 }

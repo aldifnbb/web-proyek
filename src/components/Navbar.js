@@ -32,11 +32,10 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
-        // Effect to log when user changes
+    
         console.log('User has changed:', user);
-    }, [user]); // This effect runs when user state changes
+    }, [user]); 
 
-    // Handle click outside to close dropdown
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (!e.target.closest('.nav-item.dropdown')) {
@@ -49,7 +48,7 @@ const Navbar = () => {
     }, []);
 
     if (isLoading) {
-        return <div>Loading...</div>; // Tampilkan loading jika data belum siap
+        return <div>Loading...</div>; 
     }
 
     return (
@@ -80,7 +79,6 @@ const Navbar = () => {
                                 Dashboard
                             </Link>
                         </li>
-                        {/* Dropdown Menu for "Tentang Ekonomi" */}
                         <li className="nav-item dropdown" onClick={toggleDropdown}>
                             <a
                                 className="nav-link dropdown-toggle"

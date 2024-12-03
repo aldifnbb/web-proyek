@@ -27,7 +27,7 @@ const Footer = () => {
             <h4>Support</h4>
             <ul className="list-unstyled">
               <li>
-                <a href="#" className="support-link">
+                <a href="https://www.facebook.com/aldinababan333?mibextid=ZbWKwL" className="support-link">
                   Facebook
                 </a>
               </li>
@@ -42,7 +42,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="support-link">
+                <a href="/contact" className="support-link">
                   Contact Us
                 </a>
               </li>
@@ -56,8 +56,7 @@ const Footer = () => {
           >
             <h4>Address</h4>
             <p>
-              <strong>Address:</strong> SMK N 1 SBB, Pohan Tongatonga, 2024,
-              Indonesia
+              <strong>Address:</strong> Institut Teknologi Del, Sitoluama, Kec. Balige, Toba, Sumatera Utara 22381
             </p>
             <p>
               <strong>Email:</strong> 
@@ -92,8 +91,17 @@ const Footer = () => {
               </li>
             </ul>
             <p>
-              <strong>Phone:</strong> 0822 7642 3194
+              <strong>Phone:</strong>{" "}
+              <a 
+                href="https://wa.me/qr/2WBB2XPDF6FOE1 " 
+                className="phone-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                0821 8113 7988
+              </a>
             </p>
+
           </div>
 
         </div>

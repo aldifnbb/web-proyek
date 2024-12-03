@@ -54,15 +54,16 @@ function App() {
 
   return (
     <Container className="my-5">
-      <header className="text-center mb-5">
-        <h1 className="display-4 text-primary">Bab 2: Kebijakan Moneter</h1>
-        <p className="lead text-muted" style={{textAlign: "justify"}}>
+      <header className="app__header text-center" style={{ marginTop: "-100px" }}>
+        <h1 className="app__header h1">Bab 2: Kebijakan Moneter</h1>
+        <p className="app__header__description">
           Kebijakan moneter adalah upaya yang dilakukan oleh otoritas moneter, seperti bank sentral, untuk mengelola jumlah uang yang beredar dan tingkat suku bunga dalam perekonomian. Tujuannya adalah menjaga stabilitas ekonomi, mengendalikan inflasi, menciptakan kesempatan kerja yang optimal, serta mendorong pertumbuhan ekonomi yang berkelanjutan.
         </p>
-        <p className="lead text-muted" style={{textAlign: "justify"}}>
-          Bank sentral di Indonesia, yaitu Bank Indonesia (BI), bertanggung jawab atas pelaksanaan kebijakan moneter. Alat utama kebijakan ini adalah pengaturan likuiditas di pasar untuk menjaga kestabilan nilai tukar rupiah, inflasi, dan sistem keuangan secara keseluruhan. 
+        <p className="app__header__description">
+          Bank sentral di Indonesia, yaitu Bank Indonesia (BI), bertanggung jawab atas pelaksanaan kebijakan moneter. Alat utama kebijakan ini adalah pengaturan likuiditas di pasar untuk menjaga kestabilan nilai tukar rupiah, inflasi, dan sistem keuangan secara keseluruhan.
         </p>
       </header>
+
 
       <section className="mb-5">
         <h2>Tujuan Kebijakan Moneter</h2>
@@ -117,16 +118,17 @@ function App() {
 
       <section className="mt-5">
         <h2 className="mb-4 text-center"><strong>Mini Kuis</strong></h2>
-        <Card className="p-4 mb-3 shadow-lg rounded-lg border-0 bg-light">
+        <Card className="app__card p-4 mb-3 shadow-lg rounded-lg border-0 bg-light">
           <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>1. Apa tujuan utama dari kebijakan moneter?</Form.Label>
+            <Form.Group className="app__form-group mb-3">
+              <Form.Label className="app__form-label">1. Apa tujuan utama dari kebijakan moneter?</Form.Label>
               <Form.Check
                 type="radio"
                 label="Mengendalikan Inflasi"
                 name="quiz1"
                 value="mengendalikan inflasi"
                 onChange={handleQuizChange}
+                className="app__form-check"
               />
               <Form.Check
                 type="radio"
@@ -134,6 +136,7 @@ function App() {
                 name="quiz1"
                 value="mengurangi pengangguran"
                 onChange={handleQuizChange}
+                className="app__form-check"
               />
               <Form.Check
                 type="radio"
@@ -141,22 +144,24 @@ function App() {
                 name="quiz1"
                 value="meningkatkan ekspor"
                 onChange={handleQuizChange}
+                className="app__form-check"
               />
               {quizFeedback.quiz1 && (
-                <p className={`mt-2 ${quizAnswers.quiz1 === "mengendalikan inflasi" ? "text-success" : "text-danger"}`}>
+                <p className={`mt-2 app__form-feedback ${quizAnswers.quiz1 === "mengendalikan inflasi" ? "text-success" : "text-danger"}`}>
                   {quizAnswers.quiz1 === "mengendalikan inflasi" ? <FaCheckCircle /> : <FaTimesCircle />} {quizFeedback.quiz1}
                 </p>
               )}
             </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>2. Alat kebijakan moneter yang digunakan untuk mengontrol jumlah uang yang beredar adalah?</Form.Label>
+            <Form.Group className="app__form-group mb-3">
+              <Form.Label className="app__form-label">2. Alat kebijakan moneter yang digunakan untuk mengontrol jumlah uang yang beredar adalah?</Form.Label>
               <Form.Check
                 type="radio"
                 label="Penetapan Suku Bunga"
                 name="quiz2"
-                value="penurunan suku bunga"
+                value="penetapan suku bunga"
                 onChange={handleQuizChange}
+                className="app__form-check"
               />
               <Form.Check
                 type="radio"
@@ -164,6 +169,7 @@ function App() {
                 name="quiz2"
                 value="kebijakan kredit selektif"
                 onChange={handleQuizChange}
+                className="app__form-check"
               />
               <Form.Check
                 type="radio"
@@ -171,22 +177,24 @@ function App() {
                 name="quiz2"
                 value="penurunan suku bunga"
                 onChange={handleQuizChange}
+                className="app__form-check"
               />
               {quizFeedback.quiz2 && (
-                <p className={`mt-2 ${quizAnswers.quiz2 === "penurunan suku bunga" ? "text-success" : "text-danger"}`}>
+                <p className={`mt-2 app__form-feedback ${quizAnswers.quiz2 === "penurunan suku bunga" ? "text-success" : "text-danger"}`}>
                   {quizAnswers.quiz2 === "penurunan suku bunga" ? <FaCheckCircle /> : <FaTimesCircle />} {quizFeedback.quiz2}
                 </p>
               )}
             </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>3. Contoh kebijakan moneter ekspansif adalah?</Form.Label>
+            <Form.Group className="app__form-group mb-3">
+              <Form.Label className="app__form-label">3. Contoh kebijakan moneter ekspansif adalah?</Form.Label>
               <Form.Check
                 type="radio"
                 label="Meningkatkan Jumlah Uang"
                 name="quiz3"
                 value="meningkatkan jumlah uang"
                 onChange={handleQuizChange}
+                className="app__form-check"
               />
               <Form.Check
                 type="radio"
@@ -194,6 +202,7 @@ function App() {
                 name="quiz3"
                 value="peningkatan suku bunga"
                 onChange={handleQuizChange}
+                className="app__form-check"
               />
               <Form.Check
                 type="radio"
@@ -201,18 +210,20 @@ function App() {
                 name="quiz3"
                 value="mengurangi penyaluran kredit"
                 onChange={handleQuizChange}
+                className="app__form-check"
               />
               {quizFeedback.quiz3 && (
-                <p className={`mt-2 ${quizAnswers.quiz3 === "meningkatkan jumlah uang" ? "text-success" : "text-danger"}`}>
+                <p className={`mt-2 app__form-feedback ${quizAnswers.quiz3 === "meningkatkan jumlah uang" ? "text-success" : "text-danger"}`}>
                   {quizAnswers.quiz3 === "meningkatkan jumlah uang" ? <FaCheckCircle /> : <FaTimesCircle />} {quizFeedback.quiz3}
                 </p>
               )}
             </Form.Group>
 
-            <Button variant="primary" onClick={checkAnswers} className="me-2">Cek Jawaban</Button>
-            <Button variant="secondary" onClick={handleBackClick} className="d-flex mx-auto mt-3">Kembali</Button>
+            <Button className="app__button me-2" variant="primary" onClick={checkAnswers}>Cek Jawaban</Button>
+            <Button className="app__button d-flex mx-auto mt-3" variant="secondary" onClick={handleBackClick}>Kembali</Button>
           </Form>
         </Card>
+
       </section>
     </Container>
   );

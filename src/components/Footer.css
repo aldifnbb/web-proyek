@@ -6,8 +6,9 @@ footer {
   text-decoration: none;
   color: #ffffff;
   transition: color 0.3s ease, transform 0.3s ease;
-  display: inline-flex; /* Untuk mendukung icon atau elemen tambahan */
+  display: inline-flex;
   align-items: center;
+  bottom: 10px;
 }
 
 .email-link:hover {
@@ -28,6 +29,7 @@ footer {
 }
 
 .list-emails li::before {
+  margin-left: 10px;
   content: "✉️";
   margin-right: 10px;
   font-size: 1.2em;
@@ -48,3 +50,15 @@ footer {
   color: #ff9800;
   transform: scale(1.05); 
 } 
+
+.phone-link {
+  text-decoration: none; 
+  color: #ffffff; 
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.phone-link:hover {
+  color: #ff9800; 
+  transform: scale(1.05);
+}

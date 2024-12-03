@@ -128,6 +128,7 @@ function Quiz() {
     const [score, setScore] = useState(0);
     const [quizFinished, setQuizFinished] = useState(false);
     const [feedback, setFeedback] = useState('');
+    const [answeredQuestions, setAnsweredQuestions] = useState(new Set());
 
     const handleOptionChange = (e) => setSelectedOption(e.target.value);
 
@@ -142,16 +143,16 @@ function Quiz() {
             setFeedback(`Salah! Jawaban yang benar adalah ${currentQuestion.answer}. ${currentQuestion.explanation}`);
         }
 
-        const nextQuestionIndex = currentQuestionIndex + 1;
-        if (nextQuestionIndex < allQuestions.length) {
-            setTimeout(() => {
-                setCurrentQuestionIndex(nextQuestionIndex);
-                setSelectedOption('');
-                setFeedback('');
-            }, 2500); 
-        } else {
-            setTimeout(() => setQuizFinished(true), 3000);
-        }
+        setAnsweredQuestions((prev) => new Set(prev.add(currentQuestionIndex)));
+
+        setTimeout(() => {
+            setSelectedOption('');
+            setFeedback('');
+        }, 2500);
+    };
+
+    const handleFinishQuiz = () => {
+        setQuizFinished(true);
     };
 
     const restartQuiz = () => {
@@ -160,50 +161,68 @@ function Quiz() {
         setScore(0);
         setQuizFinished(false);
         setFeedback('');
+        setAnsweredQuestions(new Set());
     };
+
+    const isAllAnswered = answeredQuestions.size === allQuestions.length;
 
     return (
         <div className="quiz-container">
-            <div className="quiz-box">
-                <h1 className="quiz-title">Kuis Ekonomi - Kelas 10</h1>
+            <div className="quiz-sidebar">
+                <h2 className="quiz-title">Kuis Ekonomi - Kelas 10</h2>
+                <div className="question-list">
+                    {allQuestions.map((question, index) => (
+                        <button
+                            key={index}
+                            className={`question-card ${currentQuestionIndex === index ? 'active' : ''} ${answeredQuestions.has(index) ? 'answered' : ''}`}
+                            onClick={() => setCurrentQuestionIndex(index)}
+                        >
+                            {index + 1}
+                        </button>
+                    ))}
+                </div>
+            </div>
+            <div className="quiz-main">
                 {quizFinished ? (
-                    <div className="results">
+                    <div className="quiz-result">
                         <h2>Kuis Selesai!</h2>
                         <p>Skor Anda: {score} dari {allQuestions.length}</p>
-                        <button onClick={restartQuiz} className="btn restart-btn">Mulai Lagi</button>
+                        <div className="result-actions">
+                            <button onClick={restartQuiz} className="btn-restart">Mulai Lagi</button>
+                            <button onClick={() => window.history.back()} className="btn-close">Kembali ke Halaman Awal</button>
+                        </div>
                     </div>
                 ) : (
                     <div className="question-box">
                         <h2>{allQuestions[currentQuestionIndex].question}</h2>
-                        <form onSubmit={handleSubmit} className="quiz-form">
-                            {allQuestions[currentQuestionIndex].options.map((option, index) => (
-                                <div key={index} className="option">
-                                    <input
-                                        type="radio"
-                                        id={`option-${index}`}
-                                        name="quiz-option"
-                                        value={option}
-                                        checked={selectedOption === option}
-                                        onChange={handleOptionChange}
-                                        className="option-input"
-                                        required
-                                    />
-                                    <label htmlFor={`option-${index}`} className="option-label">
-                                        {option}
-                                    </label>
-                                </div>
-                            ))}
-                            <button type="submit" className="btn_quiz submit-btn">Kirim Jawaban</button>
+                        <form onSubmit={handleSubmit}>
+                            <div className="options">
+                                {allQuestions[currentQuestionIndex].options.map((option, index) => (
+                                    <div key={index} className={`option ${selectedOption === option ? 'active' : ''}`}>
+                                        <input
+                                            type="radio"
+                                            id={`option-${index}`}
+                                            name="quiz-option"
+                                            value={option}
+                                            checked={selectedOption === option}
+                                            onChange={handleOptionChange}
+                                            className="option-input"
+                                            required
+                                        />
+                                        <label htmlFor={`option-${index}`} className="option-label">{option}</label>
+                                    </div>
+                                ))}
+                            </div>
+                            <button type="submit" className="btn-nav">Kirim Jawaban</button>
                         </form>
                         {feedback && <div className="feedback">{feedback}</div>}
+                        {isAllAnswered && !quizFinished && (
+                            <button className="btn-finish" onClick={handleFinishQuiz}>
+                                Selesaikan Kuis
+                            </button>
+                        )}
                     </div>
                 )}
-                <button 
-                    onClick={() => window.history.back()}
-                    className="btn back-btn"
-                >
-                    Kembali ke halaman awal
-                </button>
             </div>
         </div>
     );
