@@ -60,6 +60,10 @@ function App() {
           Lingkungan: Di era modern, pertimbangan lingkungan menjadi faktor penting. Produksi yang berkelanjutan dan ramah lingkungan semakin ditekankan.
           Pilihan metode ini juga berdampak pada biaya produksi, kualitas barang, dan waktu yang dibutuhkan untuk menghasilkan barang atau jasa.
         </p>
+        <img
+            src="https://th.bing.com/th/id/OIP.1WFu8g-DJ5zdOsL0_fB4NgAAAA?w=288&h=167&c=7&r=0&o=5&dpr=2&pid=1.7"
+            className="img-fluid rounded my-1"
+          />
       </section>
 
       <section className="app__section mb-5">
@@ -70,6 +74,10 @@ function App() {
           Kemajuan teknologi memungkinkan produksi yang lebih efisien, meskipun sering membutuhkan investasi besar. Dalam era modern, faktor lingkungan menjadi pertimbangan penting.
           Produksi yang ramah lingkungan dan berkelanjutan semakin ditekankan.
         </p>
+        <img
+            src="https://th.bing.com/th/id/OIP.LsTgvl-cCZickjLSr_mevQHaE8?w=267&h=180&c=7&r=0&o=5&dpr=2&pid=1.7"
+            className="img-fluid rounded my-1"
+          />
       </section>
 
       <section className="app__section mb-5">
@@ -80,6 +88,10 @@ function App() {
           Dalam sistem sosialis, barang didistribusikan berdasarkan kebutuhan, di mana pemerintah memainkan peran penting dalam menentukan alokasi barang atau jasa.
           Dalam sistem ekonomi campuran, distribusi barang menggabungkan mekanisme pasar dengan intervensi pemerintah.
         </p>
+        <img
+            src="https://th.bing.com/th/id/OIP.kYIEokEqaioDhV_jHxq26QHaDf?w=322&h=165&c=7&r=0&o=5&dpr=2&pid=1.7"
+            className="img-fluid rounded my-1"
+          />
       </section>
 
       <section className="app__section mb-5">
@@ -100,6 +112,32 @@ function App() {
           Perdagangan internasional juga menciptakan peluang dan tantangan, terutama dalam hal distribusi dan metode produksi. Faktor eksternal seperti pandemi, resesi, atau bencana alam dapat memperburuk kelangkaan sumber daya.
         </p>
       </section>
+      <section className="mb-5">
+  <h2 className="text-center">Video Pembelajaran</h2>
+  <p className="mt-3 text-center">
+      Kamu dapat mengakses video dibawah ini untuk menambah wawasan kamu mengenai permasalahan ekonomi dasar.
+    </p>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "300px",
+      }}
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/Wz1org27ImY"
+        title="Video Pembelajaran"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="rounded"
+      ></iframe>
+    </div>
+</section>
+
+
 
       <section className="app__section mt-5">
         <h2 className="app__section__title mb-4 text-center"><strong>Mini Kuis</strong></h2>
