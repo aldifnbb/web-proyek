@@ -60,8 +60,8 @@ const Contact = () => {
           <p><a href="mailto:permaisimangunsong@gmail.com" className="contact-link">permaisimangunsong@gmail.com</a></p>
           <p><a href="mailto:depedrompane@gmail.com" className="contact-link">depedrompane@gmail.com</a></p>
           <div className="social-icons">
-            <a href="https://www.linkedin.com/" className="social-icon">LinkedIn</a>
-            <a href="https://x.com/?lang=en-id" className="social-icon">Twitter</a>
+            <a href="https://youtube.com/@aldinababan96?si=_uomtJtJJaQwyHnk" className="social-icon">Youtube</a>
+            <a href="https://www.instagram.com/immanueell_ell/profilecard/?igsh=MXE1empyampwMGhyZw==" className="social-icon">Instagram</a>
             <a href="https://www.facebook.com/aldinababan333?mibextid=ZbWKwL" className="social-icon">Facebook</a>
           </div>
         </div>

@@ -213,7 +213,9 @@ function Quiz() {
                                         </div>
                                     ))}
                                 </div>
-                                <button type="submit" className="btn-nav">Kirim Jawaban</button>
+                                <button type="submit" className="btn-nav">
+                                    {currentQuestionIndex === allQuestions.length - 1 ? 'Finish Quiz' : 'Kirim Jawaban'}
+                                </button>
                             </form>
                         ) : (
                             <div className="explanation">
@@ -224,7 +226,9 @@ function Quiz() {
                                     }
                                 </p>
                                 <p><strong>Penjelasan:</strong> {allQuestions[currentQuestionIndex].explanation}</p>
-                                <button onClick={handleNextQuestion} className="btn-next">Soal Berikutnya</button>
+                                <button onClick={handleNextQuestion} className="btn-next">
+                                    {currentQuestionIndex === allQuestions.length - 1 ? 'Finish Quiz' : 'Soal Berikutnya'}
+                                </button>
                             </div>
                         )}
                     </div>
