@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Form, Button, Card } from "react-bootstrap";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa"; 
 import { useNavigate } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   
@@ -18,6 +20,10 @@ function App() {
     quiz2: "",
     quiz3: "",
   });
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   const handleQuizChange = (e) => {
     const { name, value } = e.target;
@@ -54,20 +60,20 @@ function App() {
 
   return (
     <Container className="my-5">
-      <header className="app__header text-center" style={{ marginTop: "-100px" }}>
+      <header className="app__header text-center" style={{ marginTop: "-100px" }} data-aos="fade-up">
         <h1 className="app__header h1">Bab 2: Kebijakan Moneter</h1>
-        <p className="app__header__description">
+        <p className="app__header__content">
           Kebijakan moneter adalah upaya yang dilakukan oleh otoritas moneter, seperti bank sentral, untuk mengelola jumlah uang yang beredar dan tingkat suku bunga dalam perekonomian. Tujuannya adalah menjaga stabilitas ekonomi, mengendalikan inflasi, menciptakan kesempatan kerja yang optimal, serta mendorong pertumbuhan ekonomi yang berkelanjutan.
         </p>
-        <p className="app__header__description">
+        <p className="app__header__content">
           Bank sentral di Indonesia, yaitu Bank Indonesia (BI), bertanggung jawab atas pelaksanaan kebijakan moneter. Alat utama kebijakan ini adalah pengaturan likuiditas di pasar untuk menjaga kestabilan nilai tukar rupiah, inflasi, dan sistem keuangan secara keseluruhan.
         </p>
       </header>
 
 
-      <section className="mb-5">
-        <h2>Tujuan Kebijakan Moneter</h2>
-        <p>
+      <section className="app__secttion mb-5" data-aos="fade-right">
+        <h2 className="app__section__title lead text-muted" style={{ textAlign: "justify" }} data-aos="fade-up">Tujuan Kebijakan Moneter</h2>
+        <p className="app__section__description">
           Kebijakan moneter bertujuan untuk mencapai beberapa tujuan penting, antara lain:
           <ul>
             <li><strong>Mengendalikan Inflasi:</strong> Mengendalikan Inflasi: Kebijakan ini bertujuan menjaga tingkat inflasi agar berada dalam batas yang ditetapkan. Inflasi yang terlalu tinggi atau rendah dapat berdampak buruk pada daya beli masyarakat dan stabilitas ekonomi.</li>
@@ -78,9 +84,9 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5">
-        <h2>Jenis Kebijakan Moneter</h2>
-        <p>
+      <section className="app__section mb-5" data-aos="fade-left">
+        <h2 className="app__section__title">Jenis Kebijakan Moneter</h2>
+        <p className="app__section__description">
           Kebijakan moneter terbagi menjadi dua jenis utama:
           <ul>
             <li><strong>Kebijakan Moneter Ekspansif:</strong> Kebijakan ini dilakukan untuk meningkatkan jumlah uang yang beredar di masyarakat. Biasanya diterapkan saat perekonomian sedang mengalami perlambatan atau resesi. Tujuannya adalah mendorong investasi dan konsumsi.</li>
@@ -91,7 +97,7 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5">
+      <section className="mb-5" data-aos="fade-right">
         <h2>Alat Kebijakan Moneter</h2>
         <p>
           Berikut adalah beberapa alat utama yang digunakan dalam kebijakan moneter:
@@ -105,7 +111,7 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5">
+      <section className="mb-5" data-aos="fade-left">
         <h2>Dampak Kebijakan Moneter</h2>
         <p>
           Dampak dari kebijakan moneter dapat dibagi menjadi dampak positif dan negatif:
@@ -115,32 +121,32 @@ function App() {
           </ul>
         </p>
       </section>
-      <section className="mb-5">
-  <h2 className="text-center">Video Pembelajaran</h2>
-  <p className="mt-3 text-center">
-      Tonton video ini agar kamu lebih memahami materi tenatng kebijakan moneter.
-    </p>
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "300px",
-      }}
-    >
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/KMPnVroI2vE"
-        title="Video Pembelajaran"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        className="rounded"
-      ></iframe>
-    </div>
-</section>
+      <section className="mb-5" data-aos="fade-right">
+        <h2 className="text-center">Video Pembelajaran</h2>
+        <p className="mt-3 text-center">
+          Tonton video ini agar kamu lebih memahami materi tenatng kebijakan moneter.
+        </p>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minHeight: "300px",
+          }}
+        >
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/KMPnVroI2vE"
+            title="Video Pembelajaran"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="rounded"
+          ></iframe>
+        </div>
+    </section>
 
-      <section className="mt-5">
+      <section className="mt-5" data-aos="fade-left">
         <h2 className="mb-4 text-center"><strong>Mini Kuis</strong></h2>
         <Card className="app__card p-4 mb-3 shadow-lg rounded-lg border-0 bg-light">
           <Form>

@@ -42,10 +42,9 @@ function App() {
 
   return (
     <Container className="my-5">
-
       <header className="app__header text-center mb-5">
-        <h1 className="display-4">Bab 3: Perdagangan Internasional</h1>
-        <p className="app__header__description" style={{textAlign: "justify"}}>
+        <h1 className="app__header__title display-4">Bab 3: Perdagangan Internasional</h1>
+        <p className="app__header__description lead text-muted" style={{textAlign: "justify"}}>
           Perdagangan internasional adalah kegiatan pertukaran barang, jasa, atau faktor produksi antara negara-negara di dunia. Kegiatan ini muncul karena tidak ada satu negara pun yang dapat memenuhi semua kebutuhan ekonominya sendiri. Melalui perdagangan internasional, negara-negara dapat saling melengkapi kebutuhan mereka dengan memanfaatkan keunggulan masing-masing.
         </p>
       </header>

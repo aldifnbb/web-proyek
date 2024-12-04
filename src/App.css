@@ -37,97 +37,169 @@
   }
 }
 
+
 /* ================================ Bab1-5 ====================================== */
 
 .app__header {
-  padding: 50px 0;
-  color: #fff; 
-  border-radius: 0 0 20px 20px;
+  color: #2d2d2d;
+  text-align: center;
+  padding: 50px 20px;
+  border-bottom: 2px solid #ff6f00;
+  margin-bottom: 40px;
 }
 
 .app__header h1 {
   font-size: 3rem;
   font-weight: bold;
-  color: #ff6f00;
 }
 
 .app__header__description {
   font-size: 1.25rem;
-  line-height: 1.6;
-  color: #333;
+  color: #555;
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
 }
 
-.app__card {
+
+/* ========================= Section Styles ========================= */
+.app__section {
+  padding: 40px 20px;
   background-color: #fff;
+  margin-bottom: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  transition: transform 0.3s ease-in-out;
+}
+
+.app__section__title {
+  font-size: 2rem;
+  color: #2d2d2d;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.app__section__title::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background-color: #ff6f00;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.app__section__content {
+  font-size: 1.1rem;
+  color: #555;
+  text-align: justify;
+}
+
+/* ========================= Quiz Card ========================= */
+.app__card {
+  background: linear-gradient(135deg, #fff, #f9f9f9);
+  border-radius: 15px;
+  padding: 40px;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .app__card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.app__button {
-  background-color: #ff6f00;
-  color: #fff; 
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+.app__form-label {
   font-size: 1.125rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  font-weight: bold;
+  color: #2d2d2d;
 }
 
-.app__button:hover {
-  background-color: #e65c00;
+.app__form-check input[type="radio"] + label {
+  font-size: 1rem;
+  color: #444;
+}
+
+.app__form-check input[type="radio"]:checked + label {
+  color: #ff6f00;
+  font-weight: bold;
 }
 
 .app__form-feedback {
   font-size: 1rem;
-  font-weight: 600;
-  transition: color 0.3s ease-in-out;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .app__form-feedback.text-success {
-  color: #28a745; 
+  color: #28a745;
 }
 
 .app__form-feedback.text-danger {
   color: #dc3545;
 }
-
-.app__form-group {
-  margin-bottom: 1.5rem;
+.app__section img {
+  display: block;
+  margin: 20px auto; 
+  max-width: 100%;
+  height: auto;
 }
 
-.app__form-label {
-  font-weight: bold;
-  color: #333;
+/* ========================= Buttons ========================= */
+.app__button {
+  background-color: #ff6f00;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1.125rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.app__form-check {
-  margin-bottom: 10px;
+.app__button:hover {
+  background-color: #e65c00;
+  transform: scale(1.05);
 }
 
-.app__form-check input[type="radio"] {
-  margin-right: 10px;
+/* ========================= Footer Styles ========================= */
+.app__footer {
+  background-color: #2d2d2d;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  border-radius: 20px 20px 0 0;
 }
 
-.app__form-check input[type="radio"]:checked + label {
-  color: #ff6f00; 
+.app__footer p {
+  margin: 0;
+  font-size: 1rem;
 }
 
-.app__form-check input[type="radio"]:hover + label {
+.app__footer a {
+  color: #ff6f00;
+}
+
+.app__footer a:hover {
   color: #e65c00;
 }
 
-.app__button:focus,
-.app__button:hover {
-  outline: none;
-  box-shadow: 0 0 10px rgba(255, 111, 0, 0.8);
+/* ========================= Video Section ========================= */
+iframe {
+  border: 3px solid #ff6f00;
+  border-radius: 10px;
+}
+
+.text-center h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2d2d2d;
+}
+
+.text-center p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
 /* ================================ Login Dan Register ====================================== */

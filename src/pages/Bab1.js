@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Form, Button, Card } from "react-bootstrap";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const [quizAnswers, setQuizAnswers] = useState({
@@ -15,6 +17,10 @@ function App() {
     quiz2: "",
     quiz3: "",
   });
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   const handleQuizChange = (e) => {
     const { name, value } = e.target;
@@ -42,14 +48,14 @@ function App() {
 
   return (
     <Container className="app__container my-5">
-      <header className="app__header text-center mb-5" style={{ marginTop: "-50px" }}>
+      <header className="app__header text-center mb-5" style={{ marginTop: "-50px" }} data-aos="fade-up">
         <h1 className="app__header__title display-4">Bab 1: Masalah Ekonomi Dasar</h1>
-        <p className="app__header__description lead text-muted" style={{ textAlign: "justify" }}>
+        <p className="app__header__description lead text-muted" style={{ textAlign: "justify" }} data-aos="fade-up">
           Masalah ekonomi dasar adalah persoalan universal yang dihadapi oleh setiap masyarakat atau individu terkait pengelolaan sumber daya yang terbatas untuk memenuhi kebutuhan yang tak terbatas. Masalah ini terjadi karena adanya kelangkaan (scarcity), yang mengharuskan masyarakat membuat pilihan di antara berbagai alternatif. Masalah ekonomi dasar ini dapat dijelaskan lebih rinci melalui tiga aspek utama, yaitu apa yang harus diproduksi, bagaimana cara memproduksi, dan untuk siapa barang atau jasa tersebut diproduksi.
         </p>
       </header>
 
-      <section className="app__section mb-5">
+      <section className="app__section mb-5" data-aos="fade-right">
         <h2 className="app__section__title">Apa yang Harus Diproduksi?</h2>
         <p className="app__section__content">
           Pertanyaan ini berfokus pada jenis barang dan jasa yang harus diproduksi untuk memenuhi kebutuhan masyarakat.
@@ -66,7 +72,7 @@ function App() {
           />
       </section>
 
-      <section className="app__section mb-5">
+      <section className="app__section mb-5" data-aos="fade-left">
         <h2 className="app__section__title">Bagaimana Cara Memproduksi?</h2>
         <p className="app__section__content">
           Setelah menentukan apa yang akan diproduksi, langkah berikutnya adalah menentukan metode produksi yang akan digunakan.
@@ -80,7 +86,7 @@ function App() {
           />
       </section>
 
-      <section className="app__section mb-5">
+      <section className="app__section mb-5" data-aos="fade-up">
         <h2 className="app__section__title">Untuk Siapa Barang atau Jasa Diproduksi?</h2>
         <p className="app__section__content">
           Pertanyaan ini berkaitan dengan bagaimana hasil produksi didistribusikan di masyarakat. Tidak semua orang memiliki kemampuan yang sama untuk mengakses barang dan jasa.
@@ -94,7 +100,7 @@ function App() {
           />
       </section>
 
-      <section className="app__section mb-5">
+      <section className="app__section mb-5" data-aos="fade-left">
         <h2 className="app__section__title">Menghadapi Masalah Kelangkaan</h2>
         <p className="app__section__content">
           Kelangkaan adalah inti dari semua masalah ekonomi. Untuk mengatasi kelangkaan, masyarakat dan pemerintah seringkali perlu mengalokasikan sumber daya secara efisien, memilih alternatif terbaik,
@@ -104,7 +110,7 @@ function App() {
         </p>
       </section>
 
-      <section className="app__section mb-5">
+      <section className="app__section mb-5" data-aos="fade-right">
         <h2 className="app__section__title">Faktor Pendukung Masalah Ekonomi Dasar</h2>
         <p className="app__section__content">
           Pertumbuhan populasi, perubahan preferensi masyarakat, globalisasi, dan krisis ekonomi atau bencana alam adalah beberapa faktor yang mempengaruhi masalah ekonomi dasar.
@@ -112,35 +118,32 @@ function App() {
           Perdagangan internasional juga menciptakan peluang dan tantangan, terutama dalam hal distribusi dan metode produksi. Faktor eksternal seperti pandemi, resesi, atau bencana alam dapat memperburuk kelangkaan sumber daya.
         </p>
       </section>
-      <section className="mb-5">
-  <h2 className="text-center">Video Pembelajaran</h2>
-  <p className="mt-3 text-center">
-      Kamu dapat mengakses video dibawah ini untuk menambah wawasan kamu mengenai permasalahan ekonomi dasar.
-    </p>
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "300px",
-      }}
-    >
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/Wz1org27ImY"
-        title="Video Pembelajaran"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        className="rounded"
-      ></iframe>
-    </div>
-</section>
-
-
-
-      <section className="app__section mt-5">
-        <h2 className="app__section__title mb-4 text-center"><strong>Mini Kuis</strong></h2>
+      <section className="mb-5"data-aos="fade-up">
+        <h2 className="text-center">Video Pembelajaran</h2>
+        <p className="mt-3 text-center">
+            Kamu dapat mengakses video dibawah ini untuk menambah wawasan kamu mengenai permasalahan ekonomi dasar.
+          </p>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: "300px",
+            }}
+          >
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/Wz1org27ImY"
+              title="Video Pembelajaran"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="rounded"
+            ></iframe>
+          </div>
+      </section>
+      <section className="app__section mt-5" data-aos="fade-up">
+        <h2 className="app__section__title mb-4 text-center" data-aos="fade-right"><strong>Mini Kuis</strong></h2>
         <Card className="app__card p-4 mb-3 shadow-lg rounded-lg border-0 bg-light">
           <Form onSubmit={checkAnswers}>
             <Form.Group className="app__form-group mb-3">

@@ -16,7 +16,6 @@ function App() {
     quiz3: "",
   });
 
-  // Tambahkan useRef untuk canvas
   const demandCanvasRef = useRef(null);
   const supplyCanvasRef = useRef(null);
 
@@ -40,16 +39,14 @@ function App() {
   };
 
   useEffect(() => {
-    // Render demand curve
     const demandCanvas = demandCanvasRef.current;
     const demandCtx = demandCanvas.getContext("2d");
     if (demandCtx) {
       demandCtx.clearRect(0, 0, demandCanvas.width, demandCanvas.height);
 
-      // Draw demand curve
       demandCtx.beginPath();
-      demandCtx.moveTo(50, 50); // Start at top-left
-      demandCtx.lineTo(250, 250); // End at bottom-right
+      demandCtx.moveTo(50, 50);
+      demandCtx.lineTo(250, 250);
       demandCtx.strokeStyle = "blue";
       demandCtx.lineWidth = 2;
       demandCtx.stroke();
@@ -57,23 +54,20 @@ function App() {
       demandCtx.fillStyle = "blue";
       demandCtx.fillText("Demand", 120, 130);
 
-      // Add labels for axes
       demandCtx.fillStyle = "#333";
       demandCtx.font = "14px Arial";
       demandCtx.fillText("Price", 20, 30);
       demandCtx.fillText("Quantity", 270, 270);
     }
 
-    // Render supply curve
     const supplyCanvas = supplyCanvasRef.current;
     const supplyCtx = supplyCanvas.getContext("2d");
     if (supplyCtx) {
       supplyCtx.clearRect(0, 0, supplyCanvas.width, supplyCanvas.height);
 
-      // Draw supply curve
       supplyCtx.beginPath();
-      supplyCtx.moveTo(50, 250); // Start at bottom-left
-      supplyCtx.lineTo(250, 50); // End at top-right
+      supplyCtx.moveTo(50, 250); 
+      supplyCtx.lineTo(250, 50);
       supplyCtx.strokeStyle = "red";
       supplyCtx.lineWidth = 2;
       supplyCtx.stroke();
@@ -81,7 +75,6 @@ function App() {
       supplyCtx.fillStyle = "red";
       supplyCtx.fillText("Supply", 120, 130);
 
-      // Add labels for axes
       supplyCtx.fillStyle = "#333";
       supplyCtx.font = "14px Arial";
       supplyCtx.fillText("Price", 20, 30);
@@ -91,24 +84,24 @@ function App() {
 
   return (
     <Container className="my-5">
-      <header className="text-center mb-5">
-        <h1 className="display-4 text-primary">Bab 4: Permintaan dan Penawaran</h1>
-        <p className="lead text-muted" style={{ textAlign: "justify" }}>
+      <header className="app__header text-center">
+        <h1 className="display-4">Bab 4: Permintaan dan Penawaran</h1>
+        <p className="app__header__description lead text-muted" style={{ textAlign: "justify" }}>
           Permintaan dan penawaran adalah konsep dasar dalam ekonomi yang menjelaskan bagaimana harga barang atau jasa ditentukan di pasar. Interaksi antara keduanya menciptakan keseimbangan pasar, di mana jumlah barang yang diminta sama dengan jumlah barang yang ditawarkan pada harga tertentu.
         </p>
       </header>
 
-      <section className="mb-5">
-        <h2>Grafik Permintaan dan Penawaran</h2>
+      <section className="app__section mb-5">
+        <h2 className="app__section__title">Grafik Permintaan dan Penawaran</h2>
         <div className="d-flex justify-content-center">
           <canvas ref={demandCanvasRef} width={300} height={300} className="border border-primary me-4"></canvas>
           <canvas ref={supplyCanvasRef} width={300} height={300} className="border border-danger"></canvas>
         </div>
       </section>
 
-      <section className="mb-5">
-        <h2>Permintaan (Demand)</h2>
-        <p>
+      <section className="app__section mb-5">
+        <h2 className="app__section__title">Permintaan (Demand)</h2>
+        <p className="app__section__content">
           Permintaan adalah jumlah barang atau jasa yang ingin dan mampu dibeli oleh konsumen pada berbagai tingkat harga dalam periode tertentu. Faktor-faktor yang memengaruhi permintaan termasuk:
           <ul>
             <li><strong>Harga Barang Itu Sendiri:</strong> Jika harga barang naik, permintaan cenderung turun.</li>
@@ -121,9 +114,9 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5">
-        <h2>Penawaran (Supply)</h2>
-        <p>
+      <section className="app__section mb-5">
+        <h2 className="app__section__title">Penawaran (Supply)</h2>
+        <p className="app__section__content">
           Penawaran adalah jumlah barang atau jasa yang ingin dan mampu dijual oleh produsen pada berbagai tingkat harga dalam periode tertentu. Faktor-faktor yang memengaruhi penawaran antara lain:
           <ul>
             <li><strong>Harga Barang Itu Sendiri:</strong> Jika harga barang meningkat, jumlah barang yang ditawarkan cenderung meningkat.</li>
@@ -136,9 +129,9 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5">
-        <h2>Keseimbangan Pasar (Market Equilibrium)</h2>
-        <p>
+      <section className="app__section mb-5">
+        <h2 className="app__section__title">Keseimbangan Pasar (Market Equilibrium)</h2>
+        <p className="app__section__content">
           Keseimbangan pasar terjadi ketika jumlah barang yang diminta sama dengan jumlah barang yang ditawarkan pada suatu tingkat harga tertentu. Harga keseimbangan adalah harga di mana permintaan dan penawaran bertemu, dan jumlah keseimbangan adalah jumlah barang yang dipertukarkan pada harga tersebut.
           <ul>
             <li><strong>Kelebihan Penawaran (Surplus):</strong> Terjadi saat harga terlalu tinggi dan jumlah yang ditawarkan melebihi jumlah yang diminta.</li>
@@ -147,9 +140,9 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5">
-        <h2>Elastisitas Permintaan dan Penawaran</h2>
-        <p>
+      <section className="app__section mb-5">
+        <h2 className="app__section__title">Elastisitas Permintaan dan Penawaran</h2>
+        <p className="app__section__content">
           Elastisitas mengukur sejauh mana permintaan atau penawaran merespon perubahan harga.
           <ul>
             <li><strong>Permintaan Elastis:</strong> Perubahan harga menyebabkan perubahan besar dalam jumlah yang diminta.</li>
@@ -160,37 +153,37 @@ function App() {
         </p>
       </section>
       <section className="mb-5">
-  <h2 className="text-center">Video Pembelajaran</h2>
-  <p className="mt-3 text-center">
-      Permintaan dan penawaran merupakan materi yang menarik! Ayoo pelajari lebih dalam.
-    </p>
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "300px",
-      }}
-    >
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/yOiVoWxFYwc"
-        title="Video Pembelajaran"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        className="rounded"
-      ></iframe>
-    </div>
-</section>
+        <h2 className="text-center">Video Pembelajaran</h2>
+        <p className="mt-3 text-center">
+            Permintaan dan penawaran merupakan materi yang menarik! Ayoo pelajari lebih dalam.
+          </p>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: "300px",
+            }}
+          >
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/yOiVoWxFYwc"
+              title="Video Pembelajaran"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="rounded"
+            ></iframe>
+          </div>
+      </section>
 
-      <section className="mt-5">
-        <h2 className="mb-4 text-center">
+      <section className="app__section mt-5">
+        <h2 className="app__section__title mb-4 text-center">
           <strong>Mini Kuis</strong>
         </h2>
-        <Card className="p-4 mb-3 shadow-lg rounded-lg border-0 bg-light">
+        <Card className="app__card p-4 mb-3 shadow-lg rounded-lg border-0 bg-light">
           <Form>
-            <Form.Group className="mb-3">
+            <Form.Group className="app__form-group mb-3">
               <Form.Label>1. Jika harga barang naik, bagaimana pengaruhnya terhadap permintaan?</Form.Label>
               <Form.Check
                 type="radio"
@@ -259,7 +252,7 @@ function App() {
               )}
             </Form.Group>
 
-            <Button variant="primary" onClick={checkAnswers}>
+            <Button className="app__button" variant="primary" onClick={checkAnswers}>
               Cek Jawaban
             </Button>
           </Form>
@@ -268,7 +261,7 @@ function App() {
 
       <button
         onClick={() => window.history.back()}
-        className="btn btn-secondary mt-4 mx-auto d-block"
+        type="button" variant="secondary" className="app__button mt-4 mx-auto d-block"
       >
         Kembali
       </button>
