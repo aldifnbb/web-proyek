@@ -120,15 +120,15 @@ function Quiz() {
             explanation:
               "Jika permintaan elastis, kenaikan harga akan menyebabkan penurunan yang lebih besar pada jumlah barang yang diminta, sehingga total penerimaan penjual menurun.",
           },
-
     ];
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedOption, setSelectedOption] = useState('');
     const [score, setScore] = useState(0);
+    const [correctAnswers, setCorrectAnswers] = useState(0);
+    const [incorrectAnswers, setIncorrectAnswers] = useState(0);
+    const [answeredQuestions, setAnsweredQuestions] = useState([]);
     const [quizFinished, setQuizFinished] = useState(false);
-    const [feedback, setFeedback] = useState('');
-    const [answeredQuestions, setAnsweredQuestions] = useState(new Set()); // Track answered questions
 
     const handleOptionChange = (e) => setSelectedOption(e.target.value);
 
@@ -136,24 +136,24 @@ function Quiz() {
         e.preventDefault();
 
         const currentQuestion = allQuestions[currentQuestionIndex];
-        if (selectedOption === currentQuestion.answer) {
+        const isCorrect = selectedOption === currentQuestion.answer;
+
+        if (isCorrect) {
             setScore(score + 1);
-            setFeedback(`Benar! ${currentQuestion.explanation}`);
+            setCorrectAnswers(correctAnswers + 1);
         } else {
-            setFeedback(`Salah! Jawaban yang benar adalah ${currentQuestion.answer}. ${currentQuestion.explanation}`);
+            setIncorrectAnswers(incorrectAnswers + 1);
         }
 
-        setAnsweredQuestions(prev => new Set(prev.add(currentQuestionIndex)));
+        setAnsweredQuestions([...answeredQuestions, currentQuestionIndex]);
+    };
 
-        const nextQuestionIndex = currentQuestionIndex + 1;
-        if (nextQuestionIndex < allQuestions.length) {
-            setTimeout(() => {
-                setCurrentQuestionIndex(nextQuestionIndex);
-                setSelectedOption('');
-                setFeedback('');
-            }, 2500);
+    const handleNextQuestion = () => {
+        if (currentQuestionIndex + 1 < allQuestions.length) {
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
+            setSelectedOption('');
         } else {
-            setTimeout(() => setQuizFinished(true), 3000);
+            setQuizFinished(true);
         }
     };
 
@@ -161,9 +161,10 @@ function Quiz() {
         setCurrentQuestionIndex(0);
         setSelectedOption('');
         setScore(0);
+        setCorrectAnswers(0);
+        setIncorrectAnswers(0);
         setQuizFinished(false);
-        setFeedback('');
-        setAnsweredQuestions(new Set());
+        setAnsweredQuestions([]);
     };
 
     return (
@@ -171,11 +172,12 @@ function Quiz() {
             <div className="quiz-sidebar">
                 <h2 className="quiz-title">Kuis Ekonomi - Kelas 10</h2>
                 <div className="question-list">
-                    {allQuestions.map((question, index) => (
+                    {allQuestions.map((_, index) => (
                         <button
                             key={index}
-                            className={`question-card ${currentQuestionIndex === index ? 'active' : ''} ${answeredQuestions.has(index) ? 'answered' : ''}`}
+                            className={`question-card ${currentQuestionIndex === index ? 'active' : ''}`}
                             onClick={() => setCurrentQuestionIndex(index)}
+                            disabled={quizFinished}
                         >
                             {index + 1}
                         </button>
@@ -187,35 +189,44 @@ function Quiz() {
                     <div className="quiz-result">
                         <h2>Kuis Selesai!</h2>
                         <p>Skor Anda: {score} dari {allQuestions.length}</p>
-                        <div className="result-actions">
-                            <button onClick={restartQuiz} className="btn-restart">Mulai Lagi</button>
-                            <button onClick={() => window.history.back()} className="btn-close">Kembali ke Halaman Awal</button>
-                        </div>
+                        <button onClick={restartQuiz} className="btn-restart">Mulai Lagi</button>
                     </div>
                 ) : (
                     <div className="question-box">
                         <h2>{allQuestions[currentQuestionIndex].question}</h2>
-                        <form onSubmit={handleSubmit}>
-                            <div className="options">
-                                {allQuestions[currentQuestionIndex].options.map((option, index) => (
-                                    <div key={index} className={`option ${selectedOption === option ? 'active' : ''}`}>
-                                        <input
-                                            type="radio"
-                                            id={`option-${index}`}
-                                            name="quiz-option"
-                                            value={option}
-                                            checked={selectedOption === option}
-                                            onChange={handleOptionChange}
-                                            className="option-input"
-                                            required
-                                        />
-                                        <label htmlFor={`option-${index}`} className="option-label">{option}</label>
-                                    </div>
-                                ))}
+                        {!answeredQuestions.includes(currentQuestionIndex) ? (
+                            <form onSubmit={handleSubmit}>
+                                <div className="options">
+                                    {allQuestions[currentQuestionIndex].options.map((option, index) => (
+                                        <div key={index} className={`option ${selectedOption === option ? 'active' : ''}`}>
+                                            <input
+                                                type="radio"
+                                                id={`option-${index}`}
+                                                name="quiz-option"
+                                                value={option}
+                                                checked={selectedOption === option}
+                                                onChange={handleOptionChange}
+                                                className="option-input"
+                                                required
+                                            />
+                                            <label htmlFor={`option-${index}`} className="option-label">{option}</label>
+                                        </div>
+                                    ))}
+                                </div>
+                                <button type="submit" className="btn-nav">Kirim Jawaban</button>
+                            </form>
+                        ) : (
+                            <div className="explanation">
+                                <p>
+                                    {selectedOption === allQuestions[currentQuestionIndex].answer
+                                        ? "Jawaban Anda benar!"
+                                        : `Jawaban Anda salah. Jawaban yang benar adalah: ${allQuestions[currentQuestionIndex].answer}`
+                                    }
+                                </p>
+                                <p><strong>Penjelasan:</strong> {allQuestions[currentQuestionIndex].explanation}</p>
+                                <button onClick={handleNextQuestion} className="btn-next">Soal Berikutnya</button>
                             </div>
-                            <button type="submit" className="btn-nav">Kirim Jawaban</button>
-                        </form>
-                        {feedback && <div className="feedback">{feedback}</div>}
+                        )}
                     </div>
                 )}
             </div>

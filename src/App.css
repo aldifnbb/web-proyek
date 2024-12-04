@@ -550,6 +550,23 @@ input:focus {
     background-color: #c0392b;
   }
 
+  .btn-next {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-next:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+
   .options {
     display: flex;
     flex-direction: column;

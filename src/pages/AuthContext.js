@@ -25,13 +25,13 @@ export const AuthProvider = ({ children }) => {
 
     const login = (userData) => {
         setUser(userData);
-        localStorage.setItem('user', JSON.stringify(userData)); // Simpan user ke localStorage
-        navigate('/dashboard'); // Navigasi ke dashboard setelah login
+        localStorage.setItem('user', JSON.stringify(userData)); 
+        navigate('/dashboard'); 
     };
 
     const register = (userData) => {
         setUser(userData);
-        localStorage.setItem('user', JSON.stringify(userData)); // Simpan user ke localStorage
+        localStorage.setItem('user', JSON.stringify(userData)); 
         navigate('/dashboard');
     };
 
