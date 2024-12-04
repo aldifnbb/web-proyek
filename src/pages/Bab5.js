@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Form, Button, Card } from "react-bootstrap";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
@@ -8,17 +8,17 @@ function App() {
     quiz1: "",
     quiz2: "",
     quiz3: "",
-    quiz4: "",
   });
 
   const [quizFeedback, setQuizFeedback] = useState({
     quiz1: "",
     quiz2: "",
     quiz3: "",
-    quiz4: "",
   });
 
-  const cycleCanvasRef = useRef(null);
+  // Tambahkan useRef untuk canvas
+  const demandCanvasRef = useRef(null);
+  const supplyCanvasRef = useRef(null);
 
   const handleQuizChange = (e) => {
     const { name, value } = e.target;
@@ -27,156 +27,183 @@ function App() {
 
   const checkAnswers = () => {
     const correctAnswers = {
-      quiz1: "Ekspansi",
-      quiz2: "Puncak",
-      quiz3: "Resesi",
-      quiz4: "Pemulihan",
+      quiz1: "harga barang naik",
+      quiz2: "penurunan harga barang",
+      quiz3: "keseimbangan pasar",
     };
 
     setQuizFeedback({
-      quiz1: quizAnswers.quiz1 === correctAnswers.quiz1 ? "Benar!" : "Salah, jawabannya adalah 'Ekspansi'.",
-      quiz2: quizAnswers.quiz2 === correctAnswers.quiz2 ? "Benar!" : "Salah, jawabannya adalah 'Puncak'.",
-      quiz3: quizAnswers.quiz3 === correctAnswers.quiz3 ? "Benar!" : "Salah, jawabannya adalah 'Resesi'.",
-      quiz4: quizAnswers.quiz4 === correctAnswers.quiz4 ? "Benar!" : "Salah, jawabannya adalah 'Pemulihan'.",
+      quiz1: quizAnswers.quiz1 === correctAnswers.quiz1 ? "Benar!" : "Salah, jawabannya adalah 'Harga barang naik'.",
+      quiz2: quizAnswers.quiz2 === correctAnswers.quiz2 ? "Benar!" : "Salah, jawabannya adalah 'Penurunan harga barang'.",
+      quiz3: quizAnswers.quiz3 === correctAnswers.quiz3 ? "Benar!" : "Salah, jawabannya adalah 'Keseimbangan pasar'.",
     });
   };
 
   useEffect(() => {
-    const canvas = cycleCanvasRef.current;
-    const ctx = canvas.getContext("2d");
+    // Render demand curve
+    const demandCanvas = demandCanvasRef.current;
+    const demandCtx = demandCanvas.getContext("2d");
+    if (demandCtx) {
+      demandCtx.clearRect(0, 0, demandCanvas.width, demandCanvas.height);
 
-    if (ctx) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Draw demand curve
+      demandCtx.beginPath();
+      demandCtx.moveTo(50, 50); // Start at top-left
+      demandCtx.lineTo(250, 250); // End at bottom-right
+      demandCtx.strokeStyle = "blue";
+      demandCtx.lineWidth = 2;
+      demandCtx.stroke();
+      demandCtx.closePath();
+      demandCtx.fillStyle = "blue";
+      demandCtx.fillText("Demand", 120, 130);
 
-      // Setting basic styles
-      ctx.strokeStyle = "blue";
-      ctx.lineWidth = 2;
-      ctx.font = "14px Arial";
+      // Add labels for axes
+      demandCtx.fillStyle = "#333";
+      demandCtx.font = "14px Arial";
+      demandCtx.fillText("Price", 20, 30);
+      demandCtx.fillText("Quantity", 270, 270);
+    }
 
-      // Draw axes
-      ctx.beginPath();
-      ctx.moveTo(50, 250); // Y-axis
-      ctx.lineTo(50, 50);
-      ctx.moveTo(50, 250); // X-axis
-      ctx.lineTo(450, 250);
-      ctx.stroke();
-      ctx.closePath();
+    // Render supply curve
+    const supplyCanvas = supplyCanvasRef.current;
+    const supplyCtx = supplyCanvas.getContext("2d");
+    if (supplyCtx) {
+      supplyCtx.clearRect(0, 0, supplyCanvas.width, supplyCanvas.height);
 
-      // Label axes
-      ctx.fillStyle = "#000";
-      ctx.fillText("Waktu", 420, 270);
-      ctx.fillText("Kinerja Ekonomi", 10, 60);
+      // Draw supply curve
+      supplyCtx.beginPath();
+      supplyCtx.moveTo(50, 250); // Start at bottom-left
+      supplyCtx.lineTo(250, 50); // End at top-right
+      supplyCtx.strokeStyle = "red";
+      supplyCtx.lineWidth = 2;
+      supplyCtx.stroke();
+      supplyCtx.closePath();
+      supplyCtx.fillStyle = "red";
+      supplyCtx.fillText("Supply", 120, 130);
 
-      // Draw economic cycle curve
-      ctx.beginPath();
-      ctx.moveTo(50, 250); // Start point (initial trough)
-      ctx.bezierCurveTo(150, 100, 200, 100, 250, 250); // Expansion to peak
-      ctx.bezierCurveTo(300, 400, 350, 400, 400, 250); // Recession to trough
-      ctx.strokeStyle = "green";
-      ctx.stroke();
-      ctx.closePath();
-
-      // Add labels for phases
-      ctx.fillStyle = "green";
-      ctx.fillText("Ekspansi", 120, 150);
-      ctx.fillText("Puncak", 220, 80);
-      ctx.fillText("Resesi", 320, 150);
-      ctx.fillText("Lembah", 420, 260);
+      // Add labels for axes
+      supplyCtx.fillStyle = "#333";
+      supplyCtx.font = "14px Arial";
+      supplyCtx.fillText("Price", 20, 30);
+      supplyCtx.fillText("Quantity", 270, 270);
     }
   }, []);
 
   return (
     <Container className="my-5">
       <header className="text-center mb-5">
-        <h1 className="display-4 text-primary">Bab 5: Siklus Ekonomi</h1>
+        <h1 className="display-4 text-primary">Bab 4: Permintaan dan Penawaran</h1>
         <p className="lead text-muted" style={{ textAlign: "justify" }}>
-        Siklus ekonomi adalah pola perubahan aktivitas ekonomi suatu negara yang terjadi secara berulang dalam periode tertentu. Siklus ini mencerminkan fluktuasi dalam tingkat pertumbuhan ekonomi yang dapat memengaruhi produksi, pendapatan, investasi, konsumsi, dan lapangan kerja. Siklus ekonomi terdiri dari empat tahap utama: ekspansi, puncak, kontraksi, dan resesi atau depresi.
+          Permintaan dan penawaran adalah konsep dasar dalam ekonomi yang menjelaskan bagaimana harga barang atau jasa ditentukan di pasar. Interaksi antara keduanya menciptakan keseimbangan pasar, di mana jumlah barang yang diminta sama dengan jumlah barang yang ditawarkan pada harga tertentu.
         </p>
       </header>
 
-      <section className="text-center mb-5">
-        <h2>Siklus Ekonomi dalam Grafik</h2>
-        <canvas ref={cycleCanvasRef} width="500" height="300" style={{ border: "1px solid #ccc" }}></canvas>
+      <section className="mb-5">
+        <h2>Grafik Permintaan dan Penawaran</h2>
+        <div className="d-flex justify-content-center">
+          <canvas ref={demandCanvasRef} width={300} height={300} className="border border-primary me-4"></canvas>
+          <canvas ref={supplyCanvasRef} width={300} height={300} className="border border-danger"></canvas>
+        </div>
       </section>
 
       <section className="mb-5">
-        <h2>Tahapan Siklus Ekonomi</h2>
+        <h2>Permintaan (Demand)</h2>
         <p>
-          Siklus ekonomi terdiri dari empat tahap utama: Ekspansi, Puncak, Kontraksi, dan Resesi/Pemulihan.
+          Permintaan adalah jumlah barang atau jasa yang ingin dan mampu dibeli oleh konsumen pada berbagai tingkat harga dalam periode tertentu. Faktor-faktor yang memengaruhi permintaan termasuk:
+          <ul>
+            <li><strong>Harga Barang Itu Sendiri:</strong> Jika harga barang naik, permintaan cenderung turun.</li>
+            <li><strong>Pendapatan Konsumen:</strong> Pendapatan lebih tinggi berarti lebih banyak barang yang dapat dibeli.</li>
+            <li><strong>Harga Barang Substitusi dan Komplementer:</strong> Harga barang substitusi yang naik meningkatkan permintaan barang utama.</li>
+            <li><strong>Preferensi Konsumen:</strong> Barang yang sedang tren akan memiliki permintaan yang lebih tinggi.</li>
+            <li><strong>Ekspektasi Konsumen:</strong> Jika harga diperkirakan akan naik, permintaan akan meningkat.</li>
+            <li><strong>Jumlah Penduduk:</strong> Semakin banyak penduduk, semakin tinggi permintaan.</li>
+          </ul>
         </p>
-        <ul>
-          <li><strong>Ekspansi:</strong>Tahap ini ditandai dengan pertumbuhan ekonomi yang positif.
-Produksi meningkat karena permintaan barang dan jasa yang tinggi.
-Lapangan kerja bertambah, tingkat pengangguran menurun, dan pendapatan masyarakat meningkat.
-Investasi oleh perusahaan dan konsumsi masyarakat berada pada tingkat yang tinggi.
-Inflasi mulai naik, tetapi masih dalam batas wajar.
-</li>
-          <li><strong>Puncak:</strong> Ekonomi mencapai tingkat pertumbuhan tertinggi dalam siklus.
-Permintaan barang dan jasa berada pada titik maksimal, menyebabkan tekanan inflasi meningkat.
-Kapasitas produksi mencapai batas maksimal, dan sulit bagi produsen untuk memenuhi permintaan tambahan.
-Biasanya, di tahap ini, kebijakan moneter yang ketat mulai diterapkan untuk mengendalikan inflasi.
-</li>
-          <li><strong>Kontraksi:</strong> Tahap ini ditandai dengan perlambatan aktivitas ekonomi.
-Permintaan barang dan jasa menurun, menyebabkan produksi berkurang.
-Pengangguran mulai meningkat karena perusahaan mengurangi produksi dan investasi.
-Inflasi cenderung menurun atau terjadi deflasi (penurunan harga barang).
-Kepercayaan konsumen dan investor menurun, yang memperburuk kondisi ekonomi.
-</li>
-          <li><strong>Resesi/Pemulihan:</strong>Ekonomi mulai bangkit dari resesi atau depresi.
-Permintaan barang dan jasa kembali meningkat, mendorong produksi dan investasi.
-Tingkat pengangguran menurun, dan pendapatan masyarakat mulai naik.
-Kepercayaan konsumen dan investor pulih, menandai dimulainya siklus ekspansi baru.
-</li>
-        </ul>
       </section>
 
       <section className="mb-5">
-        <h2>Faktor Penyebab Siklus Ekonomi</h2>
-        <ul>
-          <li><strong>Internal:</strong>Perubahan Permintaan dan Penawaran: Fluktuasi dalam konsumsi, investasi, dan produksi dapat memengaruhi siklus ekonomi.
-Kebijakan Pemerintah: Kebijakan fiskal (pengeluaran dan pajak) dan moneter (suku bunga dan uang beredar) dapat memengaruhi aktivitas ekonomi.
-Inovasi Teknologi: Penemuan baru dapat mendorong ekspansi, tetapi adaptasi yang lambat dapat memicu kontraksi.
-</li>
-<li><strong>Eksternal:</strong> Perubahan harga komoditas, krisis keuangan global, bencana alam, dan pandemi.</li>
-        </ul>
+        <h2>Penawaran (Supply)</h2>
+        <p>
+          Penawaran adalah jumlah barang atau jasa yang ingin dan mampu dijual oleh produsen pada berbagai tingkat harga dalam periode tertentu. Faktor-faktor yang memengaruhi penawaran antara lain:
+          <ul>
+            <li><strong>Harga Barang Itu Sendiri:</strong> Jika harga barang meningkat, jumlah barang yang ditawarkan cenderung meningkat.</li>
+            <li><strong>Biaya Produksi:</strong> Biaya produksi yang tinggi dapat mengurangi penawaran barang.</li>
+            <li><strong>Teknologi:</strong> Teknologi yang lebih efisien meningkatkan penawaran.</li>
+            <li><strong>Kebijakan Pemerintah:</strong> Pajak yang tinggi mengurangi penawaran, sementara subsidi dapat meningkatkan penawaran.</li>
+            <li><strong>Ekspektasi Produsen:</strong> Produsen mungkin menahan barang jika mereka memperkirakan harga akan naik.</li>
+            <li><strong>Jumlah Produsen:</strong> Semakin banyak produsen, semakin banyak barang yang ditawarkan.</li>
+            </ul>
+        </p>
       </section>
 
       <section className="mb-5">
-        <h2>Dampak Siklus Ekonomi</h2>
-        <ul>
-          <li><strong>Ekspansi:</strong> Pendapatan masyarakat meningkat, pengangguran menurun, ekonomi tumbuh.</li>
-          <li><strong>Kontraksi:</strong>Perubahan Harga Komoditas: Harga minyak, gas, atau bahan baku penting lainnya dapat memengaruhi ekonomi global.
-Krisis Keuangan Global: Peristiwa seperti krisis 2008 dapat memicu kontraksi di berbagai negara.
-Bencana Alam atau Pandemi: Situasi seperti pandemi COVID-19 dapat memperlambat ekonomi secara signifikan.
-</li>
-        </ul>
+        <h2>Keseimbangan Pasar (Market Equilibrium)</h2>
+        <p>
+          Keseimbangan pasar terjadi ketika jumlah barang yang diminta sama dengan jumlah barang yang ditawarkan pada suatu tingkat harga tertentu. Harga keseimbangan adalah harga di mana permintaan dan penawaran bertemu, dan jumlah keseimbangan adalah jumlah barang yang dipertukarkan pada harga tersebut.
+          <ul>
+            <li><strong>Kelebihan Penawaran (Surplus):</strong> Terjadi saat harga terlalu tinggi dan jumlah yang ditawarkan melebihi jumlah yang diminta.</li>
+            <li><strong>Kekurangan Penawaran (Shortage):</strong> Terjadi saat harga terlalu rendah, menyebabkan jumlah yang diminta melebihi jumlah yang ditawarkan.</li>
+          </ul>
+        </p>
       </section>
 
       <section className="mb-5">
-        <h2>Strategi Menghadapi Siklus Ekonomi</h2>
-        <ul>
-          <li><strong>Ekspansi:</strong> Pemerintah dapat menerapkan kebijakan moneter ketat untuk mencegah inflasi berlebih.</li>
-          <li><strong>Kontraksi:</strong> Pemerintah dapat memberikan stimulus fiskal untuk mendorong pertumbuhan.</li>
-        </ul>
-      </section>
+        <h2>Elastisitas Permintaan dan Penawaran</h2>
+        <p>
+          Elastisitas mengukur sejauh mana permintaan atau penawaran merespon perubahan harga.
+          <ul>
+            <li><strong>Permintaan Elastis:</strong> Perubahan harga menyebabkan perubahan besar dalam jumlah yang diminta.</li>
+            <li><strong>Permintaan Inelastis:</strong> Perubahan harga menyebabkan perubahan kecil dalam jumlah yang diminta.</li>
+            <li><strong>Penawaran Elastis:</strong> Penawaran sangat responsif terhadap perubahan harga.</li>
+            <li><strong>Penawaran Inelastis:</strong> Penawaran tidak banyak berubah meskipun harga berubah.</li>
+          </ul>
+        </p>
+      </section>
+      <section className="mb-5">
+  <h2 className="text-center">Video Pembelajaran</h2>
+  <p className="mt-3 text-center">
+      Permintaan dan penawaran merupakan materi yang menarik! Ayoo pelajari lebih dalam.
+    </p>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "300px",
+      }}
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/yOiVoWxFYwc"
+        title="Video Pembelajaran"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="rounded"
+      ></iframe>
+    </div>
+</section>
+
       <section className="mt-5">
-        <h2 className="mb-4 text-center"><strong>Mini Kuis</strong></h2>
+        <h2 className="mb-4 text-center">
+          <strong>Mini Kuis</strong>
+        </h2>
         <Card className="p-4 mb-3 shadow-lg rounded-lg border-0 bg-light">
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>1. Tahap apa yang ditandai dengan pertumbuhan ekonomi yang positif dan penurunan pengangguran?</Form.Label>
+              <Form.Label>1. Jika harga barang naik, bagaimana pengaruhnya terhadap permintaan?</Form.Label>
               <Form.Check
                 type="radio"
-                label="Ekspansi"
+                label="Permintaan naik"
                 name="quiz1"
-                value="Ekspansi"
+                value="harga barang naik"
                 onChange={handleQuizChange}
               />
               <Form.Check
                 type="radio"
-                label="Puncak"
+                label="Permintaan turun"
                 name="quiz1"
-                value="Puncak"
+                value="harga barang turun"
                 onChange={handleQuizChange}
               />
               {quizFeedback.quiz1 && (
@@ -187,19 +214,19 @@ Bencana Alam atau Pandemi: Situasi seperti pandemi COVID-19 dapat memperlambat e
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>2. Apa yang terjadi pada ekonomi saat mencapai titik tertinggi dalam siklus?</Form.Label>
+              <Form.Label>2. Apa yang terjadi pada penawaran jika harga barang turun?</Form.Label>
               <Form.Check
                 type="radio"
-                label="Puncak"
+                label="Penawaran meningkat"
                 name="quiz2"
-                value="Puncak"
+                value="penurunan harga barang"
                 onChange={handleQuizChange}
               />
               <Form.Check
                 type="radio"
-                label="Pemulihan"
+                label="Penawaran menurun"
                 name="quiz2"
-                value="Pemulihan"
+                value="penurunan penawaran"
                 onChange={handleQuizChange}
               />
               {quizFeedback.quiz2 && (
@@ -210,19 +237,19 @@ Bencana Alam atau Pandemi: Situasi seperti pandemi COVID-19 dapat memperlambat e
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>3. Apa yang terjadi pada ekonomi saat terjadi penurunan tajam dalam PDB?</Form.Label>
+              <Form.Label>3. Apa yang dimaksud dengan keseimbangan pasar?</Form.Label>
               <Form.Check
                 type="radio"
-                label="Resesi"
+                label="Harga di mana permintaan dan penawaran bertemu"
                 name="quiz3"
-                value="Resesi"
+                value="keseimbangan pasar"
                 onChange={handleQuizChange}
               />
               <Form.Check
                 type="radio"
-                label="Ekspansi"
+                label="Harga barang tertinggi yang dapat dijual"
                 name="quiz3"
-                value="Ekspansi"
+                value="harga tertinggi"
                 onChange={handleQuizChange}
               />
               {quizFeedback.quiz3 && (
@@ -231,6 +258,7 @@ Bencana Alam atau Pandemi: Situasi seperti pandemi COVID-19 dapat memperlambat e
                 </p>
               )}
             </Form.Group>
+
             <Button variant="primary" onClick={checkAnswers}>
               Cek Jawaban
             </Button>
@@ -238,7 +266,10 @@ Bencana Alam atau Pandemi: Situasi seperti pandemi COVID-19 dapat memperlambat e
         </Card>
       </section>
 
-      <button onClick={() => window.history.back()} className="btn btn-secondary mt-4 mx-auto d-block">
+      <button
+        onClick={() => window.history.back()}
+        className="btn btn-secondary mt-4 mx-auto d-block"
+      >
         Kembali
       </button>
     </Container>

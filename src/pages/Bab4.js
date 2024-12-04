@@ -159,6 +159,31 @@ function App() {
           </ul>
         </p>
       </section>
+      <section className="mb-5">
+  <h2 className="text-center">Video Pembelajaran</h2>
+  <p className="mt-3 text-center">
+      Permintaan dan penawaran merupakan materi yang menarik! Ayoo pelajari lebih dalam.
+    </p>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "300px",
+      }}
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/yOiVoWxFYwc"
+        title="Video Pembelajaran"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="rounded"
+      ></iframe>
+    </div>
+</section>
+
       <section className="mt-5">
         <h2 className="mb-4 text-center">
           <strong>Mini Kuis</strong>

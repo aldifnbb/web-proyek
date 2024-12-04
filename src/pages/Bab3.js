@@ -35,6 +35,11 @@ function App() {
     });
   };
 
+  const handleBack = () => {
+    window.history.back();
+  };
+  
+
   return (
     <Container className="my-5">
 
@@ -130,6 +135,30 @@ function App() {
           Indonesia memiliki ekspor utama seperti minyak kelapa sawit, batu bara, karet, kopi, dan produk perikanan. Impor utama Indonesia mencakup bahan baku industri, barang modal, serta barang konsumsi seperti elektronik dan kendaraan.
         </p>
       </section>
+      <section className="mb-5">
+  <h2 className="text-center">Video Pembelajaran</h2>
+  <p className="mt-3 text-center">
+     Materi perdangan internasional dapat kamu dalami melalui video dibawah lho!
+    </p>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "300px",
+      }}
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/UO7LPuvo4Iw"
+        title="Video Pembelajaran"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="rounded"
+      ></iframe>
+    </div>
+</section>
 
       <section className="quiz-section mt-5">
         <h2 className="quiz-title mb-4 text-center"><strong>Mini Kuis</strong></h2>
@@ -198,6 +227,9 @@ function App() {
 
             <Button variant="primary" className="app__button" onClick={checkAnswers}>
               Cek Jawaban
+            </Button>
+            <Button className="app__button d-flex mx-auto mt-3" variant="secondary" onClick={handleBack}>
+              Kembali
             </Button>
           </Form>
         </Card>
