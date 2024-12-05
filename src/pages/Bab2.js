@@ -82,6 +82,10 @@ function App() {
             <li><strong>Menciptakan Kesempatan Kerja:</strong> Mengurangi tingkat pengangguran dengan menciptakan kondisi yang mendukung aktivitas ekonomiKebijakan moneter juga berperan dalam menjaga tingkat pengangguran dengan menciptakan kondisi yang mendukung aktivitas ekonomi.</li>
           </ul>
         </p>
+        <img
+        src="https://i.pinimg.com/736x/6d/92/eb/6d92ebe76139187508a1644847796ad0.jpg"
+        className="img-fluid rounded my-1"
+        />
       </section>
 
       <section className="app__section mb-5" data-aos="fade-left">
@@ -109,6 +113,10 @@ function App() {
             <li><strong>Intervensi Nilai Tukar:</strong> Bank sentral dapat membeli atau menjual valuta asing untuk menjaga kestabilan nilai tukar mata uang domestik.</li>
           </ul>
         </p>
+        <img 
+        src="https://i.pinimg.com/736x/ba/75/1b/ba751b43284767e60e7870cc9bb0ebf7.jpg"
+        className="img-fluid rounded my-1"
+        />
       </section>
 
       <section className="app__section mb-5" data-aos="fade-left">

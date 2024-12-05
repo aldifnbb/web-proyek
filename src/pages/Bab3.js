@@ -61,6 +61,10 @@ function App() {
             <li><strong>Kebutuhan akan Produk yang Tidak Tersedia di Dalam Negeri:</strong> Beberapa barang tidak dapat diproduksi di negara tertentu karena keterbatasan iklim atau teknologi.</li>
           </ul>
         </p>
+        <img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqygiHoQprMWE2BdEsWLOIHtceo3Pmw-pzdied9OoOydU-yCw5z0SJTHFoTIp_ZrJ8_aU_nOv1E_3ZlfHMp4OW5iE8NIPM5dlSUq3z5VIvjV3m_BpghIk8e4fjwhaz_68-5OgGhcsB8k_a/s1600/Penyebab+Terjadinya+Perdagangan+Internasional.jpg"
+            className="img-fluid rounded my-1"
+          />
       </section>
 
       <section className="app__section mb-5" data-aos="fade-right">
@@ -75,6 +79,10 @@ function App() {
             <li><strong>Memenuhi Kebutuhan Domestik:</strong> Negara dapat mengimpor barang yang tidak dapat diproduksi dalam negeri.</li>
           </ul>
         </p>
+        <img
+            src="https://asset-2.tstatic.net/tribunnews/foto/bank/images/ilustrasi-perdagangan-internasional11.jpg"
+            className="img-fluid rounded my-1"
+          />
       </section>
 
       <section className="app__section mb-5" data-aos="fade-left">
@@ -133,6 +141,11 @@ function App() {
         <p className="app__section__content">
           Indonesia memiliki ekspor utama seperti minyak kelapa sawit, batu bara, karet, kopi, dan produk perikanan. Impor utama Indonesia mencakup bahan baku industri, barang modal, serta barang konsumsi seperti elektronik dan kendaraan.
         </p>
+        <img
+        src= "https://i.pinimg.com/736x/41/cf/4e/41cf4ed917839b6b64773d6676bf3008.jpg" 
+        classname= "img-fluid rounded my-1"
+        />
+        
       </section>
       <section className="mb-5">
         <h2 className="app__section__title text-center">Video Pembelajaran</h2>
