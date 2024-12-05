@@ -42,16 +42,16 @@ function App() {
 
   return (
     <Container className="my-5">
-      <header className="app__header text-center mb-5">
-        <h1 className="app__header__title display-4">Bab 3: Perdagangan Internasional</h1>
-        <p className="app__header__description lead text-muted" style={{textAlign: "justify"}}>
+      <header className="app__header text-center my-5" data-aos="fade-up">
+        <h1 className="app__header__title display-4" data-aos="fade-right">Bab 3: Perdagangan Internasional</h1>
+        <p className="app__header__description lead text-muted" data-aos="fade left" style={{textAlign: "justify"}}>
           Perdagangan internasional adalah kegiatan pertukaran barang, jasa, atau faktor produksi antara negara-negara di dunia. Kegiatan ini muncul karena tidak ada satu negara pun yang dapat memenuhi semua kebutuhan ekonominya sendiri. Melalui perdagangan internasional, negara-negara dapat saling melengkapi kebutuhan mereka dengan memanfaatkan keunggulan masing-masing.
         </p>
       </header>
 
-      <section className="content-section mb-5">
-        <h2 className="section-title">Alasan Terjadinya Perdagangan Internasional</h2>
-        <p className="section-content">
+      <section className="app__section mb-5" data-aos="fade-up">
+        <h2 className="app__section__title">Alasan Terjadinya Perdagangan Internasional</h2>
+        <p className="app__section__content mb-5">
           Beberapa alasan utama terjadinya perdagangan internasional antara lain:
           <ul>
             <li><strong>Perbedaan Sumber Daya Alam:</strong> Negara-negara memiliki kekayaan alam yang berbeda.</li>
@@ -63,9 +63,9 @@ function App() {
         </p>
       </section>
 
-      <section className="content-section mb-5">
-        <h2 className="section-title">Manfaat Perdagangan Internasional</h2>
-        <p className="section-content">
+      <section className="app__section mb-5" data-aos="fade-right">
+        <h2 className="app__section__title">Manfaat Perdagangan Internasional</h2>
+        <p className="app__section__content">
           Perdagangan internasional membawa manfaat berikut:
           <ul>
             <li><strong>Memperluas Pasar:</strong> Produsen dapat menjual barang ke negara lain, meningkatkan pendapatan dan skala produksi.</li>
@@ -77,9 +77,9 @@ function App() {
         </p>
       </section>
 
-      <section className="content-section mb-5">
-        <h2 className="section-title">Hambatan Perdagangan Internasional</h2>
-        <p className="section-content">
+      <section className="app__section mb-5" data-aos="fade-left">
+        <h2 className="app__section__title">Hambatan Perdagangan Internasional</h2>
+        <p className="app__section__content">
           Beberapa hambatan dalam perdagangan internasional adalah:
           <ul>
             <li><strong>Proteksionisme:</strong> Kebijakan yang melindungi industri dalam negeri dengan cara seperti tarif, kuota, atau larangan impor.</li>
@@ -91,9 +91,9 @@ function App() {
         </p>
       </section>
 
-      <section className="content-section mb-5">
-        <h2 className="section-title">Bentuk Perdagangan Internasional</h2>
-        <p className="section-content">
+      <section className="app__section mb-5" data-aos="fade-right">
+        <h2 className="app__section__title">Bentuk Perdagangan Internasional</h2>
+        <p className="app__section__content">
           Perdagangan internasional dapat berupa:
           <ul>
             <li><strong>Ekspor dan Impor:</strong> Ekspor adalah penjualan barang ke luar negeri, sementara impor adalah pembelian barang dari luar negeri.</li>
@@ -105,9 +105,9 @@ function App() {
         </p>
       </section>
 
-      <section className="content-section mb-5">
-        <h2 className="section-title">Kebijakan Perdagangan Internasional</h2>
-        <p className="section-content">
+      <section className="app__section mb-5" data-aos="fade-left">
+        <h2 className="app__section__title">Kebijakan Perdagangan Internasional</h2>
+        <p className="app__section__content">
           Terdapat dua jenis kebijakan utama dalam perdagangan internasional:
           <ul>
             <li><strong>Kebijakan Proteksi:</strong> Melindungi industri dalam negeri melalui tarif, kuota, atau subsidi ekspor.</li>
@@ -117,9 +117,9 @@ function App() {
         </p>
       </section>
 
-      <section className="content-section mb-5">
-        <h2 className="section-title">Dampak Perdagangan Internasional</h2>
-        <p className="section-content">
+      <section className="app__section mb-5" data-aos="fade-right">
+        <h2 className="app__section__title">Dampak Perdagangan Internasional</h2>
+        <p className="app__section__content">
           Dampak positif dan negatif perdagangan internasional antara lain:
           <ul>
             <li><strong>Dampak Positif:</strong> Meningkatkan pendapatan nasional, membuka lapangan kerja baru, meningkatkan akses barang dan jasa, serta mempercepat transfer teknologi.</li>
@@ -128,36 +128,36 @@ function App() {
         </p>
       </section>
 
-      <section className="content-section mb-5">
-        <h2 className="section-title">Contoh Perdagangan Internasional di Indonesia</h2>
-        <p className="section-content">
+      <section className="app__section mb-5" data-aos="fade-right">
+        <h2 className="app__section__title">Contoh Perdagangan Internasional di Indonesia</h2>
+        <p className="app__section__content">
           Indonesia memiliki ekspor utama seperti minyak kelapa sawit, batu bara, karet, kopi, dan produk perikanan. Impor utama Indonesia mencakup bahan baku industri, barang modal, serta barang konsumsi seperti elektronik dan kendaraan.
         </p>
       </section>
       <section className="mb-5">
-  <h2 className="text-center">Video Pembelajaran</h2>
-  <p className="mt-3 text-center">
-     Materi perdangan internasional dapat kamu dalami melalui video dibawah lho!
-    </p>
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "300px",
-      }}
-    >
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/UO7LPuvo4Iw"
-        title="Video Pembelajaran"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        className="rounded"
-      ></iframe>
-    </div>
-</section>
+        <h2 className="app__section__title text-center">Video Pembelajaran</h2>
+        <p className="app__section__titlemt-3 text-center">
+          Materi perdangan internasional dapat kamu dalami melalui video dibawah lho!
+          </p>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: "300px",
+            }}
+          >
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/UO7LPuvo4Iw"
+              title="Video Pembelajaran"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="rounded"
+            ></iframe>
+          </div>
+      </section>
 
       <section className="quiz-section mt-5">
         <h2 className="quiz-title mb-4 text-center"><strong>Mini Kuis</strong></h2>

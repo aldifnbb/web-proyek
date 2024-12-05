@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "aos/dist/aos.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import AOS from "aos";
+
+
 
 function Inspiratif() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   const economists = [
     {
       name: "Adam Smith",
@@ -68,14 +76,14 @@ function Inspiratif() {
     <>
       <div className="container mt-5">
         <div className="text-center mb-4">
-          <h1 className="display-5" style={{ color: "#343a40", fontWeight: "700" }}>
+          <h1 className="app__section__title" data-aos="fade-up">
             Tokoh Inspiratif Ekonomi
           </h1>
-          <p style={{ color: "#6c757d", fontSize: "18px" }}>
+          <p className="app__section__content text-center" data-aos="fade-up">
             Temukan kisah para tokoh inspiratif yang telah membentuk dunia ekonomi modern.
           </p>
         </div>
-        <div className="row justify-content-center">
+        <div className="row justify-content-center" data-aos="fade-down">
           <div className="col-md-8">
             <div
               className="card shadow border-0"

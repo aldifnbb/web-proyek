@@ -1,6 +1,12 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Quiz() {
+    useEffect(() => {
+        AOS.init({ duration: 1200 });
+      }, []);
+
     const allQuestions = [
         {
             question: "Apa masalah ekonomi dasar yang dihadapi oleh setiap masyarakat?",
@@ -169,7 +175,7 @@ function Quiz() {
 
     return (
         <div className="quiz-container">
-            <div className="quiz-sidebar">
+            <div className="quiz-sidebar" data-aos="fade-right">
                 <h2 className="quiz-title">Kuis Ekonomi - Kelas 10</h2>
                 <div className="question-list">
                     {allQuestions.map((_, index) => (
@@ -184,7 +190,7 @@ function Quiz() {
                     ))}
                 </div>
             </div>
-            <div className="quiz-main">
+            <div className="quiz-main" data-aos="fade-left">
                 {quizFinished ? (
                     <div className="quiz-result">
                         <h2>Kuis Selesai!</h2>

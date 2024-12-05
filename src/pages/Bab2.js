@@ -71,8 +71,8 @@ function App() {
       </header>
 
 
-      <section className="app__secttion mb-5" data-aos="fade-right">
-        <h2 className="app__section__title lead text-muted" style={{ textAlign: "justify" }} data-aos="fade-up">Tujuan Kebijakan Moneter</h2>
+      <section className="app__section mb-5" data-aos="fade-right">
+        <h2 className="app__section__title" data-aos="fade-up">Tujuan Kebijakan Moneter</h2>
         <p className="app__section__description">
           Kebijakan moneter bertujuan untuk mencapai beberapa tujuan penting, antara lain:
           <ul>
@@ -97,9 +97,9 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5" data-aos="fade-right">
-        <h2>Alat Kebijakan Moneter</h2>
-        <p>
+      <section className="app__section mb-5" data-aos="fade-right">
+        <h2 className="app__section__title">Alat Kebijakan Moneter</h2>
+        <p className="app__section__content">
           Berikut adalah beberapa alat utama yang digunakan dalam kebijakan moneter:
           <ul>
             <li><strong>Operasi Pasar Terbuka (OPT):</strong> Bank sentral membeli atau menjual surat berharga negara di pasar terbuka untuk mengontrol likuiditas.</li>
@@ -111,9 +111,9 @@ function App() {
         </p>
       </section>
 
-      <section className="mb-5" data-aos="fade-left">
-        <h2>Dampak Kebijakan Moneter</h2>
-        <p>
+      <section className="app__section mb-5" data-aos="fade-left">
+        <h2 className="app__section__title">Dampak Kebijakan Moneter</h2>
+        <p className="app__section__content">
           Dampak dari kebijakan moneter dapat dibagi menjadi dampak positif dan negatif:
           <ul>
             <li><strong>Dampak Positif:</strong> Meningkatkan stabilitas ekonomi, mengendalikan inflasi, dan mendorong pertumbuhan ekonomi.</li>
@@ -122,8 +122,8 @@ function App() {
         </p>
       </section>
       <section className="mb-5" data-aos="fade-right">
-        <h2 className="text-center">Video Pembelajaran</h2>
-        <p className="mt-3 text-center">
+        <h2 className="app__section__title">Video Pembelajaran</h2>
+        <p className="app__section__content text-center">
           Tonton video ini agar kamu lebih memahami materi tenatng kebijakan moneter.
         </p>
         <div

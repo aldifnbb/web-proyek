@@ -59,7 +59,7 @@ const EkonomiPerkembangan = () => {
   return (
     <div>
       <div className="container mt-5">
-        <h1 data-aos="fade-right" className="text-center mb-4 text-primary">
+        <h1 data-aos="fade-right" className="text-center mb-4">
           Perjalanan dan Dinamika Perkembangan Ekonomi
         </h1>
         <p data-aos="fade-up" className="mt-3 text-muted text-center">
@@ -70,7 +70,7 @@ const EkonomiPerkembangan = () => {
         <div className="row mt-5">
           <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
             <h3>1. Sejarah Awal Perkembangan Ekonomi</h3>
-            <p>
+            <p className="app__section__content"> 
               Dari sistem barter hingga ekonomi berbasis uang, sejarah perkembangan ekonomi
               menunjukkan evolusi cara manusia memenuhi kebutuhan hidupnya. Revolusi industri di abad ke-18
               menjadi titik balik penting dengan pengenalan mesin dan produksi massal yang mengubah cara manusia bekerja.
@@ -79,7 +79,7 @@ const EkonomiPerkembangan = () => {
 
           <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
             <h3>2. Faktor Utama Pendorong Ekonomi</h3>
-            <p>
+            <p className="app__section__content">
               Kemajuan teknologi, kebijakan ekonomi yang strategis, pendidikan yang berkualitas,
               serta pertumbuhan perdagangan internasional adalah pendorong utama perkembangan ekonomi.
               Investasi pada infrastruktur dan sumber daya manusia juga berperan besar dalam mempercepat perubahan.
@@ -89,7 +89,7 @@ const EkonomiPerkembangan = () => {
 
         <div className="row mt-4">
           <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <h3>3. Globalisasi dan Transformasi Ekonomi</h3>
+            <h3 className="app__section__content">3. Globalisasi dan Transformasi Ekonomi</h3>
             <p>
               Era globalisasi membuka pintu bagi kolaborasi lintas negara.
               Perdagangan bebas, aliran investasi, dan inovasi global mempercepat pertumbuhan ekonomi dunia,
@@ -98,7 +98,7 @@ const EkonomiPerkembangan = () => {
           </div>
 
           <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <h3>4. Era Ekonomi Digital</h3>
+            <h3 className="app__section__content">4. Era Ekonomi Digital</h3>
             <p>
               Di abad ke-21, ekonomi digital menjadi penggerak utama pertumbuhan.
               Platform e-commerce, fintech, dan teknologi blockchain menciptakan peluang baru,
@@ -109,7 +109,7 @@ const EkonomiPerkembangan = () => {
 
         <div className="row mt-4">
           <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <h3>5. Tantangan dan Krisis Ekonomi</h3>
+            <h3 className="app__section__content">5. Tantangan dan Krisis Ekonomi</h3>
             <p>
               Perkembangan ekonomi tidak lepas dari tantangan, seperti ketimpangan sosial,
               dampak perubahan iklim, dan ketidakstabilan geopolitik.
@@ -118,7 +118,7 @@ const EkonomiPerkembangan = () => {
           </div>
 
           <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <h3>6. Dampak pada Kehidupan Masyarakat</h3>
+            <h3 className="app__section__content">6. Dampak pada Kehidupan Masyarakat</h3>
             <p>
               Perkembangan ekonomi telah memberikan manfaat besar, seperti peningkatan kualitas hidup,
               inovasi medis, dan pendidikan yang lebih mudah diakses. Namun, efek samping seperti urbanisasi yang tidak terkendali

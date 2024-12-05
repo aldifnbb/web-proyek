@@ -5,7 +5,7 @@ const EkonomiKonsep = () => {
   return (
     <div>
       <div className="container mt-5">
-        <h1 data-aos="fade-right" className="text-center mb-4 text-primary">
+        <h1 data-aos="fade-right" className="app__section__title">
           Konsep Dasar Ekonomi
         </h1>
         <p data-aos="fade-up" className="lead text-muted text-center mb-5">
@@ -14,7 +14,7 @@ const EkonomiKonsep = () => {
         </p>
 
         <div data-aos="fade-right" className="mt-5">
-          <h3>Kelangkaan (Scarcity)</h3>
+          <h3 >Kelangkaan (Scarcity)</h3>
           <p>
             Kelangkaan adalah konsep utama dalam ekonomi yang menjelaskan bahwa sumber daya yang terbatas tidak dapat memenuhi kebutuhan manusia yang tidak terbatas. 
             Oleh karena itu, ekonomi berfokus pada bagaimana mengelola dan mengalokasikan sumber daya tersebut agar dapat memenuhi kebutuhan yang paling mendesak.

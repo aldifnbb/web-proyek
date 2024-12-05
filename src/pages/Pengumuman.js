@@ -10,20 +10,17 @@ const Pengumuman = () => {
     const [showNotification, setShowNotification] = useState(false);
 
     useEffect(() => {
-        // Inisialisasi AOS
         AOS.init({
-            duration: 1000, // Durasi animasi
-            easing: 'ease-in-out', // Easing animasi
-            once: true, // Animasi hanya sekali
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
         });
 
-        // Memuat data pengumuman dari localStorage
         const storedPengumumanList = JSON.parse(localStorage.getItem('pengumumanList')) || [];
         setPengumumanList(storedPengumumanList);
     }, []);
 
     useEffect(() => {
-        // Menyimpan data pengumuman ke localStorage setiap ada perubahan
         if (pengumumanList.length > 0) {
             localStorage.setItem('pengumumanList', JSON.stringify(pengumumanList));
         }
