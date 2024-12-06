@@ -131,27 +131,30 @@ function Quiz() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedOption, setSelectedOption] = useState('');
     const [score, setScore] = useState(0);
-    const [correctAnswers, setCorrectAnswers] = useState(0);
-    const [incorrectAnswers, setIncorrectAnswers] = useState(0);
     const [answeredQuestions, setAnsweredQuestions] = useState([]);
     const [quizFinished, setQuizFinished] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleOptionChange = (e) => setSelectedOption(e.target.value);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        if (!selectedOption) {
+            setErrorMessage('Silakan pilih jawaban sebelum mengirim!');
+            return;
+        }
+
         const currentQuestion = allQuestions[currentQuestionIndex];
         const isCorrect = selectedOption === currentQuestion.answer;
 
         if (isCorrect) {
             setScore(score + 1);
-            setCorrectAnswers(correctAnswers + 1);
-        } else {
-            setIncorrectAnswers(incorrectAnswers + 1);
         }
 
         setAnsweredQuestions([...answeredQuestions, currentQuestionIndex]);
+        setSelectedOption('');
+        setErrorMessage(''); // Reset pesan error
     };
 
     const handleNextQuestion = () => {
@@ -167,10 +170,9 @@ function Quiz() {
         setCurrentQuestionIndex(0);
         setSelectedOption('');
         setScore(0);
-        setCorrectAnswers(0);
-        setIncorrectAnswers(0);
         setQuizFinished(false);
         setAnsweredQuestions([]);
+        setErrorMessage('');
     };
 
     return (
@@ -195,11 +197,25 @@ function Quiz() {
                     <div className="quiz-result">
                         <h2>Kuis Selesai!</h2>
                         <p>Skor Anda: {score} dari {allQuestions.length}</p>
-                        <button onClick={restartQuiz} className="btn-restart">Mulai Lagi</button>
+                        <button onClick={restartQuiz} className="btn-restart btn btn-primary">Mulai Lagi</button>
                     </div>
                 ) : (
                     <div className="question-box">
                         <h2>{allQuestions[currentQuestionIndex].question}</h2>
+                        {errorMessage && (
+                    <div className="alert-container alert-danger">
+                        <span>{errorMessage}</span>
+                        <button
+                        type="button"
+                        className="btn-close"
+                        aria-label="Close"
+                        onClick={() => setErrorMessage('')}
+                        >
+                        &times;
+                        </button>
+                    </div>
+                    )}
+
                         {!answeredQuestions.includes(currentQuestionIndex) ? (
                             <form onSubmit={handleSubmit}>
                                 <div className="options">
@@ -213,13 +229,12 @@ function Quiz() {
                                                 checked={selectedOption === option}
                                                 onChange={handleOptionChange}
                                                 className="option-input"
-                                                required
                                             />
                                             <label htmlFor={`option-${index}`} className="option-label">{option}</label>
                                         </div>
                                     ))}
                                 </div>
-                                <button type="submit" className="btn-nav">
+                                <button type="submit" className="btn-nav btn btn-success">
                                     {currentQuestionIndex === allQuestions.length - 1 ? 'Finish Quiz' : 'Kirim Jawaban'}
                                 </button>
                             </form>
@@ -232,7 +247,7 @@ function Quiz() {
                                     }
                                 </p>
                                 <p><strong>Penjelasan:</strong> {allQuestions[currentQuestionIndex].explanation}</p>
-                                <button onClick={handleNextQuestion} className="btn-next">
+                                <button onClick={handleNextQuestion} className="btn-next btn btn-primary">
                                     {currentQuestionIndex === allQuestions.length - 1 ? 'Finish Quiz' : 'Soal Berikutnya'}
                                 </button>
                             </div>

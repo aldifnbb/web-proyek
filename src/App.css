@@ -518,6 +518,20 @@ input:focus {
 
 /* ================================ QUIZ CSS ====================================== */
 
+:root {
+  --primary-bg: #2c3e50;
+  --primary-accent: #3498db;
+  --hover-accent: #1abc9c;
+  --danger-color: #e74c3c;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --text-light: #ecf0f1;
+  --text-dark: #34495e;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --font-family: Arial, sans-serif;
+}
+
 .quiz-container {
   display: flex;
   font-family: Arial, sans-serif;
@@ -612,6 +626,11 @@ input:focus {
 .quiz-result {
   text-align: center;
   margin-top: 2rem;
+}
+
+.alert {
+  margin-bottom: 1rem;
+  border-radius: 5px;
 }
 
 .result-actions {
@@ -750,7 +769,66 @@ input:focus {
   color: #555;
   font-weight: 500;
 }
+/* ============= ALERT STYLES ============= */
 
+.alert-container {
+  width: 100%; /* Sesuaikan dengan lebar kontainer */
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  position: relative; /* Posisi relatif untuk tombol close */
+}
+
+.alert-danger {
+  background-color: #ff6b6b;
+  color: #fff;
+}
+
+.alert-danger .btn-close {
+  background: transparent;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.alert-danger .btn-close:hover {
+  transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .alert-container {
+    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .alert-danger .btn-close {
+    top: 5px;
+    right: 10px;
+  }
+}
 
 /* =========================== CONTACT CSS ============================= */
 
